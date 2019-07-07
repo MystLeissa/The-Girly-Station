@@ -2,7 +2,7 @@
 
 #include "map_files\generic\CentCom.dmm"
 
- Officially these Maps are not Supported By The Girly station - Enable at your own risk
+ //Officially these Maps are not Supported By The Girly station - Enable at your own risk
 #ifndef LOWMEMORYMODE
 	#ifdef ALL_MAPS
 		#include "map_files\BoxStation\BoxStation.dmm"
