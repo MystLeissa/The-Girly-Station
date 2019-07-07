@@ -45,7 +45,7 @@
 
 /obj/item/gun/energy/disabler/cyborg
 	name = "cyborg disabler"
-	desc = "An integrated disabler that draws from a cyborg's power cell. This weapon contains a limiter to prevent the cyborg's power cell from overheating."\
+	desc = "An integrated disabler that draws from a cyborg's power cell. This weapon contains a limiter to prevent the cyborg's power cell from overheating."
 	pin = /obj/item/firing_pin
 	spawn_empty = FALSE
 	can_charge = FALSE
