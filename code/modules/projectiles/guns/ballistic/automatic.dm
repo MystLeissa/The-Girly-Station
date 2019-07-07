@@ -22,6 +22,7 @@
 
 /obj/item/gun/ballistic/automatic/proto/unrestricted
 	pin = /obj/item/firing_pin
+	spawn_empty = FALSE
 
 /obj/item/gun/ballistic/automatic/update_icon()
 	..()
@@ -63,6 +64,7 @@
 	fire_delay = 2
 	burst_size = 2
 	pin = /obj/item/firing_pin/implant/pindicate
+	spawn_empty = FALSE
 	can_bayonet = TRUE
 	knife_x_offset = 26
 	knife_y_offset = 12
@@ -72,6 +74,7 @@
 
 /obj/item/gun/ballistic/automatic/c20r/unrestricted
 	pin = /obj/item/firing_pin
+	spawn_empty = FALSE
 
 /obj/item/gun/ballistic/automatic/c20r/Initialize()
 	. = ..()
@@ -116,6 +119,7 @@
 	burst_size = 3
 	fire_delay = 2
 	pin = /obj/item/firing_pin/implant/pindicate
+	spawn_empty = FALSE
 	mag_display = TRUE
 	empty_indicator = TRUE
 
@@ -126,6 +130,7 @@
 
 /obj/item/gun/ballistic/automatic/m90/unrestricted
 	pin = /obj/item/firing_pin
+	spawn_empty = FALSE
 
 /obj/item/gun/ballistic/automatic/m90/unrestricted/Initialize()
 	. = ..()
@@ -221,6 +226,7 @@
 	fire_delay = 1
 	spread = 7
 	pin = /obj/item/firing_pin/implant/pindicate
+	spawn_empty = FALSE
 	bolt_type = BOLT_TYPE_OPEN
 	mag_display = TRUE
 	mag_display_ammo = TRUE
@@ -230,7 +236,7 @@
 
 /obj/item/gun/ballistic/automatic/l6_saw/unrestricted
 	pin = /obj/item/firing_pin
-
+	spawn_empty = FALSE
 
 /obj/item/gun/ballistic/automatic/l6_saw/examine(mob/user)
 	. = ..()
@@ -311,6 +317,7 @@
 	can_suppress = TRUE
 	can_unsuppress = TRUE
 	pin = /obj/item/firing_pin/implant/pindicate
+	spawn_empty = FALSE
 
 // Old Semi-Auto Rifle //
 

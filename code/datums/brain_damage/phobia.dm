@@ -200,9 +200,10 @@
 	phobia_type = "falling"
 	random_gain = FALSE
 
+// Added Anime to Rand for fun...
 /datum/brain_trauma/mild/phobia/anime
 	phobia_type = "anime"
-	random_gain = FALSE
+	random_gain = TRUE
 
 /datum/brain_trauma/mild/phobia/conspiracies
 	phobia_type = "conspiracies"

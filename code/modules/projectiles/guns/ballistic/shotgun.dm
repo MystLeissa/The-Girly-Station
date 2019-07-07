@@ -117,6 +117,7 @@
 	burst_size = 1
 	fire_delay = 0
 	pin = /obj/item/firing_pin/implant/pindicate
+	spawn_empty = FALSE
 	actions_types = list()
 	mag_display = TRUE
 	empty_indicator = TRUE
@@ -129,6 +130,7 @@
 
 /obj/item/gun/ballistic/shotgun/bulldog/unrestricted
 	pin = /obj/item/firing_pin
+	spawn_empty = FALSE
 /////////////////////////////
 // DOUBLE BARRELED SHOTGUN //
 /////////////////////////////

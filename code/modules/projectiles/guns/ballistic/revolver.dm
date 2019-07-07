@@ -146,6 +146,7 @@
 	fire_sound = 'sound/weapons/resonator_blast.ogg'
 	recoil = 8
 	pin = /obj/item/firing_pin
+	spawn_empty = FALSE
 
 /obj/item/gun/ballistic/revolver/nagant
 	name = "\improper Nagant revolver"

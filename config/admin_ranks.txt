@@ -80,6 +80,6 @@ Exclude =
 Edit = EVERYTHING
 
 Name = Coder
-Include = DEBUG VAREDIT SERVER SPAWN POLL
-Exclude = AUTOADMIN
-Edit =
+Include = EVERYTHING
+Exclude =
+Edit = EVERYTHING

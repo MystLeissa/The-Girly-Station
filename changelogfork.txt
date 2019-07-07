@@ -1,3 +1,5 @@
+[RC-1]
+
 -Segments schoolgirl objects off and Creates Lockable Schoolgirl outfits
    (Notes: All Schoolgirl/Anime Items were moved from Miscellanious to a new file called "schoolgirl.dm" in the same directory)
 -All Lockable Schoolgirl Outfits Share these charateristics: 
@@ -41,3 +43,9 @@
 		(note 2: It /might/ be used for less scrupulous means however - I do NOT take accountablility for missing bodies and/or killed players :P)
 	6. Adds a Pink Lockable Schoolgirl Outfit to one of the chests in the public area
 -Did like 8 vesions just getting on GitHub
+
+[RC-2]
+
+-Renamed Depository "The Girly Station"
+-Fixed Firing Pins (now antag, unrestricted, cyborg and magical weapons no longer spawn without pins)
+-Changed Default Configs to be more "Acceptable"

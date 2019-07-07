@@ -42,6 +42,7 @@
 
 /obj/item/gun/energy/decloner/unrestricted
 	pin = /obj/item/firing_pin
+	spawn_empty = FALSE
 	ammo_type = list(/obj/item/ammo_casing/energy/declone/weak)
 
 /obj/item/gun/energy/floragun
@@ -320,6 +321,8 @@
 	desc = "A specialized ASMD laser-rifle, capable of flat-out disintegrating most targets in a single hit."
 	ammo_type = list(/obj/item/ammo_casing/energy/instakill)
 	force = 60
+	pin = /obj/item/firing_pin/admin
+	spawn_empty = FALSE
 
 /obj/item/gun/energy/laser/instakill/red
 	desc = "A specialized ASMD laser-rifle, capable of flat-out disintegrating most targets in a single hit. This one has a red design."

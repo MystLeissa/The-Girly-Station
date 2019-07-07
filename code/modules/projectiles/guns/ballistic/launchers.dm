@@ -10,10 +10,12 @@
 	fire_sound = 'sound/weapons/grenadelaunch.ogg'
 	w_class = WEIGHT_CLASS_NORMAL
 	pin = /obj/item/firing_pin/implant/pindicate
+	spawn_empty = FALSE
 	bolt_type = BOLT_TYPE_NO_BOLT
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/unrestricted
 	pin = /obj/item/firing_pin
+	spawn_empty = FALSE
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/attackby(obj/item/A, mob/user, params)
 	..()
@@ -27,6 +29,7 @@
 	icon_state = "mecha_grenadelnchr"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/grenademulti
 	pin = /obj/item/firing_pin
+	spawn_empty = FALSE
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/cyborg/attack_self()
 	return
@@ -52,6 +55,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	can_suppress = FALSE
 	pin = /obj/item/firing_pin/implant/pindicate
+	spawn_empty = FALSE
 	burst_size = 1
 	fire_delay = 0
 	casing_ejector = FALSE
@@ -64,6 +68,7 @@
 
 /obj/item/gun/ballistic/rocketlauncher/unrestricted
 	pin = /obj/item/firing_pin
+	spawn_empty = FALSE
 
 /obj/item/gun/ballistic/rocketlauncher/afterattack()
 	. = ..()

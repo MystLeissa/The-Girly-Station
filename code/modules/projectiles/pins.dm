@@ -67,12 +67,21 @@
 		if(gun)
 			qdel(gun)
 
+/obj/item/firing_pin/admin
+	name = "Admin Pin"
+	desc = "This shouldn't need to exist - but it does"
 
+/obj/item/firing_pin/admin/pin_auth(mob/living/user)
+	if(HAS_TRAIT(user,TRAIT_ADMIN)) return TRUE
+	return FALSE
+
+/obj/item/firing_pin/admin/emag_act(mob/user)
+	to_chat(user,"This cannot be emagged!")
+	return
 
 /obj/item/firing_pin/magic
 	name = "magic crystal shard"
 	desc = "A small enchanted shard which allows magical weapons to fire."
-
 
 // Test pin, works only near firing range.
 /obj/item/firing_pin/test_range
