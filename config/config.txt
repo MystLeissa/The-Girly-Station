@@ -168,7 +168,7 @@ ID_CONSOLE_JOBSLOT_DELAY 30
 #ALLOW_VOTE_MODE
 
 ## allow players to initiate a map-change vote
-ALLOW_VOTE_MAP
+#ALLOW_VOTE_MAP
 
 ## min delay (deciseconds) between voting sessions (default 10 minutes)
 VOTE_DELAY 6000
@@ -186,7 +186,7 @@ VOTE_PERIOD 600
 NORESPAWN
 
 ## disables calling del(src) on newmobs if they logout before spawnin in
-DONT_DEL_NEWMOB
+# DONT_DEL_NEWMOB
 
 ## set a hosted by name for unix platforms
 HOSTEDBY Yournamehere
@@ -239,11 +239,8 @@ ALLOW_WEBCLIENT
 # RULESURL http://www.tgstation13.org/wiki/Rules
 
 ## Github address
-<<<<<<< Updated upstream
-GITHUBURL https://github.com/MystLeissa/The-Girly-Station/
-=======
-GITHUBURL https://github.com/MystLeissa/The-Girly-Station
->>>>>>> Stashed changes
+# GITHUBURL https://github.com/MystLeissa/The-Girly-Station
+
 
 ## Round specific stats address
 ## Link to round specific parsed logs; IE statbus. It is appended with the RoundID automatically by ticker/Reboot()
