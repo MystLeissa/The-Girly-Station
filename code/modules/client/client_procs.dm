@@ -224,7 +224,11 @@ GLOBAL_LIST_EMPTY(external_rsc_urls)
 					if(matches)
 						matches += " and "
 					matches += "ID ([computer_id])"
+					//Found the Little Thing - I'm setting this to FALSE so players don't get alerted to dupe logins ~Myst
+					// Actually Since it's tied to the Spawn() thing I'm going to set it to TRUE and comment out the message.
 					alert_mob_dupe_login = TRUE
+					
+				/* This isn't needed either
 				if(matches)
 					if(C)
 						message_admins("<span class='danger'><B>Notice: </B></span><span class='notice'>[key_name_admin(src)] has the same [matches] as [key_name_admin(C)].</span>")
@@ -232,6 +236,7 @@ GLOBAL_LIST_EMPTY(external_rsc_urls)
 					else
 						message_admins("<span class='danger'><B>Notice: </B></span><span class='notice'>[key_name_admin(src)] has the same [matches] as [key_name_admin(C)] (no longer logged in). </span>")
 						log_access("Notice: [key_name(src)] has the same [matches] as [key_name(C)] (no longer logged in).")
+				*/
 
 	if(GLOB.player_details[ckey])
 		player_details = GLOB.player_details[ckey]
@@ -269,7 +274,7 @@ GLOBAL_LIST_EMPTY(external_rsc_urls)
 
 	if(alert_mob_dupe_login)
 		spawn()
-			alert(mob, "You have logged in already with another key this round, please log out of this one NOW or risk being banned!")
+			//alert(mob, "You have logged in already with another key this round, please log out of this one NOW or risk being banned!")
 
 	connection_time = world.time
 	connection_realtime = world.realtime

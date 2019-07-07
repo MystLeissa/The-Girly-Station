@@ -196,7 +196,7 @@ HOSTEDBY Yournamehere
 GUEST_JOBBAN 1
 
 ## Uncomment this to stop people connecting to your server without a registered ckey. (i.e. guest-* are all blocked from connecting)
-GUEST_BAN
+#GUEST_BAN
 
 ## Comment this out to disable checking for the cid randomizer dll. (disabled if database isn't enabled or connected)
 CHECK_RANDOMIZER
@@ -239,7 +239,11 @@ ALLOW_WEBCLIENT
 # RULESURL http://www.tgstation13.org/wiki/Rules
 
 ## Github address
+<<<<<<< Updated upstream
 GITHUBURL https://github.com/MystLeissa/The-Girly-Station/
+=======
+GITHUBURL https://github.com/MystLeissa/The-Girly-Station
+>>>>>>> Stashed changes
 
 ## Round specific stats address
 ## Link to round specific parsed logs; IE statbus. It is appended with the RoundID automatically by ticker/Reboot()
@@ -482,7 +486,7 @@ HIGH_POP_MC_MODE_AMOUNT 65
 DISABLE_HIGH_POP_MC_MODE_AMOUNT 60
 
 ## Uncomment to prevent the world from sleeping while no players are connected after initializations
-#RESUME_AFTER_INITIALIZATIONS
+RESUME_AFTER_INITIALIZATIONS
 
 ## Uncomment to set the number of /world/Reboot()s before the DreamDaemon restarts itself. 0 means restart every round. Requires tgstation server tools.
 #ROUNDS_UNTIL_HARD_RESTART 10

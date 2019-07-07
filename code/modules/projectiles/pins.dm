@@ -70,15 +70,27 @@
 /obj/item/firing_pin/admin
 	name = "Admin Pin"
 	desc = "This shouldn't need to exist - but it does"
-
+	fail_message = "You need to have admin permission to fire this weapon"
+	pin_removeable = FALSE
 /obj/item/firing_pin/admin/pin_auth(mob/living/user)
-	if(HAS_TRAIT(user,TRAIT_ADMIN)) return TRUE
+	if(HAS_TRAIT(user,TRAIT_ADMIN_FIRE)) 
+		return TRUE
 	return FALSE
+
+/obj/item/firing_ping/admin/auth_fail(mob/living/user)
+   ..()
+   to_chat(GLOB.admins,"[user] attempted to fire [gun] slotted with an [src] and failed - if you intended to let them fire it please add the TRAIT_ADMIN_FIRE to their mob")
 
 /obj/item/firing_pin/admin/emag_act(mob/user)
 	to_chat(user,"This cannot be emagged!")
 	return
-
+	
+/obj/item/firing_pin/admin/gun_remove(mob/living/user)
+	if(gun)
+		to_chat(user,"Due to removing the [src] the [gun] fades into the ether")
+		qdel(gun)
+		gun = null // Shouldn't really be neccessary but doesn't hurt to clear it in any case.
+		
 /obj/item/firing_pin/magic
 	name = "magic crystal shard"
 	desc = "A small enchanted shard which allows magical weapons to fire."
@@ -127,7 +139,7 @@
 	name = "Miner's Firing Pin"
 	desc = "Secures your miner's weapons"
 	req_implant = /obj/item/implant/weapons_auth/miner
-
+	
 // Honk pin, clown's joke item.
 // Can replace other pins. Replace a pin in cap's laser for extra fun!
 /obj/item/firing_pin/clown
@@ -173,7 +185,7 @@
 	var/gender = user.gender
 	var/user_name = user.real_name
 	var/msg = "[user_name] Is [gender]"
-	to_chat(GLOB.admins, msg)
+	//to_chat(GLOB.admins, msg)
 	gun = G
 	forceMove(gun)
 	gun.pin = src
