@@ -139,6 +139,7 @@
 #define TRAIT_UNSTABLE			"unstable"
 #define TRAIT_OIL_FRIED			"oil_fried"
 #define TRAIT_NOSUIT			"no_outerwear"
+#define TRAIT_ADMIN_FIRE		"admin_weapons_ok"
 //non-mob traits
 #define TRAIT_PARALYSIS			"paralysis" //Used for limb-based paralysis, where replacing the limb will fix it
 

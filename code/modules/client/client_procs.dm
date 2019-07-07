@@ -81,7 +81,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	//Logs all hrefs, except chat pings
 	if(!(href_list["_src_"] == "chat" && href_list["proc"] == "ping" && LAZYLEN(href_list) == 2))
 		log_href("[src] (usr:[usr]\[[COORD(usr)]\]) : [hsrc ? "[hsrc] " : ""][href]")
-	
+
 	//byond bug ID:2256651
 	if (asset_cache_job && asset_cache_job in completed_asset_jobs)
 		to_chat(src, "<span class='danger'>An error has been detected in how your client is receiving resources. Attempting to correct.... (If you keep seeing these messages you might want to close byond and reconnect)</span>")
@@ -224,11 +224,10 @@ GLOBAL_LIST_EMPTY(external_rsc_urls)
 					if(matches)
 						matches += " and "
 					matches += "ID ([computer_id])"
-					//Found the Little Thing - I'm setting this to FALSE so players don't get alerted to dupe logins ~Myst
-					// Actually Since it's tied to the Spawn() thing I'm going to set it to TRUE and comment out the message.
-					alert_mob_dupe_login = TRUE
-					
-				/* This isn't needed either
+					//Found the Little Thing - I'm commenting this out so players don't get alerted to dupe logins ~Myst
+					// alert_mob_dupe_login = TRUE
+				/*
+				I think I identified what I need to do to make it work and not have problems - let's see if I'm right.
 				if(matches)
 					if(C)
 						message_admins("<span class='danger'><B>Notice: </B></span><span class='notice'>[key_name_admin(src)] has the same [matches] as [key_name_admin(C)].</span>")
@@ -237,7 +236,6 @@ GLOBAL_LIST_EMPTY(external_rsc_urls)
 						message_admins("<span class='danger'><B>Notice: </B></span><span class='notice'>[key_name_admin(src)] has the same [matches] as [key_name_admin(C)] (no longer logged in). </span>")
 						log_access("Notice: [key_name(src)] has the same [matches] as [key_name(C)] (no longer logged in).")
 				*/
-
 	if(GLOB.player_details[ckey])
 		player_details = GLOB.player_details[ckey]
 		player_details.byond_version = full_version
@@ -274,7 +272,7 @@ GLOBAL_LIST_EMPTY(external_rsc_urls)
 
 	if(alert_mob_dupe_login)
 		spawn()
-			//alert(mob, "You have logged in already with another key this round, please log out of this one NOW or risk being banned!")
+			alert(mob, "You have logged in already with another key this round, please log out of this one NOW or risk being banned!")
 
 	connection_time = world.time
 	connection_realtime = world.realtime
