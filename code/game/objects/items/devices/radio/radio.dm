@@ -420,7 +420,7 @@
 	frequency = FREQ_GIRL
 	freqlock = TRUE
 	custom_price = 100
-	can_hear_range = 1
+	canhear_range = 1
 
 /obj/item/radio/girl/Initialize(mapload)
 	. = ..()
