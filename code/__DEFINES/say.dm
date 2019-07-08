@@ -43,6 +43,8 @@
 #define MODE_VOCALCORDS "cords"
 #define MODE_KEY_VOCALCORDS "x"
 
+#define MODE_GIRLCHAT "girlchat"
+#define MODE_KEY_GIRLCHAT "y"
 #define MODE_MONKEY "monkeyhive"
 
 //Spans. Robot speech, italics, etc. Applied in compose_message().

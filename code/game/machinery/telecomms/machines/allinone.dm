@@ -11,6 +11,7 @@
 	use_power = NO_POWER_USE
 	idle_power_usage = 0
 	var/intercept = FALSE  // If true, only works on the Syndicate frequency.
+	var/girlonly = FALSE // If true is girl-channel only
 
 /obj/machinery/telecomms/allinone/indestructable
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
@@ -20,6 +21,8 @@
 	. = ..()
 	if (intercept)
 		freq_listening = list(FREQ_SYNDICATE)
+	if (girlonly)
+		freq_listening = list(FREQ_GIRL)
 
 /obj/machinery/telecomms/allinone/receive_signal(datum/signal/subspace/signal)
 	if(!istype(signal) || signal.transmission_method != TRANSMISSION_SUBSPACE)  // receives on subspace only
@@ -42,3 +45,7 @@
 /obj/machinery/telecomms/allinone/attackby(obj/item/P, mob/user, params)
 	if(P.tool_behaviour == TOOL_MULTITOOL)
 		return attack_hand(user)
+
+/obj/machinery/telecomms/allinone/girl
+	name = "Girlchat Telecomms"
+	girlonly = TRUE

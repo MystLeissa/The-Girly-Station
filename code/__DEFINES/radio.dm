@@ -43,19 +43,22 @@
 #define RADIO_TOKEN_SYNDICATE ":t"
 
 #define RADIO_CHANNEL_CENTCOM "CentCom"
-#define RADIO_KEY_CENTCOM "y"
-#define RADIO_TOKEN_CENTCOM ":y"
+#define RADIO_KEY_CENTCOM "x"
+#define RADIO_TOKEN_CENTCOM ":x"
+
+#define RADIO_CHANNEL_GIRL "Girls"
+#define RADIO_KEY_GIRL "y"
+#define RADIO_TOKEN_GIRL ":y"
 
 #define RADIO_CHANNEL_CTF_RED "Red Team"
 #define RADIO_CHANNEL_CTF_BLUE "Blue Team"
-
-
 #define MIN_FREE_FREQ 1201 // -------------------------------------------------
 // Frequencies are always odd numbers and range from 1201 to 1599.
 
 #define FREQ_SYNDICATE 1213  // Nuke op comms frequency, dark brown
 #define FREQ_CTF_RED 1215  // CTF red team comms frequency, red
 #define FREQ_CTF_BLUE 1217  // CTF blue team comms frequency, blue
+#define FREQ_GIRL 1285
 #define FREQ_CENTCOM 1337  // CentCom comms frequency, gray
 #define FREQ_SUPPLY 1347  // Supply comms frequency, light brown
 #define FREQ_SERVICE 1349  // Service comms frequency, green

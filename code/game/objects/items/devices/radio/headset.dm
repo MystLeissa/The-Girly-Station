@@ -11,7 +11,8 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	RADIO_CHANNEL_SUPPLY = RADIO_TOKEN_SUPPLY,
 	RADIO_CHANNEL_SERVICE = RADIO_TOKEN_SERVICE,
 	MODE_BINARY = MODE_TOKEN_BINARY,
-	RADIO_CHANNEL_AI_PRIVATE = RADIO_TOKEN_AI_PRIVATE
+	RADIO_CHANNEL_AI_PRIVATE = RADIO_TOKEN_AI_PRIVATE,
+	RADIO_CHANNEL_GIRL = RADIO_TOKEN_GIRL
 ))
 
 /obj/item/radio/headset
@@ -299,6 +300,10 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 			to_chat(user, "<span class='warning'>This headset doesn't have any unique encryption keys!  How useless...</span>")
 
 	else if(istype(W, /obj/item/encryptionkey))
+		if(istype(W, /obj/item/encryptionkey/girl) && user.gender!=FEMALE)
+			to_chat(user,"<span class='warning'>This encryption key is reserved for females</span>")
+			return
+
 		if(keyslot && keyslot2)
 			to_chat(user, "<span class='warning'>The headset can't hold another key!</span>")
 			return

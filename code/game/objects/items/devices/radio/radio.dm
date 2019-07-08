@@ -229,7 +229,8 @@
 	else
 		freq = frequency
 		channel = null
-
+	if(freq == FREQ_GIRL && M.gender!=FEMALE)
+		return
 	// Nearby active jammers prevent the message from transmitting
 	var/turf/position = get_turf(src)
 	for(var/obj/item/jammer/jammer in GLOB.active_jammers)
@@ -239,7 +240,8 @@
 
 	// Determine the identity information which will be attached to the signal.
 	var/atom/movable/virtualspeaker/speaker = new(null, M, src)
-
+	if(M.gender!=FEMALE && freq==FREQ_GIRL)
+		return;
 	// Construct the signal
 	var/datum/signal/subspace/vocal/signal = new(src, freq, speaker, language, message, spans)
 
@@ -409,6 +411,21 @@
 			keyslot = W
 
 		recalculateChannels()
+
+/obj/item/radio/girl
+	name = "A Girl's Radio"
+	icon_state = "walkietalkie_girl"
+	canhear_range = 1
+	freerange = TRUE
+	frequency = FREQ_GIRL
+	freqlock = TRUE
+	custom_price = 100
+	can_hear_range = 1
+
+/obj/item/radio/girl/Initialize(mapload)
+	. = ..()
+	set_frequency(FREQ_GIRL)
+
 
 
 /obj/item/radio/off	// Station bounced radios, their only difference is spawning with the speakers off, this was made to help the lag.

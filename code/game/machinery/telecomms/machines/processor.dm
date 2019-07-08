@@ -52,6 +52,5 @@
 	id = "Processor 4"
 	network = "tcommsat"
 	autolinkers = list("processor4")
-
 /obj/machinery/telecomms/processor/preset_one/birdstation
 	name = "Processor"

@@ -32,6 +32,7 @@
 	icon_state = "schoolgirlpink"
 	item_state = "schoolgirlpink"
 	item_color = "schoolgirlpink"
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	has_sensor = NO_SENSORS
 	sensor_mode = SENSOR_COORDS
 	random_sensor = FALSE
