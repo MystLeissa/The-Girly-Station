@@ -49,3 +49,4 @@
 /obj/machinery/telecomms/allinone/girl
 	name = "Girlchat Telecomms"
 	girlonly = TRUE
+	on = FALSE

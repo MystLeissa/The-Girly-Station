@@ -74,6 +74,10 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	else if(AIuser)
 		return ..(freq, level)
 	return FALSE
+// Test Item to Check Telecomms
+/obj/item/radio/headset/girl
+	subspace_transmission = FALSE
+	keyslot = new /obj/item/encryptionkey/girl
 
 /obj/item/radio/headset/syndicate //disguised to look like a normal headset for stealth ops
 

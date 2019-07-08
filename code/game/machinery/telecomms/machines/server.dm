@@ -105,14 +105,19 @@
 
 /obj/machinery/telecomms/server/presets/command
 	id = "Command Server"
-	freq_listening = list(FREQ_COMMAND)
+	freq_listening = list(FREQ_COMMAND,FREQ_GIRL)
 	autolinkers = list("command")
 
 /obj/machinery/telecomms/server/presets/engineering
 	id = "Engineering Server"
 	freq_listening = list(FREQ_ENGINEERING)
 	autolinkers = list("engineering")
-
+/*
+/obj/machinery/telecomms/server/presets/girl
+	id = "Girl Chat Server"
+	freq_listening = list(FREQ_GIRL)
+	autolinkers = list("tcommsat")
+*/
 /obj/machinery/telecomms/server/presets/security
 	id = "Security Server"
 	freq_listening = list(FREQ_SECURITY)
