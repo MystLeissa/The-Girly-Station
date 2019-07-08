@@ -45,8 +45,10 @@
 	strip_delay = 80
 	equip_delay_other = 80
 	resistance_flags = NONE
-
+/*
 /obj/item/clothing/suit/equipped(mob/user, slot)
+	. = ..()
 	if(HAS_TRAIT(user,TRAIT_NOSUIT))
 		if(slot == SLOT_WEAR_SUIT)
 			user.dropItemToGround(src)
+*/

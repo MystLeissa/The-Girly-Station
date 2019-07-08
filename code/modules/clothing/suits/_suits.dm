@@ -32,6 +32,7 @@
 		M.update_inv_wear_suit()
 
 /obj/item/clothing/suit/equipped(mob/user, slot)
+	. = ..()
 	if(HAS_TRAIT(user,TRAIT_NOSUIT))
 		if(slot == SLOT_WEAR_SUIT)
 			user.dropItemToGround(src)
