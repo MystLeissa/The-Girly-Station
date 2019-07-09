@@ -140,6 +140,7 @@
 #define TRAIT_OIL_FRIED			"oil_fried"
 #define TRAIT_NOSUIT			"no_outerwear"
 #define TRAIT_ADMIN_FIRE		"admin_weapons_ok"
+#define TRAIT_NO_BREATHING		"no-air-required"
 //non-mob traits
 #define TRAIT_PARALYSIS			"paralysis" //Used for limb-based paralysis, where replacing the limb will fix it
 
@@ -147,7 +148,6 @@
 #define TRAIT_NODROP            "nodrop"
 #define TRAIT_T_RAY_VISIBLE     "t-ray-visible" // Visible on t-ray scanners if the atom/var/level == 1
 #define TRAIT_NO_TELEPORT		"no-teleport" //you just can't
-
 #define TRAIT_ALCOHOL_TOLERANCE	"alcohol_tolerance"
 #define TRAIT_AGEUSIA			"ageusia"
 #define TRAIT_HEAVY_SLEEPER		"heavy_sleeper"

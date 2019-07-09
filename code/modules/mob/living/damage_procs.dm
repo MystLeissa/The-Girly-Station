@@ -177,6 +177,8 @@
 /mob/living/proc/setOxyLoss(amount, updating_health = TRUE, forced = FALSE)
 	if(status_flags & GODMODE)
 		return 0
+	if(HAS_TRAIT(src,TRAIT_NO_BREATHING))
+		return 0
 	oxyloss = amount
 	if(updating_health)
 		updatehealth()

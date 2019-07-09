@@ -70,6 +70,7 @@
 	for(var/atom/movable/A in contents)
 		A.forceMove(R)
 		if(isliving(A))
+			REMOVE_TRAIT(A,TRAIT_NO_BREATHING,STATUS_EFFECT_TRAIT)
 			to_chat(A, "<span class='notice'>You suddenly feel air around you! You're free!</span>")
 	R.open(user)
 	R.add_fingerprint(user)

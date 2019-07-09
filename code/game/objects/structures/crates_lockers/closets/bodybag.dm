@@ -47,7 +47,8 @@
 		update_icon()
 
 /obj/structure/closet/body_bag/update_icon()
-	..()
+	if(opened) icon_state = "bodybag_open"
+	if(!opened) icon_state = "bodybag_closed"
 	if (tagged)
 		add_overlay("bodybag_label")
 
@@ -67,6 +68,7 @@
 	if(over_object == usr && Adjacent(usr) && (in_range(src, usr) || usr.contents.Find(src)))
 		if(!ishuman(usr))
 			return
+
 		if(opened)
 			to_chat(usr, "<span class='warning'>You wrestle with [src], but it won't fold while unzipped.</span>")
 			return
@@ -75,6 +77,11 @@
 			return
 		visible_message("<span class='notice'>[usr] folds up [src].</span>")
 		var/obj/item/bodybag/B = foldedbag_instance || new foldedbag_path
+		for(var/atom/movable/A in contents)
+			if(isliving(A))
+				ADD_TRAIT(A,TRAIT_NO_BREATHING,STATUS_EFFECT_TRAIT)
+				to_chat(A, "<span class='userdanger'>You're suddenly forced into a tiny space!</span>")
+			A.forceMove(B)
 		usr.put_in_hands(B)
 		qdel(src)
 
@@ -104,9 +111,16 @@
 			return
 		visible_message("<span class='notice'>[usr] folds up [src].</span>")
 		var/obj/item/bodybag/B = foldedbag_instance || new foldedbag_path
-		usr.put_in_hands(B)
 		for(var/atom/movable/A in contents)
-			A.forceMove(B)
 			if(isliving(A))
-				to_chat(A, "<span class='userdanger'>You're suddenly forced into a tiny, compressed space!</span>")
+				ADD_TRAIT(A,TRAIT_NO_BREATHING,STATUS_EFFECT_TRAIT)
+				to_chat(A, "<span class='userdanger'>You're suddenly forced into a tiny space!</span>")
+			A.forceMove(B)
+		usr.put_in_hands(B)
 		qdel(src)
+
+/obj/structure/closet/body_bag/bluespace/update_icon()
+	if(opened) icon_state = "bluebodybag_open"
+	if(!opened) icon_state = "bluwbodybag_closed"
+	if (tagged)
+		add_overlay("bodybag_label")

@@ -181,6 +181,20 @@
 		new /obj/item/stack/sheet/mineral/gold(src, 1, FALSE)
 	new /obj/item/storage/belt/champion(src)
 
+/obj/structure/closet/crate/plasmasheets
+	name = "Emergency Plasma Crate"
+	desc = "For emergency use only!"
+	req_access = ACCESS_MINING_STATION
+
+/obj/structure/closet/crate/plasmasheets/PopulateContents()
+	..()
+	new /obj/item/stack/sheet/mineral/plasma(src)
+	new /obj/item/stack/sheet/mineral/plasma(src)
+	new /obj/item/stack/sheet/mineral/plasma(src)
+	new /obj/item/stack/sheet/mineral/plasma(src)
+	new /obj/item/stack/sheet/mineral/plasma(src)
+	new /obj/item/stack/sheet/mineral/plasma(src)
+
 /obj/structure/closet/crate/silvercrate
 	name = "silver crate"
 
