@@ -77,6 +77,11 @@
 	desc = "A glass case containing a firearms authentication implant."
 	imp_type = /obj/item/implant/weapons_auth
 
+/obj/item/implantcase/weapons_auth/miner
+	name = "implant case - 'Mining Authentication'"
+	desc = "A glass case containing a Miner authentication implant."
+	imp_type = /obj/item/implant/weapons_auth/miner
+
 /obj/item/implantcase/adrenaline
 	name = "implant case - 'Adrenaline'"
 	desc = "A glass case containing an adrenaline implant."

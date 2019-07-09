@@ -71,6 +71,16 @@
 	name = "lockbox of mindshield implants"
 	req_access = list(ACCESS_SECURITY)
 
+/obj/item/storage/lockbox/miner
+	name = "lockbox of mining implants"
+	req_access = list(ACCESS_QM)
+
+/obj/item/storage/lockbox/miner/PopulateContents()
+	new /obj/item/implantcase/weapons_auth/miner(src)
+	new /obj/item/implantcase/weapons_auth/miner(src)
+	new /obj/item/implantcase/weapons_auth/miner(src)
+	new /obj/item/implanter/mindshield(src)
+
 /obj/item/storage/lockbox/loyalty/PopulateContents()
 	for(var/i in 1 to 3)
 		new /obj/item/implantcase/mindshield(src)
