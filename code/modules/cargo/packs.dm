@@ -166,7 +166,7 @@
 	contains = list(/obj/item/storage/box/metalfoam)
 	crate_name = "metal foam grenade crate"
 
-/datu/supply_pack/emergency/mining
+/datum/supply_pack/emergency/mining
 	name = "Miner's Death Kit"
 	desc "Have all the stations miners lost their implants? Here's a fresh case for you - it needs QM Access to open."
 	cost = 2000
