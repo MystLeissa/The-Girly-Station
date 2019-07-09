@@ -49,3 +49,14 @@
 -Renamed Depository "The Girly Station"
 -Fixed Firing Pins (now antag, unrestricted, cyborg and magical weapons no longer spawn without pins)
 -Changed Default Configs to be more "Acceptable"
+-Added Mining Awards
+-Added a (pink) color-variant of the Maid Apron called "Sailor Fuku"
+-Added Girl Chat Radio Channel
+-Modified Lava Land and Box Map to include expanded medical and security facilities
+-Many behind the scenes bug fixes
+-Not even worried about keeping up with the commit count. Thw way I see it my code is more reliable than the base tgstation branch because I actually put in the time to personality test my work after commiting it.
+-Made the Lockable Schoolgirl Uniforms acid/fire/lava proof
+-Added another variant of the sleep sack that is instead supposed to act like a melee weapon that absorbs living mobs it hits (no dice getting it working yet but the icon and base code are in and it's buyable from the girly vendor)
+-Refactored Much of the sleep sack code into closets
+-Added a TRAIT_NO_BREATHING for when you don't want the mob to take Oxygen Damage even if it would normally suffocate (it directly effects the master damage_procs - the only way you'd die from suffocation with that trait is either if you lost it or the code changed)
+-Various Minor Edits here and there that take longer to compile and test than they do to code :facepalm:
