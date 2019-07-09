@@ -181,6 +181,7 @@
 
 /obj/item/storage/lockbox/medal/cargo/PopulateContents()
 		new /obj/item/clothing/accessory/medal/ribbon/cargo(src)
+		new /obj/item/clothing/accessory/medal/ribbon/mining(src)
 
 /obj/item/storage/lockbox/medal/sci
 	name = "science medal box"

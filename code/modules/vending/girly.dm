@@ -11,6 +11,7 @@
 					/obj/item/clothing/under/schoolgirl/locked/green = 2,
 					/obj/item/firing_pin/girl = 5,
 					/obj/item/bodybag/sleepsack = 3,
+					/obj/item/sleepsack_new = 1,
 					/obj/item/radio/girl = 10)
 	contraband = list (/obj/item/encryptionkey/girl = 2)
 	refill_canister = /obj/item/vending_refill/girly

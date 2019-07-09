@@ -79,7 +79,7 @@
 		var/obj/item/bodybag/B = foldedbag_instance || new foldedbag_path
 		for(var/atom/movable/A in contents)
 			if(isliving(A))
-				ADD_TRAIT(A,TRAIT_NO_BREATHING,STATUS_EFFECT_TRAIT)
+				//ADD_TRAIT(A,TRAIT_NO_BREATHING,STATUS_EFFECT_TRAIT)
 				to_chat(A, "<span class='userdanger'>You're suddenly forced into a tiny space!</span>")
 			A.forceMove(B)
 		usr.put_in_hands(B)
@@ -113,7 +113,7 @@
 		var/obj/item/bodybag/B = foldedbag_instance || new foldedbag_path
 		for(var/atom/movable/A in contents)
 			if(isliving(A))
-				ADD_TRAIT(A,TRAIT_NO_BREATHING,STATUS_EFFECT_TRAIT)
+				//ADD_TRAIT(A,TRAIT_NO_BREATHING,STATUS_EFFECT_TRAIT)
 				to_chat(A, "<span class='userdanger'>You're suddenly forced into a tiny space!</span>")
 			A.forceMove(B)
 		usr.put_in_hands(B)

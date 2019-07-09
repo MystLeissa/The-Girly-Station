@@ -103,6 +103,15 @@
 	minimize_when_attached = FALSE
 	attachment_slot = null
 
+/obj/item/clothing/accessory/sailorfuku
+	name = "Sailor Fuku"
+	desc = "The best part of a magical girl costume."
+	icon_state = "superheroine"
+	item_state = "superheroine"
+	item_color = "superheroine"
+	minimize_when_attached = FALSE
+	attachment_slot = null
+
 //////////
 //Medals//
 //////////
@@ -175,6 +184,12 @@
 /obj/item/clothing/accessory/medal/ribbon/cargo
 	name = "\"cargo tech of the shift\" award"
 	desc = "An award bestowed only upon those cargotechs who have exhibited devotion to their duty in keeping with the highest traditions of Cargonia."
+
+/obj/item/clothing/accessory/medal/ribbon/mining
+	name = "\"Miner of the Shift\" award"
+	desc = "An Award bestowed only on the miners brave enough to bring back the loot-I-I-I mean ore."
+	icon_state = "mining"
+	item_color = "cargo"
 
 /obj/item/clothing/accessory/medal/silver
 	name = "silver medal"

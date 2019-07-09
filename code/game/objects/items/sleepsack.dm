@@ -11,19 +11,28 @@
 	mob_storage_capacity = 1 // how many human sized mob/living can fit together inside a closet.
 	storage_capacity = 30 //This is so that someone can't pack hundreds of items in a locker/crate then open it in a populated area to crash clients
 	//w_class = WEIGHT_CLASS_SMALL
-	foldedbag_path = /obj/item/bodybag/sleepsack
-	foldedbag_instance = null
+/*
+/obj/item/bodybag/proc/deploy_bodybag(mob/user, atom/location)
+	var/obj/structure/closet/body_bag/R = new unfoldedbag_path(location)
+	R.open(user)
+	R.add_fingerprint(user)
+	R.foldedbag_instance = src
 
+*/
 /obj/structure/closet/body_bag/sleepsack/can_open(mob/living/user)
 	. = ..()
 	if(. && !user.loc==src)
 		to_chat(user, "<span class='notice'>You can't open it from inside...</span>")
 		return FALSE
 	return TRUE
-/obj/structure/closet/bodybag/sleepsack/update_icon()
+
+/obj/structure/closet/body_bag/sleepsack/update_icon()
 	if(opened) icon_state = "sleepsack_open"
 	if(!opened) icon_state = "sleepsack"
 
+/obj/structure/closet/body_bag/sleepsack/container_resist(mob/living/user)
+	return
+/
 /obj/item/bodybag/sleepsack
 	name = "sleep sack"
 	desc = "A Pink Sleep Sack"
@@ -31,11 +40,53 @@
 	custom_price = 500
 	unfoldedbag_path = /obj/structure/closet/body_bag/sleepsack
 
-		.
+/obj/item/bodybag/sleepsack/container_resist(mob/living/user)
+	return
+
+/obj/item/bodybag/sleepsack/suicide_act(mob/user)
+	return
+
+
 /obj/item/bodybag/sleepsack/Destroy()
 	for(var/atom/movable/A in contents)
 		A.forceMove(get_turf(src))
 		if(isliving(A))
-			REMOVE_TRAIT(A,TRAIT_NO_BREATHING,STATUS_EFFECT_TRAIT)
+			//REMOVE_TRAIT(A,TRAIT_NO_BREATHING,STATUS_EFFECT_TRAIT)
 			to_chat(A, "<span class='notice'>You suddenly feel the space around you torn apart! You're free!</span>")
 	return ..()
+
+/obj/item/sleepsack_new
+	name = "sleepy sack"
+	desc = "A Cursed Pillow...this can't be good."
+	icon = 'icons/obj/bodybag.dmi'
+	icon_state = "sleepsack_open"
+	custom_price = 200
+	force = 3
+	attack_verb = list("fluffed","played","dolled","pushed")
+	hitsound = 'sound/items/zip.ogg'
+	w_class = WEIGHT_CLASS_SMALL
+	var/obj/item/sleepsack_new/power_level = 0
+
+/obj/item/sleepsack_new/attack(mob/living/target, mob/living/carbon/human/user)
+	if(power_level>=3)
+		return
+	if(!target)
+		return
+	var/atom/movable/target_mob = target
+	target_mob.forceMove(src.loc)
+	power_level += 1
+	icon_state = "sleepsack"
+	to_chat(target,"<span class='userdanger'>You have been absorbed into [src]!</span>")
+	to_chat(user,"<span class='notice'>Your [src] asbored [target]</span>")
+
+/obj/item/sleepsack_new/examine(mob/user)
+	. = ..()
+	. += "It has [!power_level ? "nothing" : "[power_level] buttons lit up."] scratched into the blade."
+
+/obj/item/sleepsack_new/attack_self(mob/living/carbon/user)
+	for(var/atom/movable/A in contents)
+		A.forceMove(get_turf(src))
+		to_chat(user,"<span class='warning'>You released [A]</span>")
+		to_chat(A,"<span class='notice'>You were released from [src]</span>")
+		icon_state = "sleepsack_open"
+	..()
