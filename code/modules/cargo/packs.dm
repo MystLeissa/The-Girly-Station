@@ -168,7 +168,7 @@
 
 /datum/supply_pack/emergency/mining
 	name = "Miner's Death Kit"
-	desc "Have all the stations miners lost their implants? Here's a fresh case for you - it needs QM Access to open."
+	desc = "Have all the stations miners lost their implants? Here's a fresh case for you - it needs QM Access to open."
 	cost = 2000
 	access = ACCESS_QM
 	contains = list(/obj/item/storage/lockbox/miner)
