@@ -8,6 +8,12 @@
 	back = /obj/item/tank/jetpack/oxygen
 	mask = /obj/item/clothing/mask/breath
 
+/datum/outfit/space/exoskeleton
+	name = "Exo-skeletal Space Suit"
+	suit = /obj/item/clothing/suit/space/powersuit
+	mask = /obj/item/clothing/mask/breath
+	head = /obj/item/clothing/head/helmet/space/powersuit
+
 /datum/outfit/tournament
 	name = "tournament standard red"
 
@@ -426,7 +432,7 @@
 
 /datum/outfit/debug //Debug objs plus hardsuit
 	name = "Debug outfit"
-	uniform = /obj/item/clothing/under/patriotsuit 
+	uniform = /obj/item/clothing/under/patriotsuit
 	suit = /obj/item/clothing/suit/space/hardsuit/syndi/elite
 	shoes = /obj/item/clothing/shoes/magboots/advance
 	suit_store = /obj/item/tank/internals/oxygen

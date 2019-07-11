@@ -86,6 +86,20 @@
 	lose_text = "<span class='danger'>You start tromping around like a barbarian.</span>"
 	medical_record_text = "Patient's dexterity belies a strong capacity for stealth."
 
+/datum/quirk/exoskeletal
+	name = "Exo-skeletal Suit"
+	desc = "An experimental Space Suit is Grafted to your body. You cannot remove it but you always have a pressure suit ready!"
+	value = 5
+	mob_trait = TRAIT_EXOSKELETON
+	gain_text = "<span class='notice'>You feel your skin changing</span>
+	lose_text = "<span class='danger'>You seem to have lost your exoskeletal suit</span>"
+	medical_record_text = "Patient has a exo-skeletal power suit grafted to their body"
+
+
+/datum/quirk/exosketetal/on _spawn()
+	var/mob/living/human/H = quirk_holder
+	H.equipOutfit(/datum/outfit/space/exoskeleton)
+
 /datum/quirk/musician
 	name = "Musician"
 	desc = "You can tune handheld musical instruments to play melodies that clear certain negative effects and soothe the soul."

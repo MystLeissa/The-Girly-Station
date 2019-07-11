@@ -72,21 +72,27 @@
 		return
 	if(!target)
 		return
+	if(target==user)
+		return
+	if(!iscarbon(target))
+		return
 	var/atom/movable/target_mob = target
 	target_mob.forceMove(src.loc)
-	power_level += 1
+	power_level++
 	icon_state = "sleepsack"
 	to_chat(target,"<span class='userdanger'>You have been absorbed into [src]!</span>")
 	to_chat(user,"<span class='notice'>Your [src] asbored [target]</span>")
 
 /obj/item/sleepsack_new/examine(mob/user)
 	. = ..()
-	. += "It has [!power_level ? "nothing" : "[power_level] buttons lit up."] scratched into the blade."
+	. += "It has [!power_level ? "nothing" : "[power_level] buttons lit up."]"
 
-/obj/item/sleepsack_new/attack_self(mob/living/carbon/user)
-	for(var/atom/movable/A in contents)
-		A.forceMove(get_turf(src))
-		to_chat(user,"<span class='warning'>You released [A]</span>")
-		to_chat(A,"<span class='notice'>You were released from [src]</span>")
-		icon_state = "sleepsack_open"
-	..()
+/obj/item/sleepsack_new/attackby(obj/item/I, mob/user, params)
+	if(user.is_holding_item_of_type(/obj/item/card/girls))
+		for(var/atom/movable/A in contents)
+			A.forceMove(get_turf(src))
+			to_chat(user,"<span class='warning'>You released [A]</span>")
+			to_chat(A,"<span class='notice'>You were released from [src]</span>")
+			icon_state = "sleepsack_open"
+		power_level = 0
+	. = ..()

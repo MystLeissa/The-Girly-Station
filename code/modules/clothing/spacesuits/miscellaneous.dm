@@ -397,3 +397,24 @@ Contains:
 		torn = TRUE
 		playsound(loc, 'sound/weapons/slashmiss.ogg', 50, 1)
 		playsound(loc, 'sound/effects/refill.ogg', 50, 1)
+
+/obj/item/clothing/suit/space/powersuit
+	name = "Power Suit"
+	desc = "An Exo-skeletal power suit grafted into the body of the user,"
+	icon_state = "adamsuit"
+
+/obj/item/clothing/suit/space/powersuit/equipped(mob/user, slot)
+	. = ..
+	if(HAS_TRAIT(user,TRAIT_EXOSKELETON)
+		ADD_TRAIT(src,TRAIT_NODROP,ROUNDSTART_TRAIT)
+
+/obj/item/clothing/head/helmet/space/powersuit
+	name = "Power Helmet"
+	desc = "The Headpiece to an exoskeletal Power Suit"
+	icon_state = "space"
+
+/obj/item/clothing/head/helmet/space/powersuit/equipped(mob/user, slot)
+	. = ..
+	if(HAS_TRAIT(user,TRAIT_EXOSKELETON)
+		ADD_TRAIT(src,TRAIT_NODROP,ROUNDSTART_TRAIT)
+
