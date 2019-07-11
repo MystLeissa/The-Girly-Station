@@ -404,7 +404,7 @@ Contains:
 	icon_state = "adamsuit"
 
 /obj/item/clothing/suit/space/powersuit/equipped(mob/user, slot)
-	. = ..
+	. = ..()
 	if(HAS_TRAIT(user,TRAIT_EXOSKELETON))
 		ADD_TRAIT(src,TRAIT_NODROP,ROUNDSTART_TRAIT)
 
@@ -414,7 +414,7 @@ Contains:
 	icon_state = "space"
 
 /obj/item/clothing/head/helmet/space/powersuit/equipped(mob/user, slot)
-	. = ..
+	. = ..()
 	if(HAS_TRAIT(user,TRAIT_EXOSKELETON))
 		ADD_TRAIT(src,TRAIT_NODROP,ROUNDSTART_TRAIT)
 

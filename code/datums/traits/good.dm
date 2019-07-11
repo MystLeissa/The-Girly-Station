@@ -95,8 +95,8 @@
 	lose_text = "<span class='danger'>You seem to have lost your exoskeletal suit</span>"
 	medical_record_text = "Patient has a exo-skeletal power suit grafted to their body"
 
-/datum/quirk/exosketetal/on _spawn()
-	var/mob/living/human/H = quirk_holder
+/datum/quirk/exosketetal/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
 	H.equipOutfit(/datum/outfit/space/exoskeleton)
 
 /datum/quirk/musician
