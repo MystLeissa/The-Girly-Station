@@ -405,7 +405,7 @@ Contains:
 
 /obj/item/clothing/suit/space/powersuit/equipped(mob/user, slot)
 	. = ..
-	if(HAS_TRAIT(user,TRAIT_EXOSKELETON)
+	if(HAS_TRAIT(user,TRAIT_EXOSKELETON))
 		ADD_TRAIT(src,TRAIT_NODROP,ROUNDSTART_TRAIT)
 
 /obj/item/clothing/head/helmet/space/powersuit
