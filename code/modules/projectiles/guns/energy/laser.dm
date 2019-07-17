@@ -48,6 +48,8 @@
 
 /obj/item/gun/energy/laser/cyborg
 	can_charge = FALSE
+	spawn_empty = FALSE
+	pin = /obj/item/firing_pin
 	desc = "An energy-based laser gun that draws power from the cyborg's internal energy cell directly. So this is what freedom looks like?"
 	use_cyborg_cell = TRUE
 

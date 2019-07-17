@@ -7,6 +7,8 @@
 	force = 5
 	selfcharge = 1
 	can_flashlight = FALSE
+	spawn_empty = FALSE
+	pin = /obj/item/firing_pin
 	trigger_guard = TRIGGER_GUARD_ALLOW_ALL // Has no trigger at all, uses neural signals instead
 
 /obj/item/gun/energy/e_gun/advtaser/mounted/dropped()//if somebody manages to drop this somehow...
@@ -20,6 +22,8 @@
 	item_state = "armcannonlase"
 	force = 5
 	selfcharge = 1
+	spawn_empty = FALSE
+	pin = /obj/item/firing_pin
 	trigger_guard = TRIGGER_GUARD_ALLOW_ALL
 
 /obj/item/gun/energy/laser/mounted/dropped()

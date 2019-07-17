@@ -11,6 +11,8 @@
 	force = 4
 	materials = list(MAT_METAL=2000)
 	clumsy_check = FALSE
+	spawn_empty = FALSE
+	pin = /obj/item/firing_pin
 	fire_sound = 'sound/items/syringeproj.ogg'
 	var/time_per_syringe = 250
 	var/syringes_left = 4

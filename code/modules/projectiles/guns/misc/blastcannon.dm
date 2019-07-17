@@ -10,7 +10,8 @@
 	item_flags = NONE
 	clumsy_check = FALSE
 	randomspread = FALSE
-
+	spawn_empty = FALSE
+	pin = /obj/item/firing_pin
 	var/hugbox = TRUE
 	var/max_power = INFINITY
 	var/reaction_volume_mod = 0

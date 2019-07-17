@@ -94,5 +94,5 @@
 			to_chat(user,"<span class='warning'>You released [A]</span>")
 			to_chat(A,"<span class='notice'>You were released from [src]</span>")
 			icon_state = "sleepsack_open"
-		power_level = 0
+			power_level--
 	. = ..()

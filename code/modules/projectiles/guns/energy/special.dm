@@ -292,6 +292,8 @@
 	icon = 'icons/obj/guns/projectile.dmi'
 	cell_type = "/obj/item/stock_parts/cell/secborg"
 	ammo_type = list(/obj/item/ammo_casing/energy/c3dbullet)
+	pin = /obj/item/firing_pin
+	spawn_empty = FALSE
 	can_charge = FALSE
 	use_cyborg_cell = TRUE
 

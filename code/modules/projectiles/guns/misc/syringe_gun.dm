@@ -4,6 +4,8 @@
 	icon_state = "syringegun"
 	item_state = "syringegun"
 	w_class = WEIGHT_CLASS_NORMAL
+	spawn_empty = FALSE
+	pin = /obj/item/firing_pin
 	throw_speed = 3
 	throw_range = 7
 	force = 4
