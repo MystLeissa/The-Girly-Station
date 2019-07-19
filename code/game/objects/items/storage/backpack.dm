@@ -293,6 +293,17 @@
 	w_class = WEIGHT_CLASS_NORMAL //Can fit in backpacks itself.
 	level = 1
 
+/obj/item/storage/backpack/satchel/minerimplants
+	name = "Miner Implant's satchel"
+	desc = "A Satchel that contains Miner's Implants (supposedly)."
+	icon_state = "satchel-flat"
+	w_class = WEIGHT_CLASS_NORMAL //Can fit in backpacks itself.
+
+/obj/item/storage/backpack/satchel/minerimplants/PopulateContents()
+	new /obj/item/implantcase/weapons_auth/miner(src)
+	new /obj/item/implantcase/weapons_auth/miner(src)
+	new /obj/item/implantcase/weapons_auth/miner(src)
+
 /obj/item/storage/backpack/satchel/flat/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)

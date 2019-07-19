@@ -12,7 +12,8 @@
 					/obj/item/firing_pin/girl = 5,
 					/obj/item/bodybag/sleepsack = 3,
 					/obj/item/sleepsack_new = 1,
-					/obj/item/radio/girl = 10)
+					/obj/item/radio/girl = 10,
+					/obj/item/clothing/accessory/sailorfuku = 2)
 	contraband = list (/obj/item/encryptionkey/girl = 2)
 	refill_canister = /obj/item/vending_refill/girly
 	product_ads = "Pretty Princess Power!"
