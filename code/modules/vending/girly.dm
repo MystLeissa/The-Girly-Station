@@ -13,7 +13,8 @@
 					/obj/item/bodybag/sleepsack = 3,
 					/obj/item/sleepsack_new = 1,
 					/obj/item/radio/girl = 10,
-					/obj/item/clothing/accessory/sailorfuku = 2)
+					/obj/item/clothing/accessory/sailorfuku = 2,
+					/obj/item/clothing/gloves/color/pink = 4)
 	contraband = list (/obj/item/encryptionkey/girl = 2)
 	refill_canister = /obj/item/vending_refill/girly
 	product_ads = "Pretty Princess Power!"
@@ -21,6 +22,22 @@
 	extra_price = 5000
 	payment_department = NO_FREEBIES
 	girl_locked = TRUE
+
+/obj/machinery/vending/girly/pink
+	name = "Pink Stuffz"
+	desc = "A Knock-off Girl-thing dispensor..."
+	icon_state = "pgirly"
+	products = list(/obj/item/clothing/under/schoolgirl = 1,
+					/obj/item/clothing/under/schoolgirl/orange = 1,
+					/obj/item/clothing/under/schoolgirl/green = 1,
+					/obj/item/clothing/under/schoolgirl/orange = 1,
+					/obj/item/clothing/accessory/sailorfuku = 4,
+					/obj/item/clothing/gloves/color/pink = 3)
+	contraband = list(/obj/item/firing_pin/girl = 3,
+					  /obj/item/radio/girl = 1)
+	girl_locked = FALSE
+	default_price = 100
+	extra_price = 4900
 
 /obj/machinery/vending/girly/emag_act(mob/user)
 	to_chat(user, "<span class='notice'>You cannot Emag [src].</span>")

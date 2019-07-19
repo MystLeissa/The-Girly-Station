@@ -78,12 +78,14 @@
 /datum/component/storage/concrete/pockets/pocketprotector/Initialize()
 	original_parent = parent
 	. = ..()
-	set_holdable(list( //Same items as a PDA
+	set_holdable(list(
 		/obj/item/pen,
 		/obj/item/toy/crayon,
 		/obj/item/lipstick,
 		/obj/item/flashlight/pen,
-		/obj/item/clothing/mask/cigarette)
+		/obj/item/clothing/mask/cigarette,
+		/obj/item/clothing/glasses,
+		/obj/item/key)
 		)
 
 /datum/component/storage/concrete/pockets/pocketprotector/real_location()

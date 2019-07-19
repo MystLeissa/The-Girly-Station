@@ -180,7 +180,20 @@
 	desc = "These look pretty fancy."
 	icon_state = "white"
 	item_state = "wgloves"
-	item_color="white"
+	item_color = "white"
+
+/obj/item/clothing/gloves/color/pink
+	name = "pink gloves"
+	desc = "These look pretty girly."
+	icon_state = "pink"
+	item_state = "pgloves"
+	item_color = "white"
+	siemens_coefficient = 1.25
+	permeability_coefficient = 0.03
+	transfer_prints = TRUE
+	resistance_flags = NONE
+	cold_protection = HANDS
+	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
 
 /obj/item/clothing/gloves/color/white/redcoat
 	item_color = "redcoat"		//Exists for washing machines. Is not different from white gloves in any way.
