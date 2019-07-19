@@ -46,7 +46,7 @@
 
 /obj/item/clothing/under/schoolgirl/locked/equipped(mob/user, slot)
 	. = ..()
-	if(HAS_TRAIT(user,TRAIT_EXOSKELETON)
+	if(HAS_TRAIT(user,TRAIT_EXOSKELETON))
 		user.dropItemToGround(src)
 		to_chat(user,"<span='warning'>You cannot wear this as it would not fit over your exoskeleton</span>")
 		return
