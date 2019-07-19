@@ -68,7 +68,7 @@
 /obj/item/clothing/under/schoolgirl/locked/proc/lock(mob/user)
 	var/mob/living/carbon/human/M = user
 	ADD_TRAIT(src,TRAIT_NODROP, CLOTHING_TRAIT)
-	ADD_TRAIT(user,TRAIT_DUMB, CLOTHING_TRAIT)
+	ADD_TRAIT(user,TRAIT_DITZ, CLOTHING_TRAIT)
 	ADD_TRAIT(user,TRAIT_NOSUIT, CLOTHING_TRAIT)
 	locked = TRUE
 	to_chat(wearer,"<span class='notice'>The Lock Snaps Shut. It seems you will be wearing this for a quite while")
@@ -82,7 +82,7 @@
 		to_chat(user, "<span class='notice'>You unlock the outfit.</span>")
 		//to_chat(wearer,"<span class='notice'>[user] unlocks your outfit!")
 		REMOVE_TRAIT(src,TRAIT_NODROP, CLOTHING_TRAIT)
-		REMOVE_TRAIT(wearer,TRAIT_DUMB, CLOTHING_TRAIT)
+		REMOVE_TRAIT(wearer,TRAIT_DITZ, CLOTHING_TRAIT)
 		REMOVE_TRAIT(wearer,TRAIT_NOSUIT, CLOTHING_TRAIT)
 	return
 

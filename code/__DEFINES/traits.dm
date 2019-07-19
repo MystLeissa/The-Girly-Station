@@ -141,6 +141,8 @@
 #define TRAIT_NOSUIT			"no_outerwear"
 #define TRAIT_ADMIN_FIRE		"admin_weapons_ok"
 #define TRAIT_NO_BREATHING		"no-air-required"
+#define TRAIT_EXOSKELETON		"exoskeleton_suit"
+#define TRAIT_DITZ				"ditzygirl"
 //non-mob traits
 #define TRAIT_PARALYSIS			"paralysis" //Used for limb-based paralysis, where replacing the limb will fix it
 
@@ -169,7 +171,6 @@
 #define TRAIT_LIGHT_DRINKER		"light_drinker"
 #define TRAIT_EMPATH			"empath"
 #define TRAIT_FRIENDLY			"friendly"
-#define TRAIT_EXOSKELETON		"exoskeleton_suit"
 
 // common trait sources
 #define TRAIT_GENERIC "generic"

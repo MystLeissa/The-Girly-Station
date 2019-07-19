@@ -70,6 +70,10 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	if(ishuman(src.loc))
 		var/mob/living/carbon/human/H = src.loc
 		if(H.ears == src)
+			if(HAS_TRAIT(H,TRAIT_DITZ) && prob(50))
+				H.dropItemToGround(src)
+				to_chat(H,"<span class='warning'>You drop your [src] while listening to the transmission!</span>")
+				return
 			return ..(freq, level)
 	else if(AIuser)
 		return ..(freq, level)
