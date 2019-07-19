@@ -151,6 +151,11 @@
 	item_color = "pink"
 	color = "#ff3ccd"
 
+/obj/item/restraints/handcuffs/cable/pink/perma
+	name = "Permanent Cable Ties"
+	desc = "These are really hard to break..."
+	breakouttime = 60 MINUTES
+
 /obj/item/restraints/handcuffs/cable/orange
 	item_color = "orange"
 	color = "#ff8000"

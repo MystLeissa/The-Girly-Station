@@ -140,3 +140,11 @@
 	icon_state = "schoolgirlgreen"
 	item_state = "schoolgirlgreen"
 	item_color = "schoolgirlgreen"
+
+/obj/item/clothing/mask/muzzle/schoolgirl
+	clothing_flags = VOICEBOX_TOGGLABLE
+	modifies_speech = TRUE
+
+/obj/item/clothing/mask/muzzle/schoolgirl/handle_speech(datum/source, list/speech_args) //whenever you speak
+	if(!CHECK_BITFIELD(clothing_flags, VOICEBOX_DISABLED))
+		speech_args[SPEECH_MESSAGE] = pick("I'm such a sissy!", "I'm a good girl..really!","So Soft - I just wanna wear this forever.")
