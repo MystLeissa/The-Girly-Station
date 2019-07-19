@@ -155,7 +155,7 @@
 
 /obj/item/hand_tele/attack_self(mob/user)
 	if(HAS_TRAIT(user,TRAIT_DITZ))
-		to_chat(user,"<span class='warning'>You have no idea how to use the [src]</span>"
+		to_chat(user,"<span class='warning'>You have no idea how to use the [src]</span>")
 		return
 	var/turf/current_location = get_turf(user)//What turf is the user on?
 	var/area/current_area = current_location.loc
