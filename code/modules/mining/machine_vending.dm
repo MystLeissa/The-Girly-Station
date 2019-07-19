@@ -57,7 +57,7 @@
 		new /datum/data/mining_equipment("KA Damage Increase",			/obj/item/borg/upgrade/modkit/damage,								1000),
 		new /datum/data/mining_equipment("KA Cooldown Decrease",		/obj/item/borg/upgrade/modkit/cooldown,								1000),
 		new /datum/data/mining_equipment("KA AoE Damage",				/obj/item/borg/upgrade/modkit/aoe/mobs,								2000),
-		new /datum/data/mining_equipment("Mining Implant",				/obj/item/implantcase/weapons_auth/miner,							3000)
+		new /datum/data/mining_equipment("3x Mining Implants",			/obj/item/storage/backpack/satchel/minerimplants,					3000)
 		)
 
 /datum/data/mining_equipment
@@ -265,3 +265,4 @@
 	new /obj/item/encryptionkey/headset_cargo(src)
 	new /obj/item/clothing/mask/gas/explorer(src)
 	new /obj/item/card/mining_access_card(src)
+	new /obj/item/implanter/miner(src)

@@ -79,7 +79,7 @@
 	new /obj/item/implantcase/weapons_auth/miner(src)
 	new /obj/item/implantcase/weapons_auth/miner(src)
 	new /obj/item/implantcase/weapons_auth/miner(src)
-	new /obj/item/implanter/mindshield(src)
+	new /obj/item/implanter/miner(src)
 
 /obj/item/storage/lockbox/loyalty/PopulateContents()
 	for(var/i in 1 to 3)

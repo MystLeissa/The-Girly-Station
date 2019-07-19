@@ -16,6 +16,10 @@
 	name = "Miner's Authentication implant"
 	desc = "Lets you shoot Kinetic Accelerators"
 
+/obj/item/implanter/miner
+	name = "implanter (Mining Weapons Authentication)"
+	imp_type = /obj/item/implant/weapons_auth/miner
+
 /obj/item/implant/adrenalin
 	name = "adrenal implant"
 	desc = "Removes all stuns."
