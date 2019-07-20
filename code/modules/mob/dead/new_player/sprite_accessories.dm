@@ -623,6 +623,12 @@
 /datum/sprite_accessory/hair/ronin
 	name = "Ronin"
 	icon_state = "hair_ronin"
+/*
+I really wish this worked...~Myst
+*/
+/datum/sprite_accessory/hair/sailormoon
+	name = "Sailor Moon"
+	icon_state = "sailor_moon"
 
 /datum/sprite_accessory/hair/shaved
 	name = "Shaved"
