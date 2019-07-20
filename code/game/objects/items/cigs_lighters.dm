@@ -92,11 +92,10 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	name = "Ignite Anywhere Match"
 	desc = "This match will ignite when struck on any surface"
 
-/obj/item/match/selflight/attack(mob/living/carbon/M,mob/living/carbon/user)
-	if(!isliving(M))
+/obj/item/match/selflight/attackby(obj/item/I, mob/user, params)
+	if(user.hands==src)
 		matchignite()
 		return
-	..()
 
 /obj/item/proc/help_light_cig(mob/living/M)
 	var/mask_item = M.get_item_by_slot(SLOT_WEAR_MASK)
