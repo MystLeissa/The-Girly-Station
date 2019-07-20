@@ -72,7 +72,7 @@
 
 /datum/component/storage/concrete/pockets/pocketprotector
 	max_items = 3
-	max_w_class = WEIGHT_CLASS_TINY
+	max_w_class = WEIGHT_CLASS_SMALL
 	var/atom/original_parent
 
 /datum/component/storage/concrete/pockets/pocketprotector/Initialize()
@@ -85,6 +85,7 @@
 		/obj/item/flashlight/pen,
 		/obj/item/clothing/mask/cigarette,
 		/obj/item/clothing/glasses,
+		/obj/item/match/selflight,
 		/obj/item/key)
 		)
 

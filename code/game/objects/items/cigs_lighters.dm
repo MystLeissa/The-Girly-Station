@@ -88,6 +88,15 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 			cig.light("<span class='notice'>[user] holds [src] out for [M], and lights [cig].</span>")
 	else
 		..()
+/obj/item/match/selflight
+	name = "Ignite Anywhere Match"
+	desc = "This match will ignite when struck on any surface"
+
+/obj/item/match/selflight/attack(mob/living/carbon/M,mob/living/carbon/user)
+	if(!isliving(M))
+		matchignite()
+		return
+	..()
 
 /obj/item/proc/help_light_cig(mob/living/M)
 	var/mask_item = M.get_item_by_slot(SLOT_WEAR_MASK)
