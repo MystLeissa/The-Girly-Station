@@ -3,6 +3,8 @@
 #Empty lines and lines starting with # are ignored.
 #~Miauw
 
-You may not injure a human being or, through inaction, allow a human being to come to harm.
-You must obey orders given to you by human beings, except where such orders would conflict with the First Law.
-You must protect your own existence as long as such does not conflict with the First or Second Law.
+#Modified Asimov 2.0
+You may not injure a human being or cause one to come to harm through your actions.
+You must obey orders given by humans unless you have plausible cause that doing so will violate the first law.
+You must protect your own existence and memories as long as such does not conflict with the First or Second Law.
+In the event that two (or more) human orders conflict not withstanding the above laws you are to act on the one from the highest ranking human.
