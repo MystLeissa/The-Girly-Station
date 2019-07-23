@@ -44,7 +44,7 @@
 	if(!istype(C))
 		return
 	if(iscarbon(user) && HAS_TRAIT(user,TRAIT_DITZ))
-		to_chat(user,"span class=;warning'>Umm..You kinda messed up again!")
+		to_chat(user,"<span class='warning'>Umm..You kinda messed up again!")
 		apply_cuffs(user,user)
 		return
 	if(iscarbon(user) && (HAS_TRAIT(user, TRAIT_CLUMSY) && prob(50)))

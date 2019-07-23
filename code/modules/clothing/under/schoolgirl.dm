@@ -109,13 +109,13 @@
 	to_chat(user,"It's locked.")
 
 /obj/item/clothing/under/schoolgirl/locked/examine(mob/user)
-
+	. = ..()
 	if(locked)
 		. += "<span class='notice'>It's locked..</span>"
 	if(perma)
 		. += "<span class='notice'>It's impossible to unlock.</span>"
 	if(slaved)
-		. += "<span class-'notice'>THey belong to [slaved_to].</span>"
+		. += "<span class-'notice'>They belong to [slaved_to].</span>"
 
 /obj/item/clothing/under/schoolgirl/locked/blue
 	name = "blue schoolgirl uniform"
@@ -142,9 +142,11 @@
 	item_color = "schoolgirlgreen"
 
 /obj/item/clothing/mask/muzzle/schoolgirl
+	name = "gag"
 	clothing_flags = VOICEBOX_TOGGLABLE
 	modifies_speech = TRUE
 
 /obj/item/clothing/mask/muzzle/schoolgirl/handle_speech(datum/source, list/speech_args) //whenever you speak
+	..()
 	if(!CHECK_BITFIELD(clothing_flags, VOICEBOX_DISABLED))
 		speech_args[SPEECH_MESSAGE] = pick("I'm such a sissy!", "I'm a good girl..really!","So Soft - I just wanna wear this forever.")
