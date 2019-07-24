@@ -142,11 +142,20 @@
 	item_color = "schoolgirlgreen"
 
 /obj/item/clothing/mask/muzzle/schoolgirl
-	name = "gag"
+	name = "deprieciated"
+	desc = "defunct item"
+
+/obj/item/clothing/mask/schoolgirl
+	name = "schoolgirl mask"
+	desc = "To stop that awful noise."
+	icon_state = "sexyclown"
+	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDEEARS
 	clothing_flags = VOICEBOX_TOGGLABLE
 	modifies_speech = TRUE
+	flags_cover = MASKCOVERSMOUTH
+	w_class = WEIGHT_CLASS_SMALL
 
-/obj/item/clothing/mask/muzzle/schoolgirl/handle_speech(datum/source, list/speech_args) //whenever you speak
+/obj/item/clothing/mask/schoolgirl/handle_speech(datum/source, list/speech_args) //whenever you speak
 	..()
 	if(!CHECK_BITFIELD(clothing_flags, VOICEBOX_DISABLED))
 		speech_args[SPEECH_MESSAGE] = pick("I'm such a sissy!", "I'm a good girl..really!","So Soft - I just wanna wear this forever.")

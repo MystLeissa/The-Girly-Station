@@ -431,7 +431,7 @@
 "io" = (/obj/machinery/door/airlock/glass{name = "Break Room"},/obj/machinery/atmospherics/pipe/simple/supply/hidden,/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,/turf/open/floor/plasteel,/area/mine/living_quarters)
 "ip" = (/obj/machinery/airalarm{dir = 1; pixel_y = -22},/obj/structure/closet/crate{icon_state = "crateopen"},/turf/open/floor/plasteel,/area/mine/production)
 "iq" = (/obj/structure/closet/crate{icon_state = "crateopen"},/obj/machinery/light,/obj/effect/turf_decal/tile/brown,/obj/effect/turf_decal/tile/brown{dir = 8},/turf/open/floor/plasteel,/area/mine/production)
-"ir" = (/obj/structure/closet/crate,/obj/effect/turf_decal/tile/purple,/obj/effect/turf_decal/tile/purple{dir = 8},/obj/item/clothing/under/schoolgirl/locked,/obj/item/restraints/handcuffs/cable/pink/perma,/obj/item/clothing/mask/muzzle/schoolgirl,/turf/open/floor/plasteel,/area/mine/production)
+"ir" = (/obj/structure/closet/crate,/obj/effect/turf_decal/tile/purple,/obj/effect/turf_decal/tile/purple{dir = 8},/obj/item/clothing/under/schoolgirl/locked,/obj/item/restraints/handcuffs/cable/pink/perma,/obj/item/clothing/mask/schoolgirl,/turf/open/floor/plasteel,/area/mine/production)
 "is" = (/obj/structure/closet/crate{icon_state = "crateopen"},/obj/effect/turf_decal/tile/purple,/turf/open/floor/plasteel,/area/mine/production)
 "it" = (/obj/effect/turf_decal/tile/brown{dir = 8},/obj/effect/turf_decal/tile/brown,/turf/open/floor/plasteel,/area/mine/production)
 "iu" = (/obj/effect/turf_decal/loading_area{dir = 8},/turf/open/floor/plasteel,/area/mine/production)
