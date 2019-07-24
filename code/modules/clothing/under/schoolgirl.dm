@@ -41,6 +41,7 @@
 	var/locked = FALSE
 	var/perma = FALSE
 	var/mob/wearer = null
+	locked_string = "<span class='notice'>It's locked..</span>"
 
 /obj/item/clothing/under/schoolgirl/locked/equipped(mob/user, slot)
 	. = ..()
@@ -82,13 +83,6 @@
 		unlock()
 		return
 	to_chat(user,"It's locked.")
-
-/obj/item/clothing/under/schoolgirl/locked/examine(mob/user)
-	if(locked)
-		. += "<span class='notice'>It's locked..</span>"
-	if(perma)
-		. += "<span class='notice'>It's impossible to unlock.</span>"
-	. = ..()
 
 /obj/item/clothing/under/schoolgirl/locked/blue
 	name = "blue schoolgirl uniform"
