@@ -41,8 +41,6 @@
 	var/locked = FALSE
 	var/perma = FALSE
 	var/mob/wearer = null
-	var/slaved = FALSE
-	var/mob/slaved_to = null
 
 /obj/item/clothing/under/schoolgirl/locked/equipped(mob/user, slot)
 	. = ..()
@@ -57,13 +55,6 @@
 /obj/item/clothing/under/schoolgirl/locked/dropped(mob/user)
 	. = ..()
 	wearer = null
-
-/obj/item/clothing/under/schoolgirl/locked/proc/toggle_lock(user)
-	locked = !locked
-	if(locked)
-		lock(user)
-	if(!locked)
-		unlock(user)
 
 /obj/item/clothing/under/schoolgirl/locked/proc/lock(mob/user)
 	var/mob/living/carbon/human/M = user
@@ -87,22 +78,6 @@
 	return
 
 /obj/item/clothing/under/schoolgirl/locked/attackby(obj/item/I, mob/user, params)
-	/*if(perma)
-		return
-	if(I == /obj/item/locks/perma)
-		to_chat(user,"You swap out the lock for a permanent type")
-		perma = TRUE
-		return
-	if(I == /obj/item/locks/slave)
-		to_chat(user,"You swap out the standard lock for a slave lock")
-		slaved = TRUE
-		slaved_to = user
-		return
-	if(slaved)
-		if(user==slaved_to)
-			toggle_lock(user)
-		return
-	*/
 	if(user.is_holding_item_of_type(/obj/item/card/girls) && !perma)
 		unlock()
 		return
@@ -113,8 +88,6 @@
 		. += "<span class='notice'>It's locked..</span>"
 	if(perma)
 		. += "<span class='notice'>It's impossible to unlock.</span>"
-	if(slaved)
-		. += "<span class-'notice'>They belong to [slaved_to].</span>"
 	. = ..()
 
 /obj/item/clothing/under/schoolgirl/locked/blue
