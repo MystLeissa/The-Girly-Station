@@ -109,13 +109,13 @@
 	to_chat(user,"It's locked.")
 
 /obj/item/clothing/under/schoolgirl/locked/examine(mob/user)
-	. = ..()
 	if(locked)
 		. += "<span class='notice'>It's locked..</span>"
 	if(perma)
 		. += "<span class='notice'>It's impossible to unlock.</span>"
 	if(slaved)
 		. += "<span class-'notice'>They belong to [slaved_to].</span>"
+	. = ..()
 
 /obj/item/clothing/under/schoolgirl/locked/blue
 	name = "blue schoolgirl uniform"
@@ -141,18 +141,13 @@
 	item_state = "schoolgirlgreen"
 	item_color = "schoolgirlgreen"
 
-/obj/item/clothing/mask/muzzle/schoolgirl
-	name = "deprieciated"
-	desc = "defunct item"
-
 /obj/item/clothing/mask/schoolgirl
 	name = "schoolgirl mask"
 	desc = "To stop that awful noise."
 	icon_state = "sexyclown"
 	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDEEARS
-	clothing_flags = VOICEBOX_TOGGLABLE
+	clothing_flags = NONE
 	modifies_speech = TRUE
-	flags_cover = MASKCOVERSMOUTH
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/clothing/mask/schoolgirl/handle_speech(datum/source, list/speech_args) //whenever you speak
