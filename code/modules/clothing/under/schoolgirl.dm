@@ -41,7 +41,7 @@
 	var/locked = FALSE
 	var/perma = FALSE
 	var/mob/wearer = null
-	locked_string = "<span class='notice'>It's locked..</span>"
+	locked_string = "is locked."
 
 /obj/item/clothing/under/schoolgirl/locked/equipped(mob/user, slot)
 	. = ..()

@@ -116,7 +116,7 @@
 /obj/item/clothing/examine(mob/user)
 	. = ..()
 	if(HAS_TRAIT(src,TRAIT_NODROP))
-		. += "[locked_string]"
+		. += "[src] [locked_string]"
 	switch (max_heat_protection_temperature)
 		if (400 to 1000)
 			. += "[src] offers the wearer limited protection from fire."

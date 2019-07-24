@@ -87,7 +87,7 @@
 /obj/item/clothing/mask/pig/cursed
 	name = "pig face"
 	desc = "It looks like a mask, but closer inspection reveals it's melded onto this persons face!"
-	locked_string = "<span class='warning'>It is cursed</span>"
+	locked_string = "is cursed"
 	flags_inv = HIDEFACIALHAIR
 	clothing_flags = NONE
 
@@ -145,7 +145,7 @@
 /obj/item/clothing/mask/cowmask/cursed
 	name = "cow face"
 	desc = "It looks like a cow mask, but closer inspection reveals it's melded onto this persons face!"
-	locked_string = "<span class='warning'>It is cursed</span>"
+	locked_string = "is cursed"
 	flags_inv = HIDEFACIALHAIR
 	clothing_flags = NONE
 
@@ -170,7 +170,7 @@
 /obj/item/clothing/mask/horsehead/cursed
 	name = "horse face"
 	desc = "It initially looks like a mask, but it's melded into the poor person's face."
-	locked_string = "<span class='warning'>It is cursed</span>"
+	locked_string = "is cursed"
 	clothing_flags = NONE
 	flags_inv = HIDEFACIALHAIR
 
