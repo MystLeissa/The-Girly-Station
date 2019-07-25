@@ -13,6 +13,24 @@
 	extra_price = 50
 	payment_department = NO_FREEBIES
 
+/obj/machinery/vending/pmining
+	name = "Public Mining Vendor"
+	desc = "Everyday Tools for aspiring miners."
+	icon = 'icons/obj/machines/mining_machines.dmi'
+	icon_state = "mining"
+	product_ads = "Everyday tools for aspiring wanna-be miners,"
+	products = list(/obj/item/rope = 5,
+					/obj/item/stack/marker_beacon = 30,
+					/obj/item/survivalcapsule = 2,
+					/obj/item/fulton_core = 4)
+	contraband = list(/obj/item/storage/backpack/duffelbag/mining_conscript = 1)
+	premium = list(/obj/item/clothing/shoes/bhop = 1)
+	refill_canister = /obj/item/vending_refill/assist
+	default_price = 500
+	extra_price = 2500
+	set_obj_flags = "NODECONSTRUCT_1"
+	payment_department = NO_FREEBIES
+
 /obj/item/vending_refill/assist
 	machine_name = "Vendomat"
 	icon_state = "refill_engi"

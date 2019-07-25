@@ -32,13 +32,39 @@
 
 /obj/structure/closet/body_bag/sleepsack/container_resist(mob/living/user)
 	return
-/
+
+/obj/structure/closet/body_bag/MouseDrop(over_object, src_location, over_location)
+	. = ..()
+	if(over_object == usr && Adjacent(usr) && (in_range(src, usr) || usr.contents.Find(src)))
+		if(!ishuman(usr))
+			return
+
+		if(opened)
+			to_chat(usr, "<span class='warning'>You wrestle with [src], but it won't fold while unzipped.</span>")
+			return
+		if(contents.len)
+			to_chat(usr, "<span class='warning'>There are too many things inside of [src] to fold it up!</span>")
+			return
+		visible_message("<span class='notice'>[usr] folds up [src].</span>")
+		var/obj/item/bodybag/B = foldedbag_instance || new foldedbag_path
+		for(var/atom/movable/A in contents)
+			if(isliving(A))
+				//ADD_TRAIT(A,TRAIT_NO_BREATHING,STATUS_EFFECT_TRAIT)
+				to_chat(A, "<span class='userdanger'>You're suddenly forced into a tiny space!</span>")
+			A.forceMove(B)
+		usr.put_in_hands(B)
+		qdel(src)
+
 /obj/item/bodybag/sleepsack
 	name = "sleep sack"
 	desc = "A Pink Sleep Sack"
 	icon_state = "sleepsack_folded"
 	custom_price = 500
 	unfoldedbag_path = /obj/structure/closet/body_bag/sleepsack
+
+/obj/item/bodybag/sleepsack/Initialize()
+	. = ..()
+	assume_air(get_turf(src))
 
 /obj/item/bodybag/sleepsack/container_resist(mob/living/user)
 	return
