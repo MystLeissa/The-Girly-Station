@@ -9,6 +9,7 @@
 	var/ready = FALSE
 	var/list/destinations = list()
 	anchored = TRUE
+	resistance_flags = INDESTRUCTIBLE
 
 /obj/machinery/lavaland/hole/proc/climb(atom/movable/AM)
 	playsound(src, 'sound/misc/slip.ogg', 30, TRUE)
@@ -58,6 +59,10 @@
 /obj/machinery/lavaland/hole/up/two/Initialize()
 	. = ..()
 	GLOB.lavaland_holes_two += src
+
+/obj/machinery/lavaland/hole/up/two/Destroy()
+	GLOB.lavaland_holes_two.Remove(src)
+	return ..()
 
 /obj/machinery/lavaland/hole/up/attackby(obj/item/W, mob/user, params)
 	if(get_turf(user)==get_turf(src))
