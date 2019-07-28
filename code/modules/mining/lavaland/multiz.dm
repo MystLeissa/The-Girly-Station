@@ -12,7 +12,6 @@
 	resistance_flags = INDESTRUCTIBLE
 
 /obj/machinery/lavaland/hole/proc/climb(atom/movable/AM)
-	playsound(src, 'sound/misc/slip.ogg', 30, TRUE)
 	if (ismovableatom(AM))
 		if(!ready)
 			if(to_level=="one")
@@ -31,8 +30,13 @@
 	density = TRUE
 
 /obj/machinery/lavaland/hole/down/Bumped(atom/movable/AM)
-	climb(AM)
-	return
+	var/mob/M = AM
+	climb(M)
+	if(!M.is_holding_item_of_type(/obj/item/rope) && prob(33) && istype(M,/mob/living/carbon))
+		var/mob/living/carbon/tripped = M
+		playsound(tripped, 'sound/misc/slip.ogg', 30, TRUE)
+		to_chat(tripped,"<span class='warning'>You fall and hit your head.</span>")
+		tripped.gain_trauma_type(/datum/brain_trauma/mild/concussion, TRAUMA_LIMIT_BASIC)
 
 /obj/machinery/lavaland/hole/down/one
 	desc = "a hole leading to map level 2"
@@ -66,8 +70,14 @@
 
 /obj/machinery/lavaland/hole/up/attackby(obj/item/W, mob/user, params)
 	if(get_turf(user)==get_turf(src))
-		if(istype(W,/obj/item/rope))
+		if(istype(user,/mob/living/silicon))
+			to_chat(user,"<span class='notice'>You climb up the hole.</span>")
 			climb(user)
+			return
+		if(istype(W,/obj/item/rope))
+			to_chat(user,"<span class='notice'>You use the rope to climb up the hole.</span>")
+			climb(user)
+			return
 
 /obj/item/rope
 	name = "rope"
