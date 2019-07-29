@@ -81,7 +81,7 @@ GLOBAL_DATUM_INIT(keycard_events, /datum/events, new)
 	event = event_type
 	waiting = 1
 	GLOB.keycard_events.fireEvent("triggerEvent", src)
-	addtimer(CALLBACK(src, .proc/eventSent), 20)
+	addtimer(CALLBACK(src, .proc/eventSent), 120)
 
 /obj/machinery/keycard_auth/proc/eventSent()
 	triggerer = null
@@ -91,7 +91,7 @@ GLOBAL_DATUM_INIT(keycard_events, /datum/events, new)
 /obj/machinery/keycard_auth/proc/triggerEvent(source)
 	icon_state = "auth_on"
 	event_source = source
-	addtimer(CALLBACK(src, .proc/eventTriggered), 20)
+	addtimer(CALLBACK(src, .proc/eventTriggered), 120)
 
 /obj/machinery/keycard_auth/proc/eventTriggered()
 	icon_state = "auth_off"

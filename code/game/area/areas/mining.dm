@@ -71,7 +71,8 @@
 	icon_state = "security"
 	ambientsounds = HIGHSEC
 
-
+/area/mine/nekoprison
+	name = "Neko Prison"
 
 
 /**********************Lavaland Areas**************************/

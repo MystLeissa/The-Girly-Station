@@ -322,6 +322,28 @@
 		dereliction of duty!</b>"
 	assignedrole = "Hotel Staff"
 
+/obj/effect/mob_spawn/human/nekogirl
+	name = "Neko Sleeper"
+	desc = "a sleeper designed for kitties."
+	mob_name = "Neko"
+	mob_species = /datum/species/human/felinid
+	icon = 'icons/obj/machines/sleeper.dmi'
+	icon_state = "sleeper_s"
+	objectives = "Have fun! ~Merow"
+	death = FALSE
+	roundstart = FALSE
+	random = TRUE
+	outfit = /datum/outfit/nekogirl
+	flavour_text = "<span class=;big bold'>You are a sleepy kitty. Have FuN! -Merow</span>"
+	assignedrole = "Neko Prisoner"
+
+/datum/outfit/nekogirl
+	name = "Neko Girl"
+	uniform = /obj/item/clothing/under/schoolgirl/locked
+	shoes = /obj/item/clothing/shoes/winterboots
+	belt = /obj/item/tank/internals/emergency_oxygen/double
+	mask = /obj/item/clothing/mask/breath/medical
+
 /datum/outfit/hotelstaff
 	name = "Hotel Staff"
 	uniform = /obj/item/clothing/under/assistantformal
