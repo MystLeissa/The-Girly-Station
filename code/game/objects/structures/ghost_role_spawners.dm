@@ -334,7 +334,7 @@
 	roundstart = FALSE
 	random = TRUE
 	outfit = /datum/outfit/nekogirl
-	flavour_text = "<span class=;big bold'>You are a sleepy kitty. Have FuN! -Merow</span>"
+	flavour_text = "<span class='big bold'>You are a sleepy kitty. Have FuN! -Merow</span>"
 	assignedrole = "Neko Prisoner"
 
 /datum/outfit/nekogirl
@@ -343,6 +343,7 @@
 	shoes = /obj/item/clothing/shoes/winterboots
 	belt = /obj/item/tank/internals/emergency_oxygen/double
 	mask = /obj/item/clothing/mask/breath/medical
+	implants = list(/obj/item/implant/tracking)
 
 /datum/outfit/hotelstaff
 	name = "Hotel Staff"
