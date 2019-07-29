@@ -118,6 +118,18 @@ Slimecrossing Armor
 	..()
 	REMOVE_TRAIT(user, TRAIT_PACIFISM, "peaceflower_[REF(src)]")
 
+/obj/item/clothing/head/peaceflower/cursed
+	name = "Beautiful Bud"
+	desc = "An extremely addictive flower, full of peace magic."
+	locked_string = "is cursed."
+
+/obj/item/clothing/head/peaceflower/cursed/equipped(mob/living/carbon/human/user,slot)
+	. = ..()
+	if(slot == SLOT_HEAD)
+		ADD_TRAIT(user,TRAIT_PACIFISM,CLOTHING_TRAIT)
+		ADD_TRAIT(src,TRAIT_NODROP,CLOTHING_TRAIT)
+		to_chat(user,"<span class='warning'>Ops...that flower wasn't so good an idea to put in your hair.</span>")
+
 /obj/item/clothing/head/peaceflower/attack_hand(mob/user)
 	if(iscarbon(user))
 		var/mob/living/carbon/C = user

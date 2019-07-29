@@ -62,10 +62,9 @@
 	name = "mining airlock"
 	icon = 'icons/obj/doors/airlocks/station/mining.dmi'
 	assemblytype = /obj/structure/door_assembly/door_assembly_min
-	req_access = ACCESS_NEKO_EXTERNAL
+	req_access = list(ACCESS_NEKO_EXTERNAL)
 	hackProof = TRUE
 	aiControlDisabled = 1
-	security_level = 1
 
 //////////////////////////////////
 /*
