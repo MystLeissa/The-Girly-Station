@@ -66,6 +66,8 @@
 
 	var/area/A = get_area(curturf)
 	var/area/B = get_area(destturf)
+	if(A.noteleexit)
+		return FALSE
 	if(!forced && (HAS_TRAIT(teleatom, TRAIT_NO_TELEPORT) || A.noteleport || B.noteleport))
 		return FALSE
 

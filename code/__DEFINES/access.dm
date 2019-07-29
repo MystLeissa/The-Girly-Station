@@ -88,6 +88,8 @@
 #define ACCESS_AWAY_GENERIC2 206
 #define ACCESS_AWAY_GENERIC3 207
 #define ACCESS_AWAY_GENERIC4 208
+#define ACCESS_NEKO 209 // Neko Prison Access
+#define ACCESS_NEKO_EXTERNAL 210 // Neko Prison Exit Access - NYI
 
 	//Special, for anything that's basically internal
 #define ACCESS_BLOODCULT 250

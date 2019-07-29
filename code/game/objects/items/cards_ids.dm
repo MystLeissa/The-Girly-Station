@@ -489,6 +489,12 @@ update_label("John Doe", "Clowny")
 	golem_account.bank_cards += src
 	registered_account = golem_account
 
+/obj/item/card/id/neko
+	name = "NekOS ID"
+	desc = "Every kitten needs an ID!"
+	access = list(ACCESS_NEKO)
+	icon_state = "girlskey"
+
 /obj/item/card/id/away
 	name = "a perfectly generic identification card"
 	desc = "A perfectly generic identification card. Looks like it could use some flavor."

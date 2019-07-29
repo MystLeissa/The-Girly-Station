@@ -112,6 +112,10 @@
 /obj/machinery/power/apc/away //general away mission access
 	req_access = list(ACCESS_AWAY_GENERAL)
 
+/obj/machinery/power/apc/neko
+	req_access = list(ACCESS_NEKO)
+	cell_type = /obj/item/stock_parts/cell/high/plus
+
 /obj/machinery/power/apc/highcap/five_k
 	cell_type = /obj/item/stock_parts/cell/upgraded/plus
 

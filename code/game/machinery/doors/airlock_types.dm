@@ -58,6 +58,15 @@
 	icon = 'icons/obj/doors/airlocks/station/virology.dmi'
 	assemblytype = /obj/structure/door_assembly/door_assembly_viro
 
+/obj/machinery/door/airlock/neko
+	name = "mining airlock"
+	icon = 'icons/obj/doors/airlocks/station/mining.dmi'
+	assemblytype = /obj/structure/door_assembly/door_assembly_min
+	req_access = ACCESS_NEKO_EXTERNAL
+	hackProof = TRUE
+	aiControlDisabled = 1
+	security_level = 1
+
 //////////////////////////////////
 /*
 	Station Airlocks Glass
@@ -111,7 +120,6 @@
 	frequency = FREQ_AIRLOCK_CONTROL
 	heat_proof = TRUE
 	req_access = list(ACCESS_TOX)
-
 /obj/machinery/door/airlock/research/glass/incinerator/toxmix_interior
 	name = "Mixing Room Interior Airlock"
 	id_tag = INCINERATOR_TOXMIX_AIRLOCK_INTERIOR

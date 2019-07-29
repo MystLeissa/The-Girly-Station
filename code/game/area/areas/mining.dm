@@ -73,7 +73,8 @@
 
 /area/mine/nekoprison
 	name = "Neko Prison"
-
+	noteleexit = TRUE
+	outdoors = FALSE
 
 /**********************Lavaland Areas**************************/
 

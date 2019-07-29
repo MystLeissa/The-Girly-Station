@@ -327,6 +327,7 @@
 	desc = "a sleeper designed for kitties."
 	mob_name = "Neko"
 	mob_species = /datum/species/human/felinid
+	mob_gender = FEMALE
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper_s"
 	objectives = "Have fun! ~Merow"
@@ -344,6 +345,7 @@
 	belt = /obj/item/tank/internals/emergency_oxygen/double
 	mask = /obj/item/clothing/mask/breath/medical
 	implants = list(/obj/item/implant/tracking)
+	id = /obj/item/card/id/neko
 
 /datum/outfit/hotelstaff
 	name = "Hotel Staff"
