@@ -206,7 +206,8 @@
 		return
 	// Check for Radio Blocking Turf
 	var/turf/mypos = get_turf(src)
-	if(mypos.noradio)
+	var/area/myarea = get_area(mypos)
+	if(myarea.noradio)
 		return
 	if(use_command)
 		spans |= SPAN_COMMAND
@@ -318,7 +319,8 @@
 			return FALSE
 	// Check for the Presence of Radio Blocking Turf
 	var/turf/mypos = get_turf(src)
-	if(mypos.noradio)
+	var/area/myarea = get_area(mypos)
+	if(myarea.noradio)
 		return FALSE
 	// allow checks: are we listening on that frequency?
 	if (freq == frequency)

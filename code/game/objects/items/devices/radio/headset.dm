@@ -84,7 +84,8 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	if(ishuman(src.loc))
 		var/mob/living/carbon/human/H = src.loc
 		var/turf/mypos = get_turf(src)
-		if(mypos.noradio)
+		var/area/myarea = get_area(mypos)
+		if(myarea.noradio)
 			return FALSE
 		if(H.ears == src)
 			if(HAS_TRAIT(H,TRAIT_DITZ) && prob(50))

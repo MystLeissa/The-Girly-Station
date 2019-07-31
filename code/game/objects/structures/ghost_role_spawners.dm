@@ -333,10 +333,13 @@
 	objectives = "Have fun! ~Merow"
 	death = FALSE
 	roundstart = FALSE
-	random = TRUE
 	outfit = /datum/outfit/nekogirl
 	flavour_text = "<span class='big bold'>You are a sleepy kitty. Have FuN! -Merow</span>"
 	assignedrole = "Neko Prisoner"
+
+/obj/effect/mob_spawn/human/nekogirl/special(mob/living/L)
+	L.gender = FEMALE
+	L.fully_replace_character_name(null,"Neko [pick("maid","youth","girl","child","doll","sister","kitten","loli","lolita")]")
 
 /datum/outfit/nekogirl
 	name = "Neko Girl"

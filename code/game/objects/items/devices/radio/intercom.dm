@@ -101,7 +101,8 @@
 	if(wires.is_cut(WIRE_RX))
 		return FALSE
 	var/turf/position = get_turf(src)
-	if(position.noradio)
+	var/area/myarea = get_area(position)
+	if(myarea.noradio)
 		return FALSE
 	if(!(0 in level))
 		if(isnull(position) || !(position.z in level))
