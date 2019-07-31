@@ -25,9 +25,11 @@
 
 /area/centcom/prison
 	name = "Admin Prison"
+	noradio = TRUE
 
 /area/centcom/holding
 	name = "Holding Facility"
+	noradio = TRUE
 
 /area/centcom/supplypod/flyMeToTheMoon
 	name = "Supplypod Shipping lane"

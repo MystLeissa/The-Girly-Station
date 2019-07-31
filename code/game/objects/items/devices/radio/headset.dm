@@ -1,4 +1,5 @@
 // Used for translating channels to tokens on examination
+#define POWERED_HEADSET_COST 1000
 GLOBAL_LIST_INIT(channel_tokens, list(
 	RADIO_CHANNEL_COMMON = RADIO_KEY_COMMON,
 	RADIO_CHANNEL_SCIENCE = RADIO_TOKEN_SCIENCE,
@@ -26,7 +27,11 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 
 	slot_flags = ITEM_SLOT_EARS
 	var/obj/item/encryptionkey/keyslot2 = null
+	var/obj/item/stock_parts/cell/cell = null
 	dog_fashion = null
+
+/obj/item/radio/headset/get_cell()
+	return cell
 
 /obj/item/radio/headset/suicide_act(mob/living/carbon/user)
 	user.visible_message("<span class='suicide'>[user] begins putting \the [src]'s antenna up [user.p_their()] nose! It looks like [user.p_theyre()] trying to give [user.p_them()]self cancer!</span>")
@@ -50,6 +55,11 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 
 		if(command)
 			. += "<span class='info'>Alt-click to toggle the high-volume mode.</span>"
+		if(cell)
+			var/battery_percent = cell.percent()
+			. += "<span class='info'>[src] has [powered_radio ? "powered" : "unpowered"] transmission and has a [cell.name] inserted with [battery_percent] percent charge</span>"
+		else
+			. += "<span class='info'>[src] has a slot for a power cell linked to it's transmitter.</span>"
 	else
 		. += "<span class='notice'>A small screen on the headset flashes, it's too small to read without holding or wearing the headset.</span>"
 
@@ -64,20 +74,27 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 /obj/item/radio/headset/talk_into(mob/living/M, message, channel, list/spans,datum/language/language)
 	if (!listening)
 		return ITALICS | REDUCE_RANGE
+	if(powered_radio)
+		cell.use(POWERED_HEADSET_COST)
+		if(cell.charge <= 0)
+			powered_radio = FALSE
 	return ..()
 
 /obj/item/radio/headset/can_receive(freq, level, AIuser)
 	if(ishuman(src.loc))
 		var/mob/living/carbon/human/H = src.loc
+		var/turf/mypos = get_turf(src)
+		if(mypos.noradio)
+			return FALSE
 		if(H.ears == src)
 			if(HAS_TRAIT(H,TRAIT_DITZ) && prob(50))
 				H.dropItemToGround(src)
 				to_chat(H,"<span class='warning'>You drop your [src] while listening to the transmission!</span>")
-				return
 			return ..(freq, level)
 	else if(AIuser)
 		return ..(freq, level)
 	return FALSE
+
 // Test Item to Check Telecomms
 /obj/item/radio/headset/girl
 	subspace_transmission = FALSE
@@ -285,14 +302,30 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 
 /obj/item/radio/headset/attackby(obj/item/W, mob/user, params)
 	user.set_machine(src)
-
-	if(W.tool_behaviour == TOOL_SCREWDRIVER)
+	var/turf/T = get_turf(user)
+	if(istype(W,/obj/item/stock_parts/cell))
+		if(cell)
+			to_chat(user,"<span class='warning'>This already has a [cell.name] inserted.</span>")
+			return
+		W.forceMove(src)
+		cell = W
+		if(cell.charge >= POWERED_HEADSET_COST)
+			powered_radio = TRUE
+		to_chat(user,"<span class='notice'>You insert the [cell.name] into [src].</span>")
+		return
+	else if(W.tool_behaviour == TOOL_CROWBAR)
+		if(cell)
+			if(T)
+				to_chat(user,"<span class='notice'>You pop out the [cell.name] from [src].</span>")
+				powered_radio = FALSE
+				cell.forceMove(T)
+				cell = null
+				return
+	else if(W.tool_behaviour == TOOL_SCREWDRIVER)
 		if(keyslot || keyslot2)
 			for(var/ch_name in channels)
 				SSradio.remove_object(src, GLOB.radiochannels[ch_name])
 				secure_radio_connections[ch_name] = null
-
-			var/turf/T = user.drop_location()
 			if(T)
 				if(keyslot)
 					keyslot.forceMove(T)

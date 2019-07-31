@@ -181,7 +181,7 @@
 "dy" = (/obj/machinery/atmospherics/pipe/simple/supply/hidden{dir = 4},/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{dir = 9},/turf/open/floor/plating/dirt,/area/mine/explored)
 "dz" = (/obj/machinery/atmospherics/pipe/simple/supply/hidden{dir = 9},/turf/open/floor/plating/dirt,/area/mine/explored)
 "dA" = (/obj/effect/turf_decal/tile/red{dir = 1},/obj/effect/turf_decal/tile/red{dir = 4},/obj/effect/turf_decal/tile/red{dir = 8},/turf/open/floor/plating/dirt,/area/mine/explored)
-"dB" = (/obj/machinery/atmospherics/pipe/simple/supply/hidden,/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,/obj/effect/turf_decal/tile/red{dir = 4},/obj/effect/turf_decal/tile/red{dir = 1},/mob/living/simple_animal/bot/secbot/beepsky{desc = "Powered by the tears and sweat of laborers."; name = "Prison Ofitser"},/turf/open/floor/plating/dirt,/area/mine/explored)
+"dB" = (/obj/machinery/atmospherics/pipe/simple/supply/hidden,/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,/obj/effect/turf_decal/tile/red{dir = 4},/obj/effect/turf_decal/tile/red{dir = 1},/turf/open/floor/plating/dirt,/area/mine/explored)
 "dC" = (/obj/machinery/power/apc{dir = 4; name = "Labor Camp Security APC"; pixel_x = 24},/obj/structure/cable,/obj/effect/turf_decal/tile/red{dir = 4},/obj/effect/turf_decal/tile/red{dir = 1},/obj/effect/turf_decal/tile/red,/turf/open/floor/plating/dirt,/area/mine/explored)
 "dD" = (/obj/structure/cable,/turf/open/floor/plating/dirt,/area/mine/explored)
 "dE" = (/obj/effect/turf_decal/tile/red{dir = 4},/turf/open/floor/plating/dirt,/area/mine/explored)

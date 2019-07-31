@@ -142,6 +142,11 @@
 	// Assemble the list of radios
 	var/list/radios = list()
 	switch (transmission_method)
+		if (TRANSMISSION_POWERED)
+			for(var/obj/item/radio/R in GLOB.all_radios["[frequency]"])
+				if(R.can_receive(frequency, levels))
+					radios += R
+
 		if (TRANSMISSION_SUBSPACE)
 			// Reaches any radios on the levels
 			for(var/obj/item/radio/R in GLOB.all_radios["[frequency]"])

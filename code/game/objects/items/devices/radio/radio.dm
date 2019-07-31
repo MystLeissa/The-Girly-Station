@@ -18,7 +18,7 @@
 	var/frequency = FREQ_COMMON
 	var/canhear_range = 3  // The range around the radio in which mobs can hear what it receives.
 	var/emped = 0  // Tracks the number of EMPs currently stacked.
-
+	var/powered_radio = FALSE
 	var/broadcasting = FALSE  // Whether the radio will transmit dialogue it hears nearby.
 	var/listening = TRUE  // Whether the radio is currently receiving.
 	var/prison_radio = FALSE  // If true, the transmit wire starts cut.
@@ -204,7 +204,10 @@
 		return
 	if(!M.IsVocal())
 		return
-
+	// Check for Radio Blocking Turf
+	var/turf/mypos = get_turf(src)
+	if(mypos.noradio)
+		return
 	if(use_command)
 		spans |= SPAN_COMMAND
 
@@ -244,7 +247,13 @@
 		return;
 	// Construct the signal
 	var/datum/signal/subspace/vocal/signal = new(src, freq, speaker, language, message, spans)
-
+	// Powered Radios reach
+	if (powered_radio)
+		signal.data["compression"] = 0
+		signal.transmission_method = TRANSMISSION_POWERED
+		signal.levels = list(0)
+		signal.broadcast()
+		return
 	// Independent radios, on the CentCom frequency, reach all independent radios
 	if (independent && (freq == FREQ_CENTCOM || freq == FREQ_CTF_RED || freq == FREQ_CTF_BLUE))
 		signal.data["compression"] = 0
@@ -307,7 +316,10 @@
 		var/turf/position = get_turf(src)
 		if(!position || !(position.z in level))
 			return FALSE
-
+	// Check for the Presence of Radio Blocking Turf
+	var/turf/mypos = get_turf(src)
+	if(mypos.noradio)
+		return FALSE
 	// allow checks: are we listening on that frequency?
 	if (freq == frequency)
 		return TRUE

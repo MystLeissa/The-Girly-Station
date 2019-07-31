@@ -96,6 +96,7 @@
 #define TRANSMISSION_RADIO 1  // electromagnetic radiation (default)
 #define TRANSMISSION_SUBSPACE 2  // subspace transmission (headsets only)
 #define TRANSMISSION_SUPERSPACE 3  // reaches independent (CentCom) radios only
+#define TRANSMISSION_POWERED 4 // Reaches all radios but cannot receive without SUBSPACE
 
 // Filter types, used as an optimization to avoid unnecessary proc calls.
 #define RADIO_TO_AIRALARM "to_airalarm"
