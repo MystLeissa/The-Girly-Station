@@ -217,7 +217,7 @@
 	desc = "Damn, they better have the /tg/ channel on these things."
 	icon = 'icons/obj/status_display.dmi'
 	icon_state = "entertainment_blank"
-	network = list("thunder")
+	network = list("thunder","neko")
 	density = FALSE
 	circuit = null
 	long_ranged = TRUE

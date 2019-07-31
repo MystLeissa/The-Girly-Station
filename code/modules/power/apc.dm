@@ -114,6 +114,8 @@
 
 /obj/machinery/power/apc/neko
 	req_access = list(ACCESS_NEKO)
+	dir = NORTH
+	pixel_y = 23
 	cell_type = /obj/item/stock_parts/cell/high/plus
 
 /obj/machinery/power/apc/highcap/five_k

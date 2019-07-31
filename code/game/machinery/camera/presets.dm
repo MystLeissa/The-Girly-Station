@@ -1,5 +1,9 @@
 // PRESETS
-
+/obj/machinery/camera/autoname/neko
+	name = "Camera"
+	c_tag = "Neko Prison"
+	network = list("neko")
+	start_active = TRUE
 // EMP
 /obj/machinery/camera/emp_proof
 	start_active = TRUE
