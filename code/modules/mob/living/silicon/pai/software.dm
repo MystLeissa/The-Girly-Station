@@ -295,8 +295,10 @@
 			if("camerajack")
 				if(href_list["jack"])
 					if(cable && cable.machine)
+						/*
 						var/obj/machinery/camera/linked = cable.machine
 						network = linked.network
+						*/
 						CameraTerm()
 				if(href_list["cable"])
 					var/turf/T = get_turf(loc)
@@ -613,11 +615,6 @@
 	user = src
 	var/list/camera_list = get_available_cameras()
 	var/t = input(user, "Which camera should you change to?") as null|anything in camera_list
-	/*if(!t)
-		user.unset_machine()
-		playsound(src, 'sound/machines/terminal_off.ogg', 25, 0)
-		return
-	*/
 	var/obj/machinery/camera/C = camera_list[t]
 
 	if(t == "Cancel")
@@ -625,7 +622,7 @@
 		playsound(src, 'sound/machines/terminal_off.ogg', 25, 0)
 		return
 	if(C)
-		if(!C.can_use() || !cable || !cable.machine)
+		if(!C.can_use() || !cable || !cable.machine || user.eye_blind || user.incapacitated())
 			user.unset_machine()
 			return 0
 		playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 25, 0)
