@@ -623,7 +623,7 @@
 		playsound(src, 'sound/machines/terminal_off.ogg', 25, 0)
 		return
 	if(C)
-		if(!C.can_use() || user.eye_blind || user.incapacitated())
+		if(!C.can_use() || user.eye_blind || user.incapacitated() || !cable || !cable.machine)
 			user.unset_machine()
 			return 0
 		playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 25, 0)
