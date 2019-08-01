@@ -295,7 +295,7 @@
 			if("camerajack")
 				if(href_list["jack"])
 					if(cable && cable.machine)
-						var/obj/machinery/camera/linked = machine
+						var/obj/machinery/camera/linked = cable.machine
 						network = linked.network
 						CameraTerm()
 				if(href_list["cable"])
