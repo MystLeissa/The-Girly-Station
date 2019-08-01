@@ -30,6 +30,8 @@
 	density = TRUE
 
 /obj/machinery/lavaland/hole/down/Bumped(atom/movable/AM)
+	if(!isliving(AM))
+		return
 	var/mob/M = AM
 	climb(M)
 	if(!M.is_holding_item_of_type(/obj/item/rope) && prob(33) && istype(M,/mob/living/carbon))

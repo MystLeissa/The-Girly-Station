@@ -13,7 +13,8 @@
 	maxHealth = 500
 	layer = BELOW_MOB_LAYER
 	can_be_held = TRUE
-	var/network = "ss13"
+	var/list/network = list("ss13")
+	var/pai_remote_camera = FALSE
 	var/obj/machinery/camera/current = null
 
 	var/ram = 100	// Used as currency to purchase different abilities
@@ -80,7 +81,8 @@
 	var/overload_maxhealth = 0
 	var/silent = FALSE
 	var/brightness_power = 5
-
+	var/list/watchers = list()
+	var/long_ranged = FALSE
 /mob/living/silicon/pai/can_unbuckle()
 	return FALSE
 

@@ -16,6 +16,18 @@
 	name = "Miner's Authentication implant"
 	desc = "Lets you shoot Kinetic Accelerators"
 
+/obj/item/implant/monkeyspeak
+	name = "Monkey Translator"
+	desc = "Lets you speak monkey"
+
+/obj/item/implant/monkeyspeak/implant(mob/living/target, mob/user, silent = FALSE, force = FALSE)
+	if(..())
+		target.grant_language(/datum/language/monkey)
+
+/obj/item/implant/monkeyspeak/removed(mob/living/source, silent = FALSE, special = 0)
+	if(..())
+		source.remove_language(/datum/language/monkey)
+
 /obj/item/implanter/miner
 	name = "implanter (Mining Weapons Authentication)"
 	imp_type = /obj/item/implant/weapons_auth/miner

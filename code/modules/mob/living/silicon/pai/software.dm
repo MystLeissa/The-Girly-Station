@@ -20,7 +20,7 @@
 															"security records" = 10,
 															"camera zoom" = 10,
 															"host scan" = 10,
-															//"camera jack" = 10,
+															"camera jack" = 10,
 															//"heartbeat sensor" = 10,
 															//"projection array" = 15,
 															"medical HUD" = 20,
@@ -292,7 +292,16 @@
 					var/turf/T = get_turf(loc)
 					cable = new /obj/item/pai_cable(T)
 					T.visible_message("<span class='warning'>A port on [src] opens to reveal [cable], which promptly falls to the floor.</span>", "<span class='italics'>You hear the soft click of something light and hard falling to the ground.</span>")
-
+			if("camerajack")
+				if(href_list["jack"])
+					if(cable && cable.machine)
+						var/obj/machinery/camera/linked = machine
+						network = linked.network
+						CameraTerm()
+				if(href_list["cable"])
+					var/turf/T = get_turf(loc)
+					cable = new /obj/item/pai_cable(T)
+					T.visible_message("<span class='warning'>A port on [src] opens to reveal [cable], which promptly falls to the floor. </span>","<span class='italics'>You hear the soft click of something light and hard falling to the ground </span>")
 			if("loudness")
 				if(subscreen == 1) // Open Instrument
 					internal_instrument.interact(src)
@@ -328,7 +337,7 @@
 		if(s == "security records")
 			dat += "<a href='byond://?src=[REF(src)];software=securityrecord;sub=0'>Security Records</a> <br>"
 		if(s == "camera")
-			dat += "<a href='byond://?src=[REF(src)];software=[s]'>Camera Jack</a> <br>"
+			dat += "<a href='byond://?src=[REF(src)];software=camera;sub=0'>Camera</a> <br>"
 		if(s == "remote signaller")
 			dat += "<a href='byond://?src=[REF(src)];software=signaller;sub=0'>Remote Signaller</a> <br>"
 		if(s == "loudness booster")
@@ -582,6 +591,8 @@
 
 	if(!cable)
 		dat += "<font color=#FF5555>Retracted</font> <br>"
+		dat += "<a href='byond://?src=[REF(src)];software=camerajack;cable=1;sub=0'>Extend Cable</a> <br>"
+
 		return dat
 	if(!cable.machine)
 		dat += "<font color=#FFFF55>Extended</font> <br>"
@@ -591,8 +602,81 @@
 	dat += "<font color=#55FF55>Connected</font> <br>"
 
 	if(!istype(machine, /obj/machinery/camera))
-		to_chat(src, "DERP")
+		dat += "The Device Doesn't seem to be compatible!"
+		return dat
+	dat += "<a href='byond://?src=[REF(src)];software=camerajack;jack=1;sub=0'>View Camera Network</a> <br>"
 	return dat
+
+/mob/living/silicon/pai/proc/use_camera_console(mob/user)
+	user = src
+	var/list/camera_list = get_available_cameras()
+	var/t = input(user, "Which camera should you change to?") as null|anything in camera_list
+	if(!t)
+		user.unset_machine()
+		playsound(src, 'sound/machines/terminal_off.ogg', 25, 0)
+		return
+
+	var/obj/machinery/camera/C = camera_list[t]
+
+	if(t == "Cancel")
+		user.unset_machine()
+		playsound(src, 'sound/machines/terminal_off.ogg', 25, 0)
+		return
+	if(C)
+		if(!C.can_use() || user.eye_blind || user.incapacitated())
+			user.unset_machine()
+			return 0
+		playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 25, 0)
+		pai_remote_camera = TRUE
+		user.reset_perspective(C)
+		user.overlay_fullscreen("flash", /obj/screen/fullscreen/flash/static)
+		user.clear_fullscreen("flash", 5)
+		watchers[user] = C
+		addtimer(CALLBACK(src, .proc/use_camera_console, user), 5)
+
+/mob/living/silicon/pai/proc/CameraTerm()
+	var/mob/user = src
+	if (!network)
+		user.unset_machine()
+		CRASH("No camera network")
+		return
+	if (!(islist(network)))
+		user.unset_machine()
+		CRASH("Camera network is not a list")
+		return
+	playsound(src, 'sound/machines/terminal_prompt.ogg', 25, 0)
+	use_camera_console(user)
+
+/mob/living/silicon/pai/unset_machine(mob/user)
+	..()
+	user = src
+	if(pai_remote_camera)
+		watchers.Remove(user)
+		user.reset_perspective(null)
+		pai_remote_camera = FALSE
+
+/mob/living/silicon/pai/proc/get_available_cameras()
+	var/list/L = list()
+	for (var/obj/machinery/camera/C in GLOB.cameranet.cameras)
+		if((is_away_level(z) || is_away_level(C.z)) && (C.z != z))//if on away mission, can only receive feed from same z_level cameras
+			continue
+		L.Add(C)
+
+	camera_sort(L)
+
+	var/list/D = list()
+	D["Cancel"] = "Cancel"
+	for(var/obj/machinery/camera/C in L)
+		if(!C.network)
+			stack_trace("Camera in a cameranet has no camera network")
+			continue
+		if(!(islist(C.network)))
+			stack_trace("Camera in a cameranet has a non-list camera network")
+			continue
+		var/list/tempnetwork = C.network&network
+		if(tempnetwork.len)
+			D["[C.c_tag][(C.status ? null : " (Deactivated)")]"] = C
+	return D
 
 // Door Jack
 /mob/living/silicon/pai/proc/softwareDoor()
