@@ -351,8 +351,10 @@
 			dat += "<a href='byond://?src=[REF(src)];software=camzoom;sub=0'>Adjust Camera Zoom</a> <br>"
 		if(s == "atmosphere sensor")
 			dat += "<a href='byond://?src=[REF(src)];software=atmosensor;sub=0'>Atmospheric Sensor</a> <br>"
+		/*
 		if(s == "heartbeat sensor")
 			dat += "<a href='byond://?src=[REF(src)];software=[s]'>Heartbeat Sensor</a> <br>"
+		*/
 		if(s == "security HUD")
 			dat += "<a href='byond://?src=[REF(src)];software=securityhud;sub=0'>Facial Recognition Suite</a>[(secHUD) ? "<font color=#55FF55> On</font>" : "<font color=#FF5555> Off</font>"] <br>"
 		if(s == "medical HUD")
@@ -611,11 +613,11 @@
 	user = src
 	var/list/camera_list = get_available_cameras()
 	var/t = input(user, "Which camera should you change to?") as null|anything in camera_list
-	if(!t)
+	/*if(!t)
 		user.unset_machine()
 		playsound(src, 'sound/machines/terminal_off.ogg', 25, 0)
 		return
-
+	*/
 	var/obj/machinery/camera/C = camera_list[t]
 
 	if(t == "Cancel")
@@ -623,7 +625,7 @@
 		playsound(src, 'sound/machines/terminal_off.ogg', 25, 0)
 		return
 	if(C)
-		if(!C.can_use() || user.eye_blind || user.incapacitated() || !cable || !cable.machine)
+		if(!C.can_use() || !cable || !cable.machine)
 			user.unset_machine()
 			return 0
 		playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 25, 0)
