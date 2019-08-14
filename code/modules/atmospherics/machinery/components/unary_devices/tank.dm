@@ -29,13 +29,15 @@
 /obj/machinery/atmospherics/components/unary/tank/air
 	icon_state = "grey"
 	name = "pressure tank (Air)"
+
 /obj/machinery/atmospherics/components/unary/tank/knockout
 	icon_state = "grey"
 	name = "pressure tank (N2O Mix)"
+
 /obj/machinery/atmospherics/components/unary/tank/knockout/New()
 	..()
 	var/datum/gas_mixture/air_contents = airs[1]
-	air_contents.assert_gas(/datum/gas/nitrous_oxide, /datum/gas/oxygen)
+	air_contents.assert_gases(/datum/gas/nitrous_oxide, /datum/gas/oxygen)
 	air_contents.gases[/datum/gas/nitrous_oxide][MOLES] = AIR_CONTENTS * 0.5
 	air_contents.gases[/datum/gas/oxygen][MOLES] = AIR_CONTENTS * 0.5
 

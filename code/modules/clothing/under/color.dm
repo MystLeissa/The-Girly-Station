@@ -13,7 +13,12 @@
 	..()
 	var/obj/item/clothing/under/color/C = pick(subtypesof(/obj/item/clothing/under/color) - subtypesof(/obj/item/clothing/under/skirt/color) - /obj/item/clothing/under/color/random - /obj/item/clothing/under/color/grey/glorf - /obj/item/clothing/under/color/black/ghost)
 	if(ishuman(loc))
+		C = pick(subtypesof(/obj/item/clothing/under/schoolgirl/locked))
 		var/mob/living/carbon/human/H = loc
+		if(H.gender == FEMALE)
+			C = pick(subtypesof(/obj/item/clothing/under/skirt/color))
+		if(GLOB.girlsday==TRUE)
+			C = pick(subtypesof(/obj/item/clothing/under/schoolgirl/locked))
 		H.equip_to_slot_or_del(new C(H), SLOT_W_UNIFORM) //or else you end up with naked assistants running around everywhere...
 	else
 		new C(loc)
@@ -110,6 +115,13 @@
 	icon_state = "pink_skirt"
 	item_state = "p_suit"
 	item_color = "pink_skirt"
+
+/obj/item/clothing/under/pinkdress
+	name = "pink dress"
+	desc = "This is cute."
+	icon_state = "pink_dress"
+	item_state = "pink_dress"
+	item_color = "pink_dress"
 
 /obj/item/clothing/under/color/red
 	name = "red jumpsuit"

@@ -253,9 +253,22 @@
 	begin_day = 4
 	begin_month = JULY
 
+/datum/holiday/girls
+	name = "The Girly Dev Day"
+	begin_day = 2
+	begin_month = 3
+
+/datum/holiday/girls/getStationPrefix()
+	return pick("Cute","Blonde","Pink","Bubblegum","Sugar","Spice")
+
+/datum/holiday/girls/greet()
+	return "This is the day of the Girly Dev. Welcome sweetheart!"
+
+/datum/holiday/girls/celebrate()
+	GLOB.girlsday = TRUE
+
 /datum/holiday/USA/getStationPrefix()
 	return pick("Independent","American","Burger","Bald Eagle","Star-Spangled", "Fireworks")
-
 /datum/holiday/writer
 	name = "Writer's Day"
 	begin_day = 8
