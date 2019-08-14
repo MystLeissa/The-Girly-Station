@@ -32,7 +32,10 @@
 					/obj/item/clothing/under/schoolgirl/green = 1,
 					/obj/item/clothing/under/schoolgirl/orange = 1,
 					/obj/item/clothing/accessory/sailorfuku = 4,
-					/obj/item/clothing/gloves/color/pink = 3)
+					/obj/item/clothing/gloves/color/pink = 3,
+					/obj/item/clothing/under/pinkdress = 2,
+					/obj/item/clothing/under/maid = 1,
+					/obj/item/clothing/under/janimaid = 1)
 	contraband = list(/obj/item/firing_pin/girl = 3,
 					  /obj/item/radio/girl = 1)
 	girl_locked = FALSE
