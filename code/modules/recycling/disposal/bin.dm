@@ -27,7 +27,7 @@
 /obj/machinery/disposal/mailchute
 	name = "Mailchute"
 	desc = "A Mailbox in the intergalactic age!"
-	icon_state = 'mailchute'
+	icon_state = "mailchute"
 	var/can_hold = /obj/item/paper
 
 /obj/machinery/disposal/mailchute/place_item_in_disposal(obj/item/I, mob/user)
