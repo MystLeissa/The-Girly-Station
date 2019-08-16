@@ -135,7 +135,7 @@ SUBSYSTEM_DEF(persistence)
 		if(!path)
 			continue
 
-		T.showpiece = new /obj/item/showpiece_dummy(T, path)
+		T.showpiece = new path(src)
 		T.trophy_message = chosen_trophy["message"]
 		T.placer_key = chosen_trophy["placer_key"]
 		T.update_icon()
@@ -301,7 +301,7 @@ SUBSYSTEM_DEF(persistence)
 					loaded = TRUE
 		if(!loaded) //We do not have information for whatever reason, just generate new one
 			R.GenerateRecipe()
-		
+
 		if(!R.HasConflicts()) //Might want to try again if conflicts happened in the future.
 			add_chemical_reaction(R)
 
@@ -323,6 +323,6 @@ SUBSYSTEM_DEF(persistence)
 			recipe_data["results"] = R.results
 			recipe_data["required_container"] = "[R.required_container]"
 			file_data["[R.id]"] = recipe_data
-	
+
 	fdel(json_file)
 	WRITE_FILE(json_file, json_encode(file_data))

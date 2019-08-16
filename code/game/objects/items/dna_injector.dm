@@ -6,6 +6,7 @@
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	throw_speed = 3
+	persistance_proof = TRUE
 	throw_range = 5
 	w_class = WEIGHT_CLASS_TINY
 

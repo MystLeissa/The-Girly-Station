@@ -9,6 +9,7 @@
 	throw_speed = 3
 	throw_range = 7
 	resistance_flags = FLAMMABLE
+	persistance_proof = TRUE
 
 /obj/item/teleportation_scroll/apprentice
 	name = "lesser scroll of teleportation"

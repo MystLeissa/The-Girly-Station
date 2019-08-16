@@ -14,6 +14,7 @@
 	var/pulse = 0
 	var/cooldown = 0
 	var/pulseicon = "plutonium_core_pulse"
+	persistance_proof = TRUE
 
 /obj/item/nuke_core/Initialize()
 	. = ..()

@@ -20,7 +20,7 @@
 	var/persistence_replacement //have something WAY too amazing to live to the next round? Set a new path here. Overuse of this var will make me upset.
 	var/current_skin //Has the item been reskinned?
 	var/list/unique_reskin //List of options to reskin.
-
+	var/persistance_proof = FALSE
 	// Access levels, used in modules\jobs\access.dm
 	var/list/req_access
 	var/req_access_txt = "0"

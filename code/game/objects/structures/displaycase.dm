@@ -158,17 +158,23 @@
 
 /obj/structure/displaycase/attack_hand(mob/user)
 	. = ..()
-	if(.)
+	/*if(.)
 		return
 	user.changeNext_move(CLICK_CD_MELEE)
-	if (showpiece && (broken || open))
+	*/
+	if (showpiece && open && !broken)
 		to_chat(user, "<span class='notice'>You deactivate the hover field built into the case.</span>")
 		log_combat(user, src, "deactivates the hover field of")
 		dump()
 		src.add_fingerprint(user)
 		update_icon()
 		return
-	else
+	if(showpiece && broken)
+		to_chat(user,"The Case breaks in a million pieces along with it's treasure")
+		QDEL_NULL(showpiece)
+	 	qdel(src)
+	 	return
+	if(user.a_intent == INTENT_HARM)
 	    //prevents remote "kicks" with TK
 		if (!Adjacent(user))
 			return
@@ -254,9 +260,11 @@
 /obj/structure/displaycase/trophy/Destroy()
 	GLOB.trophy_cases -= src
 	return ..()
-
+/obj/structure/displaycase/trophy/attack_hand(mob/user)
+	return attackby(src,user,null)
 /obj/structure/displaycase/trophy/attackby(obj/item/W, mob/user, params)
-
+	if(W==src)
+		return
 	if(!user.Adjacent(src)) //no TK museology
 		return
 	if(user.a_intent == INTENT_HARM)
@@ -277,7 +285,6 @@
 	if(!added_roundstart)
 		to_chat(user, "<span class='warning'>You've already put something new in this case!</span>")
 		return
-
 	if(is_type_in_typecache(W, GLOB.blacklisted_cargo_types))
 		to_chat(user, "<span class='warning'>The case rejects the [W]!</span>")
 		return
@@ -286,7 +293,10 @@
 		if(is_type_in_typecache(a, GLOB.blacklisted_cargo_types))
 			to_chat(user, "<span class='warning'>The case rejects the [W]!</span>")
 			return
-
+	if(!is_locked && showpiece)
+		dump()
+		to_chat(user,"The [showpiece] Falls on the ground beneath your feet")
+		return
 	if(user.transferItemToLoc(W, src))
 
 		if(showpiece)
@@ -320,13 +330,11 @@
 
 /obj/structure/displaycase/trophy/dump()
 	if (showpiece)
-		/*
-		if(added_roundstart)
+		if(showpiece.persistance_proof)
 			visible_message("<span class='danger'>The [showpiece] crumbles to dust!</span>")
 			new /obj/effect/decal/cleanable/ash(loc)
 			QDEL_NULL(showpiece)
-		else
-		*/
+			return
 		..()
 /obj/item/key/displaycase
 	name = "display case key"
