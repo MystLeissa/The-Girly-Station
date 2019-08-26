@@ -42,6 +42,20 @@
 	icon_state = "red"
 	item_state = "toolbox_red"
 
+/obj/item/storage/toolbox/girly
+	name = "girly toolbox"
+	icon_state = "pink"
+	item_state = "toolbox_pink"
+
+/obj/item/storage/toolbox/girly/PopulateContents()
+	switch(rand(1,2))
+		if(1)
+			new /obj/item/radio/girl(src)
+			new /obj/item/firing_pin/girl(src)
+		if(2)
+			new /obj/item/clothing/under/schoolgirl/locked(src)
+			new /obj/item/clothing/accessory/sailorfuku(src)
+
 /obj/item/storage/toolbox/emergency/PopulateContents()
 	new /obj/item/crowbar/red(src)
 	new /obj/item/weldingtool/mini(src)
