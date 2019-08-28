@@ -795,3 +795,14 @@
 	desc = "A blue mech pilot's suit. For the more reluctant mech pilots."
 	icon_state = "blue_mech_suit"
 	item_state = "blue_mech_suit"
+
+/obj/item/clothing/under/skirt/bimbo
+	name = "bimbo skirt"
+	desc = "A skirt in the style appropriate for a vivacious bimbo."
+	icon_state = "bimbo_skirt"
+	item_color = "bimbo_skirt"
+	item_state = "bimbo_skirt"
+	body_parts_covered = CHEST|GROIN
+	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = FALSE
+	custom_price = 600
