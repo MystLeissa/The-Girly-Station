@@ -9,7 +9,7 @@
 	icon_state = "sleeper"
 	state_open = TRUE
 	occupant_typecache = list(/mob/living/carbon/human) // turned into typecache in Initialize
-	circuit = /obj/item/circuitboard/machine/vr_sleeper
+	circuit = null
 	var/you_die_in_the_game_you_die_for_real = FALSE
 	var/datum/effect_system/spark_spread/sparks
 	var/mob/living/carbon/human/virtual_reality/vr_human
@@ -155,7 +155,7 @@
 	return data
 
 /obj/machinery/vr_sleeper/proc/get_vr_spawnpoint() //proc so it can be overridden for team games or something
-	return safepick(GLOB.vr_spawnpoints[vr_category])
+	return pick(GLOB.vr_spawnpoints[vr_category])
 
 /obj/machinery/vr_sleeper/proc/build_spawnpoints() // used to rebuild the list for admins if need be
 	GLOB.vr_spawnpoints = list()

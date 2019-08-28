@@ -28,10 +28,9 @@
 	name = "Mailchute"
 	desc = "A Mailbox in the intergalactic age!"
 	icon_state = "mailchute"
-	var/can_hold = /obj/item/paper
 
 /obj/machinery/disposal/mailchute/place_item_in_disposal(obj/item/I, mob/user)
-	if(istype(I)!=/obj/item/paper)
+	if(!istype(I,/obj/item/paper))
 		eject()
 		to_chat(user,"Sorry this bin can only handle paper.")
 		return
