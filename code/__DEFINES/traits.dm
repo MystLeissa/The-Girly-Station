@@ -143,6 +143,8 @@
 #define TRAIT_NO_BREATHING		"no-air-required"
 #define TRAIT_EXOSKELETON		"exoskeleton_suit"
 #define TRAIT_DITZ				"ditzygirl"
+#define TRAIT_TRAPPED			"trapped"
+
 //non-mob traits
 #define TRAIT_PARALYSIS			"paralysis" //Used for limb-based paralysis, where replacing the limb will fix it
 

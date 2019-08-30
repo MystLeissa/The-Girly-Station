@@ -251,3 +251,15 @@ effective or pretty fucking useless.
 	else
 		GLOB.active_jammers -= src
 	update_icon()
+
+/obj/structure/jammer
+	name = "static radio jammer"
+	desc = "Device used to disrupt nearby radio comms."
+	icon = 'icons/obj/device.dmi'
+	icon_state = "jammer"
+	var/active = TRUE
+	var/range = 24
+
+/obj/structure/jammer/Initialize()
+	. = ..()
+	GLOB.active_jammers |= src

@@ -78,6 +78,9 @@
 	button_icon_state = "logout"
 
 /datum/action/quit_vr/Trigger()
+	if (HAS_TRAIT(owner,TRAIT_TRAPPED))
+		to_chat(owner,"<span class='warning'>You are hardwired to the system you cannot logout.</span>")
+		return
 	if(..())
 		if(istype(owner, /mob/living/carbon/human/virtual_reality))
 			var/mob/living/carbon/human/virtual_reality/VR = owner

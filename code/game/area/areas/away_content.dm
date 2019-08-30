@@ -30,3 +30,10 @@ Unused icons for new areas are "awaycontent1" ~ "awaycontent30"
 	dynamic_lighting = DYNAMIC_LIGHTING_DISABLED
 	var/pacifist = TRUE // if when you enter this zone, you become a pacifist or not
 	var/death = FALSE // if when you enter this zone, you die
+
+/area/awaymission/vr/chatroom
+	name = "Virtual Reality Chat Room"
+	icon_state = "awaycontent1"
+	pacifist = FALSE
+	death = FALSE
+	noradio = FALSE
