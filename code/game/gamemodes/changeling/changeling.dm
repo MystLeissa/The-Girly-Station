@@ -13,7 +13,7 @@ GLOBAL_VAR(changeling_team_objective_type) //If this is not null, we hand our th
 	false_report_weight = 10
 	restricted_jobs = list("AI", "Cyborg")
 	protected_jobs = list("Security Officer", "Warden", "Detective", "Head of Security", "Captain")
-	required_players = 15
+	required_players = 2
 	required_enemies = 1
 	recommended_enemies = 4
 	reroll_friendly = 1

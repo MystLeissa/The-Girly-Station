@@ -16,6 +16,7 @@
 	var/vr_category = "default" //Specific category of spawn points to pick from
 	var/allow_creating_vr_humans = TRUE //So you can have vr_sleepers that always spawn you as a specific person or 1 life/chance vr games
 	var/only_current_user_can_interact = FALSE
+	var/trap_humans = FALSE
 
 /obj/machinery/vr_sleeper/Initialize()
 	. = ..()
@@ -176,6 +177,8 @@
 		vr_human.undershirt = H.undershirt
 		vr_human.underwear = H.underwear
 		vr_human.updateappearance(TRUE, TRUE, TRUE)
+		if(trap_humans)
+			ADD_TRAIT(vr_human,TRAIT_TRAPPED,VR_ZONE_TRAIT)
 		if(outfit)
 			var/datum/outfit/O = new outfit()
 			O.equip(vr_human)
