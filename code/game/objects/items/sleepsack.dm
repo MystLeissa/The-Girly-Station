@@ -20,10 +20,28 @@
 
 */
 /obj/structure/closet/body_bag/sleepsack/can_open(mob/living/user)
-	. = ..()
-	if(. && !user.loc==src)
+	if(user.loc==src)
 		to_chat(user, "<span class='notice'>You can't open it from inside...</span>")
 		return FALSE
+	return TRUE
+
+/obj/structure/closet/body_bag/sleepsack/open(mob/living/user)
+	if(opened || !can_open(user))
+		return
+	opened = TRUE
+	density = FALSE
+	dump_contents()
+	update_icon()
+	return 1
+
+/obj/structure/closet/body_bag/sleepsack/close(mob/living/user)
+	if(!opened || !can_close(user))
+		return FALSE
+	take_contents()
+	playsound(loc, close_sound, 15, 1, -3)
+	opened = FALSE
+	density = TRUE
+	update_icon()
 	return TRUE
 
 /obj/structure/closet/body_bag/sleepsack/update_icon()
@@ -32,28 +50,6 @@
 
 /obj/structure/closet/body_bag/sleepsack/container_resist(mob/living/user)
 	return
-
-/obj/structure/closet/body_bag/MouseDrop(over_object, src_location, over_location)
-	. = ..()
-	if(over_object == usr && Adjacent(usr) && (in_range(src, usr) || usr.contents.Find(src)))
-		if(!ishuman(usr))
-			return
-
-		if(opened)
-			to_chat(usr, "<span class='warning'>You wrestle with [src], but it won't fold while unzipped.</span>")
-			return
-		if(contents.len)
-			to_chat(usr, "<span class='warning'>There are too many things inside of [src] to fold it up!</span>")
-			return
-		visible_message("<span class='notice'>[usr] folds up [src].</span>")
-		var/obj/item/bodybag/B = foldedbag_instance || new foldedbag_path
-		for(var/atom/movable/A in contents)
-			if(isliving(A))
-				//ADD_TRAIT(A,TRAIT_NO_BREATHING,STATUS_EFFECT_TRAIT)
-				to_chat(A, "<span class='userdanger'>You're suddenly forced into a tiny space!</span>")
-			A.forceMove(B)
-		usr.put_in_hands(B)
-		qdel(src)
 
 /obj/item/bodybag/sleepsack
 	name = "sleep sack"
