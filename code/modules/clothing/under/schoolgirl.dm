@@ -8,6 +8,23 @@
 	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = FALSE
 
+/obj/item/clothing/under/schoolgirl/magical
+	name = "Magical Girl Uniform"
+	desc = "It's a magical girl uniform. It seems to be cute."
+	icon_state = "magicalgirl"
+	item_state = "magicalgirl"
+	item_color = "magicalgirl"
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
+	has_sensor = LOCKED_SENSORS
+	sensor_mode = SENSOR_COORDS
+	random_sensor = FALSE
+	locked_string = "is bonded to you."
+
+/obj/item/clothing/under/schoolgirl/magical/equipped(mob/user,slot)
+	var/mob/living/carbon/human/M = user
+	ADD_TRAIT(src,TRAIT_NODROP, CLOTHING_TRAIT)
+	to_chat(M,"<span class='notice'>The [src] bonds to your body forming an unbreakable connection.</span>")
+
 /obj/item/clothing/under/schoolgirl/red
 	name = "red schoolgirl uniform"
 	icon_state = "schoolgirlred"

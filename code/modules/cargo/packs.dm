@@ -2189,6 +2189,7 @@
 					/obj/item/clothing/under/schoolgirl/locked/red,
 					/obj/item/clothing/under/schoolgirl/locked/orange,
 					/obj/item/clothing/under/schoolgirl/locked/green,
+					/obj/item/clothing/under/schoolgirl/magical,
 					/obj/item/storage/lockbox/girlkey)
 	crate_name = "anime costume crate"
 	crate_type = /obj/structure/closet/crate/schoolgirl
