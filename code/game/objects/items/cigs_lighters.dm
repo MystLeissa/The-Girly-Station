@@ -89,8 +89,8 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	else
 		..()
 /obj/item/match/selflight
-	name = "Ignite Anywhere Match"
-	desc = "This match will ignite when struck on any surface"
+	name = "ignite anywhere match"
+	desc = "This match will ignite when struck on any surface."
 
 /obj/item/match/selflight/attack_self(mob/user)
 	if(user.is_holding_item_of_type(/obj/item/match/selflight))

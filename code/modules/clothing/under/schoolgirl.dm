@@ -9,7 +9,7 @@
 	can_adjust = FALSE
 
 /obj/item/clothing/under/schoolgirl/magical
-	name = "Magical Girl Uniform"
+	name = "magical girl uniform"
 	desc = "It's a magical girl uniform. It seems to be cute."
 	icon_state = "magicalgirl"
 	item_state = "magicalgirl"
