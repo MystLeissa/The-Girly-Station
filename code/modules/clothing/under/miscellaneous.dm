@@ -21,6 +21,16 @@
 	item_state = "ek"
 	item_color = "ek"
 	can_adjust = FALSE
+/*
+/obj/item/clothing/under/princess
+	name = "Princess Dress"
+	desc = "a Princess Party Dress - how lucky!"
+	icon = "/goon/icons/mob.dmi"
+	icon_state = "princess_obj"
+	item = "/goon/icons/mob.dmi"
+	item_state = "princess_wear"
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS
+*/
 
 /obj/item/clothing/under/scratch
 	name = "white suit"
