@@ -37,6 +37,7 @@
 					/obj/item/clothing/under/pinkdress = 2,
 					/obj/item/clothing/under/maid = 1,
 					/obj/item/clothing/under/janimaid = 1,
+					/obj/item/clothing/under/skirt/bimbo = 1,
 					/obj/item/clothing/under/schoolgirl/magical = 1)
 	contraband = list(/obj/item/firing_pin/girl = 3,
 					  /obj/item/radio/girl = 1)
