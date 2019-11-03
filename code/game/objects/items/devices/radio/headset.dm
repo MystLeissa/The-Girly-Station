@@ -30,6 +30,10 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	var/obj/item/stock_parts/cell/cell = null
 	dog_fashion = null
 
+/obj/item/radio/headset/superheroine
+	keyslot = new /obj/item/encryptionkey/headset_sec
+	keyslot2 = new /obj/item/encryptionkey/headset_med
+
 /obj/item/radio/headset/get_cell()
 	return cell
 

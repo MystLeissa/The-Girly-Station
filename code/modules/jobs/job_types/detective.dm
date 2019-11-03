@@ -34,7 +34,6 @@
 	minimal_access = list()
 	paycheck = PAYCHECK_ASSISTANT
 	paycheck_department = ACCOUNT_CIV
-	mind_traits = list()
 	selection_color = "#ffccdd"
 
 /datum/outfit/job/superheroine
@@ -43,10 +42,11 @@
 	uniform = /obj/item/clothing/under/schoolgirl/magical
 	shoes = /obj/item/clothing/shoes/winterboots
 	belt = /obj/item/melee/classic_baton
-	ears = /obj/item/clothing/ears/headphones
+	ears = /obj/item/radio/headset/superheroine
 	implants = list(/obj/item/implant/mindshield)
-	backpack_contents = list(/obj/item/storage/box/evidence=1,\
-		/obj/item/detective_scanner=1)
+	pda_slot = SLOT_L_STORE
+	r_pocket = /obj/item/detective_scanner
+	backpack_contents = list(/obj/item/storage/box/evidence=1)
 
 /datum/outfit/job/detective
 	name = "Detective"
