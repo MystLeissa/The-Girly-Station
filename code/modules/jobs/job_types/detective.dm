@@ -45,6 +45,7 @@
 	ears = /obj/item/radio/headset/superheroine
 	implants = list(/obj/item/implant/mindshield)
 	pda_slot = SLOT_L_STORE
+	l_pocket = /obj/item/pda/clear
 	r_pocket = /obj/item/detective_scanner
 	backpack_contents = list(/obj/item/storage/box/evidence=1)
 
