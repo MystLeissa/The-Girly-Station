@@ -4,7 +4,7 @@
 	icon_state = "schoolgirl"
 	item_state = "schoolgirl"
 	item_color = "schoolgirl"
-	body_parts_covered = CHEST|GROIN|ARMS
+	body_parts_covered = CHEST|GROIN
 	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = FALSE
 
@@ -22,8 +22,9 @@
 
 /obj/item/clothing/under/schoolgirl/magical/equipped(mob/user,slot)
 	var/mob/living/carbon/human/M = user
-	ADD_TRAIT(src,TRAIT_NODROP, CLOTHING_TRAIT)
-	to_chat(M,"<span class='notice'>The [src] bonds to your body forming an unbreakable connection.</span>")
+	if(slot == SLOT_W_UNIFORM)
+		ADD_TRAIT(src,TRAIT_NODROP, CLOTHING_TRAIT)
+		to_chat(M,"<span class='notice'>The [src] bonds to your body forming an unbreakable connection.</span>")
 
 /obj/item/clothing/under/schoolgirl/red
 	name = "red schoolgirl uniform"
