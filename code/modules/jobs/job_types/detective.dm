@@ -20,8 +20,33 @@
 	paycheck = PAYCHECK_MEDIUM
 	paycheck_department = ACCOUNT_SEC
 	mind_traits = list(TRAIT_LAW_ENFORCEMENT_METABOLISM)
-
 	display_order = JOB_DISPLAY_ORDER_DETECTIVE
+
+/datum/job/detective/superheroine
+	title = "Superheroine"
+	supervisors = "Truth, love and Justice (and space law)"
+	minimal_player_age = 2
+	exp_requirements = 120
+	exp_type = EXP_TYPE_CREW
+
+	outfit = /datum/outfit/job/superheroine
+	access = list(ACCESS_MAINT_TUNNELS)
+	minimal_access = list()
+	paycheck = PAYCHECK_ASSISTANT
+	paycheck_department = ACCOUNT_CIV
+	mind_traits = list()
+	selection_color = "#ffccdd"
+
+/datum/outfit/job/superheroine
+	name = "Superheroine"
+	jobtype = /datum/job/detective/superheroine
+	uniform = /obj/item/clothing/under/schoolgirl/magical
+	shoes = /obj/item/clothing/shoes/winterboots
+	belt = /obj/item/melee/classic_baton
+	ears = /obj/item/clothing/ears/headphones
+	implants = list(/obj/item/implant/mindshield)
+	backpack_contents = list(/obj/item/storage/box/evidence=1,\
+		/obj/item/detective_scanner=1)
 
 /datum/outfit/job/detective
 	name = "Detective"
