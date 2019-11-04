@@ -68,7 +68,13 @@
 	say_mod = "mews"
 	taste_sensitivity = 5 // combined nose + tongue, extra sensitive
 	modifies_speech = TRUE
-	languages_possible = list(/datum/language/common,/datum/language/aphasia)
+	var/static/list/languages_possible_neko = typecacheof(list(
+		/datum/language/common,
+		/datum/language/aphasia))
+
+/obj/item/organ/tongue/neko/Initialize(mapload)
+	. = ..()
+	languages_possible = languages_possible_neko
 
 /obj/item/organ/tongue/fly
 	name = "proboscis"
