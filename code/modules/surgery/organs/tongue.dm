@@ -62,6 +62,14 @@
 		message = lizard_hiSS.Replace(message, "SSS")
 	speech_args[SPEECH_MESSAGE] = message
 
+/obj/item/organ/tongue/neko
+	name = "cat tongue"
+	desc = "A thin and long muscle typically found in cat-like races."
+	say_mod = "mews"
+	taste_sensitivity = 5 // combined nose + tongue, extra sensitive
+	modifies_speech = TRUE
+	languages_possible = list(/datum/language/common,/datum/language/aphasia)
+
 /obj/item/organ/tongue/fly
 	name = "proboscis"
 	desc = "A freakish looking meat tube that apparently can take in liquids."
