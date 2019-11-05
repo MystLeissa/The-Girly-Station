@@ -28,13 +28,17 @@
 	minimal_player_age = 2
 	exp_requirements = 120
 	exp_type = EXP_TYPE_CREW
-
+	flag = ASSISTANT
+	department_flag = CIVILIAN
+	total_positions = 1
+	spawn_positions = 1
 	outfit = /datum/outfit/job/superheroine
 	access = list(ACCESS_MAINT_TUNNELS)
-	minimal_access = list()
+	minimal_access = list(ACCESS_MAINT_TUNNELS)
 	paycheck = PAYCHECK_ASSISTANT
 	paycheck_department = ACCOUNT_CIV
 	selection_color = "#ffccdd"
+	display_order = JOB_DISPLAY_ORDER_DEFAULT
 
 /datum/outfit/job/superheroine
 	name = "Superheroine"

@@ -63,6 +63,10 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	name = "Assistant"
 	icon_state = "Assistant"
 
+/obj/effect/landmark/start/superheroine
+	name = "Superheroine"
+	icon_state = "Assistant"
+
 /obj/effect/landmark/start/assistant/override
 	jobspawn_override = TRUE
 	delete_after_roundstart = FALSE
@@ -303,7 +307,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	GLOB.xeno_spawn += loc
 	return INITIALIZE_HINT_QDEL
 
-//objects with the stationloving component (nuke disk) respawn here. 
+//objects with the stationloving component (nuke disk) respawn here.
 //also blobs that have their spawn forcemoved (running out of time when picking their spawn spot), santa and respawning devils
 /obj/effect/landmark/blobstart
 	name = "blobstart"
