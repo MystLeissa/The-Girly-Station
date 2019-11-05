@@ -162,7 +162,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 		<table><tr><td style='width:25%'><b>Job</b></td><td style='width:25%'><b>Slots</b></td>
 		<td style='width:25%'><b>Open job</b></td><td style='width:25%'><b>Close job</b><td style='width:25%'><b>Prioritize</b></td></td></tr>"}
 		var/ID
-		if(scan && (ACCESS_CHANGE_IDS in scan.access) && !target_dept)
+		if((scan && (ACCESS_CHANGE_IDS in scan.access)) && !target_dept)
 			ID = 1
 		else
 			ID = 0
@@ -342,6 +342,10 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 			eject_id_scan(usr)
 		if ("auth")
 			if ((!( authenticated ) && (scan || issilicon(usr)) && (modify || mode)))
+				if (issilicon(usr))
+					authenticated = 2
+					playsound(src, 'sound/machines/terminal_on.ogg', 50, 0)
+					return
 				if (check_access(scan))
 					region_access = list()
 					head_subordinates = list()
