@@ -504,6 +504,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 				flick(icon_vend,src)
 			new R.product_path(get_turf(src))
 			R.amount--
+			return
 		if(onstation && ishuman(usr))
 			var/mob/living/carbon/human/H = usr
 			var/obj/item/card/id/C = H.get_idcard(TRUE)

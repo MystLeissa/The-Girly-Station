@@ -1138,6 +1138,9 @@
 		buckle_mob(M)
 
 /mob/living/silicon/robot/buckle_mob(mob/living/M, force = FALSE, check_loc = TRUE)
+	// Silicons can no longer buckle mobs. Use Pull you retards.
+	return
+	/*
 	if(!is_type_in_typecache(M, can_ride_typecache))
 		M.visible_message("<span class='warning'>[M] really can't seem to mount [src]...</span>")
 		return
@@ -1162,7 +1165,7 @@
 			M.visible_message("<span class='boldwarning'>[M] can't climb onto [src] because [M.p_their()] hands are full!</span>")
 		return
 	. = ..(M, force, check_loc)
-
+	*/
 /mob/living/silicon/robot/unbuckle_mob(mob/user, force=FALSE)
 	if(iscarbon(user))
 		var/datum/component/riding/riding_datum = GetComponent(/datum/component/riding)
