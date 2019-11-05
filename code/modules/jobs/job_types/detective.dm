@@ -49,6 +49,10 @@
 	r_pocket = /obj/item/detective_scanner
 	backpack_contents = list(/obj/item/storage/box/evidence=1)
 
+/datum/outfit/job/superheroine/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	H.gender = FEMALE //Girls Only
+
 /datum/outfit/job/detective
 	name = "Detective"
 	jobtype = /datum/job/detective

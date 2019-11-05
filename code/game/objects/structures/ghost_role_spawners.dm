@@ -338,7 +338,6 @@
 	assignedrole = "Neko Prisoner"
 
 /obj/effect/mob_spawn/human/nekogirl/special(mob/living/L)
-	L.gender = FEMALE
 	L.fully_replace_character_name(null,"Neko [pick("maid","youth","girl","child","doll","sister","kitten","loli","lolita")]")
 
 /datum/outfit/nekogirl
@@ -349,6 +348,10 @@
 	mask = /obj/item/clothing/mask/breath/medical
 	implants = list(/obj/item/implant/tracking)
 	id = /obj/item/card/id/neko
+
+/datum/outfit/nekogirl/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	H.gender = FEMALE //Girls Only
 
 /datum/outfit/hotelstaff
 	name = "Hotel Staff"
