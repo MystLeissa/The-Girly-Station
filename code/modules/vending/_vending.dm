@@ -78,6 +78,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	var/onstation = TRUE //if it doesn't originate from off-station during mapload, everything is free
 	var/list/canload_access_list
 	var/girl_locked = FALSE
+	var/no_silicons = FALSE
 	var/list/vending_machine_input = list()
 	var/input_display_header = "Custom Compartment"
 
@@ -358,6 +359,8 @@ GLOBAL_LIST_EMPTY(vending_products)
 	var/datum/bank_account/account
 	var/mob/living/carbon/human/H
 	var/obj/item/card/id/C
+	if(issilicon(user) && no_silicons)
+		return
 	if(ishuman(user))
 		H = user
 		C = H.get_idcard(TRUE)
@@ -401,7 +404,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 				price_listed = "$[R.custom_premium_price ? R.custom_premium_price : extra_price]"
 			dat += {"<tr><td><span class="vending32x32 [replacetext(replacetext("[R.product_path]", "/obj/item/", ""), "/", "-")]"></td>
 							<td style=\"width: 100%\"><b>[sanitize(R.name)]  ([price_listed])</b></td>"}
-			if(R.amount > 0 && ((C && C.registered_account && onstation) || (!onstation && isliving(user))))
+			if(R.amount > 0 && ((C && C.registered_account && onstation) || (!onstation && isliving(user)) || (onstation && issilicon(user))))
 				dat += "<td align='right'><b>[R.amount]&nbsp;</b><a href='byond://?src=[REF(src)];vend=[REF(R)]'>Vend</a></td>"
 			else
 				dat += "<td align='right'><span class='linkOff'>Not&nbsp;Available</span></td>"
@@ -481,7 +484,6 @@ GLOBAL_LIST_EMPTY(vending_products)
 			if(!extended_inventory)
 				vend_ready = 1
 				return
-
 		else if (!(R in record_to_check))
 			vend_ready = 1
 			message_admins("Vending machine exploit attempted by [ADMIN_LOOKUPFLW(usr)]!")
@@ -491,10 +493,20 @@ GLOBAL_LIST_EMPTY(vending_products)
 			flick(icon_deny,src)
 			vend_ready = 1
 			return
+		if(onstation && issilicon(usr))
+			if(girl_locked)
+				say("No Silicons!")
+				flick(icon_deny,src)
+				vend_ready = 1
+				return
+			use_power(5)
+			if(icon_vend) //Show the vending animation if needed
+				flick(icon_vend,src)
+			new R.product_path(get_turf(src))
+			R.amount--
 		if(onstation && ishuman(usr))
 			var/mob/living/carbon/human/H = usr
 			var/obj/item/card/id/C = H.get_idcard(TRUE)
-
 			if(!C)
 				say("No card found.")
 				flick(icon_deny,src)

@@ -30,4 +30,5 @@
 	resistance_flags = FIRE_PROOF
 	default_price = 50
 	extra_price = 100
+	no_silicons = TRUE
 	payment_department = ACCOUNT_SEC
