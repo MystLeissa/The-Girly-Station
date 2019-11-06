@@ -38,7 +38,8 @@
 					/obj/item/clothing/under/maid = 1,
 					/obj/item/clothing/under/janimaid = 1,
 					/obj/item/clothing/under/skirt/bimbo = 1,
-					/obj/item/clothing/under/schoolgirl/magical = 1)
+					/obj/item/clothing/under/schoolgirl/magical = 1,
+					/obj/item/storage/backpack/duffelbag/girly_conscript = 1)
 	contraband = list(/obj/item/firing_pin/girl = 3,
 					  /obj/item/radio/girl = 1)
 	girl_locked = FALSE
@@ -52,3 +53,12 @@
 /obj/item/vending_refill/girly
 	machine_name = "Girly Stuffs"
 	icon_state = "refill_girly"
+
+/obj/item/storage/backpack/duffelbag/girly_conscript
+	name = "Knock-off Mining Kit"
+	desc = "A kit containing (almost) everything a girl needs to support a shaft miner in the field."
+
+/obj/item/storage/backpack/duffelbag/girly_conscript/PopulateContents()
+	new /obj/item/card/mining_access_card(src)
+	new /obj/item/kitchen/knife/combat/survival
+	new /obj/item/firing_pin/girl

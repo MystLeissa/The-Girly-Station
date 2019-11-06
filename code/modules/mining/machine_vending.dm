@@ -267,4 +267,4 @@
 	new /obj/item/clothing/mask/gas/explorer(src)
 	new /obj/item/card/mining_access_card(src)
 	new /obj/item/implanter/miner(src)
-	new /obj/item/kitchen/knife/combat
+	new /obj/item/kitchen/knife/combat/survival
