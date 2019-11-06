@@ -4,18 +4,18 @@
 	icon_state = "girly"
 	product_slogans = "Forever Kawaii!!"
 	products = list(/obj/item/storage/lockbox/girlkey = 1,
-					/obj/item/clothing/under/schoolgirl/locked = 2,
-					/obj/item/clothing/under/schoolgirl/locked/blue = 2,
-					/obj/item/clothing/under/schoolgirl/locked/red = 2,
-					/obj/item/clothing/under/schoolgirl/locked/orange = 2,
-					/obj/item/clothing/under/schoolgirl/locked/green = 2,
-					/obj/item/firing_pin/girl = 5,
-					/obj/item/bodybag/sleepsack = 3,
+					/obj/item/clothing/under/schoolgirl/locked = 4,
+					/obj/item/clothing/under/schoolgirl/locked/blue = 4,
+					/obj/item/clothing/under/schoolgirl/locked/red = 4,
+					/obj/item/clothing/under/schoolgirl/locked/orange = 4,
+					/obj/item/clothing/under/schoolgirl/locked/green = 4,
+					/obj/item/firing_pin/girl = 4,
+					/obj/item/bodybag/sleepsack = 1,
 					/obj/item/sleepsack_new = 1,
-					/obj/item/radio/girl = 10,
-					/obj/item/clothing/accessory/sailorfuku = 2,
-					/obj/item/clothing/gloves/color/pink = 4,
-					/obj/item/clothing/under/schoolgirl/magical = 3)
+					/obj/item/radio/girl = 5,
+					/obj/item/clothing/accessory/sailorfuku = 4,
+					/obj/item/clothing/gloves/color/pink = 2,
+					/obj/item/clothing/under/schoolgirl/magical = 2)
 	contraband = list (/obj/item/encryptionkey/girl = 2)
 	refill_canister = /obj/item/vending_refill/girly
 	product_ads = "Pretty Princess Power!"
@@ -28,19 +28,19 @@
 	name = "Pink Stuffz"
 	desc = "A Knock-off Girl-thing dispensor..."
 	icon_state = "pgirly"
-	products = list(/obj/item/clothing/under/schoolgirl = 1,
-					/obj/item/clothing/under/schoolgirl/orange = 1,
-					/obj/item/clothing/under/schoolgirl/green = 1,
-					/obj/item/clothing/under/schoolgirl/orange = 1,
-					/obj/item/clothing/accessory/sailorfuku = 4,
-					/obj/item/clothing/gloves/color/pink = 3,
+	products = list(/obj/item/clothing/under/schoolgirl = 2,
+					/obj/item/clothing/under/schoolgirl/orange = 2,
+					/obj/item/clothing/under/schoolgirl/green = 2,
+					/obj/item/clothing/under/schoolgirl/orange = 2,
+					/obj/item/clothing/accessory/sailorfuku = 2,
+					/obj/item/clothing/gloves/color/pink = 1,
 					/obj/item/clothing/under/pinkdress = 2,
 					/obj/item/clothing/under/maid = 1,
 					/obj/item/clothing/under/janimaid = 1,
-					/obj/item/clothing/under/skirt/bimbo = 1,
+					/obj/item/clothing/under/skirt/bimbo = 2,
 					/obj/item/clothing/under/schoolgirl/magical = 1,
 					/obj/item/storage/backpack/duffelbag/girly_conscript = 1)
-	contraband = list(/obj/item/firing_pin/girl = 3,
+	contraband = list(/obj/item/firing_pin/girl = 1,
 					  /obj/item/radio/girl = 1)
 	girl_locked = FALSE
 	default_price = 100
