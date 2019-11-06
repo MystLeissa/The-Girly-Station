@@ -1,4 +1,4 @@
-Headnote From the Girly Station: Most of the following has not been edited to fit the new Girly station code - follow links at your own peril. I did however remove a couple of references to setup instructions that do not apply to this fork.
+Headnote From the Girly Station: Most of the following has not been edited to fit the new Girly station code - follow links at your own peril. I did however remove a couple of references to setup instructions that do not apply to this fork. The Readme File is not really updated by me. The entire reason The Girly Station exists is because /tg/station is somewhat problematic with their coding population.
 
 ## /tg/station codebase
 
