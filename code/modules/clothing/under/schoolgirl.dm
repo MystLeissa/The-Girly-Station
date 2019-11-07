@@ -27,11 +27,11 @@
 		to_chat(M,"<span class='notice'>The [src] bonds to your body forming an unbreakable connection.</span>")
 
 /obj/item/clothing/under/schoolgirl/magical/on_mob_death(mob/living/L, gibbed)
-	if(L==src)
+	if(L==src.loc)
 		REMOVE_TRAIT(src,TRAIT_NODROP, CLOTHING_TRAIT)
 
 /obj/item/clothing/under/schoolgirl/locked/on_mob_death(mob/living/L, gibbed)
-	if(L==src)
+	if(L==src.loc)
 		REMOVE_TRAIT(src,TRAIT_NODROP, CLOTHING_TRAIT)
 		REMOVE_TRAIT(wearer,TRAIT_DITZ, CLOTHING_TRAIT)
 		REMOVE_TRAIT(wearer,TRAIT_NOSUIT, CLOTHING_TRAIT)
