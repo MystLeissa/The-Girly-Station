@@ -60,5 +60,5 @@
 
 /obj/item/storage/backpack/duffelbag/girly_conscript/PopulateContents()
 	new /obj/item/card/mining_access_card(src)
-	new /obj/item/kitchen/knife/combat/survival
-	new /obj/item/firing_pin/girl
+	new /obj/item/kitchen/knife/combat/survival(src)
+	new /obj/item/firing_pin/girl(src)
