@@ -112,12 +112,12 @@
 
 /obj/item/card/girls/superheroine
 	name = "Super Card"
-	desc = "It is your morphalogical card"
+	desc = "It is your morphilogical card"
 
-/obj/item/card/girls/superheroine/attack_self(mob/user)
+obj/item/card/girls/superheroine/attack_self(mob/user)
 	if(!ishuman(user))
 		return
-	var/mob/living/carbon/human/H
+	var/mob/living/carbon/human/H = user
 	H.equipOutfit(/datum/outfit/job/superheroine,FALSE)
 	qdel(src)
 
