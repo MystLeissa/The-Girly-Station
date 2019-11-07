@@ -51,7 +51,7 @@
 	pda_slot = SLOT_L_STORE
 	l_pocket = /obj/item/pda/clear
 	r_pocket = /obj/item/detective_scanner
-	backpack_contents = list(/obj/item/storage/box/evidence=1)
+	backpack_contents = list(/obj/item/storage/box/evidence=1,/obj/item/shadowcloak=1)
 
 /datum/outfit/job/superheroine/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
