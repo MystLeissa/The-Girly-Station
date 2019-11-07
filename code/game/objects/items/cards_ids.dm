@@ -110,6 +110,17 @@
 	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
 
+/obj/item/card/girls/superheroine
+	name = "Super Card"
+	desc = "It is your morphalogical card"
+
+/obj/item/card/girls/superheroine/attack_self(mob/user)
+	if(!ishuman(user))
+		return
+	var/mob/living/carbon/human/H
+	H.equipOutfit(/datum/outfit/job/superheroine,FALSE)
+	qdel(src)
+
 /obj/item/card/minerpermit
 	name = "Miner's Permit"
 	desc = "You must equip it to fire stock Kinetic Accelerators."

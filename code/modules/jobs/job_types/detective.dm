@@ -32,7 +32,7 @@
 	department_flag = CIVILIAN
 	total_positions = 1
 	spawn_positions = 1
-	outfit = /datum/outfit/job/superheroine
+	outfit = /datum/outfit/job/superheroine/untransformed
 	access = list(ACCESS_MAINT_TUNNELS)
 	minimal_access = list(ACCESS_MAINT_TUNNELS)
 	paycheck = PAYCHECK_ASSISTANT
@@ -52,6 +52,15 @@
 	l_pocket = /obj/item/pda/clear
 	r_pocket = /obj/item/detective_scanner
 	backpack_contents = list(/obj/item/storage/box/evidence=1,/obj/item/shadowcloak=1)
+
+/datum/outfit/job/superheroine/untransformed
+	name = "Superheroine (Untransformed)"
+	jobtype = /datum/job/assistant
+	uniform = /obj/item/clothing/under/color/grey
+	r_pocket = /obj/item/card/girls/superheroine
+	l_pocket = /obj/item/pda/clear
+	ears = /obj/item/radio/headset
+
 
 /datum/outfit/job/superheroine/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
