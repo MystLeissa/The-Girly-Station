@@ -58,7 +58,6 @@
 		r_store,
 		w_uniform
 		)
-
 /mob/living/carbon/human/proc/get_head_slots()
 	return list(
 		head,
@@ -262,6 +261,9 @@
 
 	return O.equip(src, visualsOnly)
 
+/mob/living/carbon/human/proc/delete_equipment_keeping_held()
+	for(var/slot in get_all_slots())//order matters, dependant slots go first
+		qdel(slot)
 
 //delete all equipment without dropping anything
 /mob/living/carbon/human/proc/delete_equipment()

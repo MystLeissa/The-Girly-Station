@@ -53,6 +53,10 @@
 	r_pocket = /obj/item/detective_scanner
 	backpack_contents = list(/obj/item/storage/box/evidence=1,/obj/item/shadowcloak=1)
 
+/datum/outfit/job/superheroine/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	H.delete_equipment_keeping_held()
+	..()
+
 /datum/outfit/job/superheroine/untransformed
 	name = "Superheroine (Untransformed)"
 	jobtype = /datum/job/assistant
