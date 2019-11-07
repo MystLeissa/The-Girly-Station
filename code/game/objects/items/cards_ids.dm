@@ -119,7 +119,6 @@
 		return
 	var/mob/living/carbon/human/H = user
 	H.equipOutfit(/datum/outfit/job/superheroine,FALSE)
-	qdel(src)
 
 /obj/item/card/minerpermit
 	name = "Miner's Permit"

@@ -54,7 +54,7 @@
 	backpack_contents = list(/obj/item/storage/box/evidence=1,/obj/item/shadowcloak=1)
 
 /datum/outfit/job/superheroine/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	H.delete_equipment_keeping_held()
+	H.delete_equipment()
 	..()
 
 /datum/outfit/job/superheroine/untransformed
