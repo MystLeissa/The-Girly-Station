@@ -61,10 +61,14 @@
 	name = "Superheroine (Untransformed)"
 	jobtype = /datum/job/assistant
 	uniform = /obj/item/clothing/under/color/grey
+	belt = /obj/item/pda
+	shoes = /obj/item/clothing/shoes/sneakers/black
+	l_pocket = null
 	r_pocket = /obj/item/card/girls/superheroine
-	l_pocket = /obj/item/pda/clear
 	ears = /obj/item/radio/headset
-
+	backpack_contents = list()
+	implants = list()
+	pda_slot = SLOT_BELT
 
 /datum/outfit/job/superheroine/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
