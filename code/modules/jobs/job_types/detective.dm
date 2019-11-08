@@ -72,10 +72,17 @@
 	implants = list()
 	pda_slot = SLOT_BELT
 
-/datum/outfit/job/superheroine/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+/datum/outfit/job/superheroine/untransformed/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+    ..()
+
+/datum/outfit/job/superheroine/untransformed/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
-	H.fully_replace_character_name(H.name,"[pick("Station Girl","Pink Mask","Selfie Pro","Doll Woman","Dolly Drastic","Lynette Twist","Runtime Girl","Weaving Window","Smeared Painting")]")
+
+/datum/outfit/job/superheroine/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	var/old_name = H.real_name
+	H.fully_replace_character_name(old_name,"[pick("Station Girl","Pink Mask","Selfie Pro","Doll Woman","Dolly Drastic","Lynette Twist","Runtime Girl","Weaving Window","Smeared Painting")]")
 	H.gender = FEMALE //Girls Only
+	..()
 
 /datum/outfit/job/detective
 	name = "Detective"
