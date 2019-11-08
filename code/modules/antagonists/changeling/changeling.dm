@@ -353,12 +353,11 @@
 			B.vital = FALSE
 			B.decoy_override = TRUE
 	update_changeling_icons_added()
-	return
+	..()
 
 /datum/antagonist/changeling/remove_innate_effects()
 	update_changeling_icons_removed()
-	return
-
+	..()
 
 /datum/antagonist/changeling/greet()
 	if (you_are_greet)

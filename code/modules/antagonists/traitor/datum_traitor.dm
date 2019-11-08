@@ -51,13 +51,13 @@
 
 	// Randomise order, so we don't have contracts always in payout order.
 	to_generate = shuffle(to_generate)
-	
+
 	var/list/assigned_targets = list()
 	// Generate contracts, and find the lowest paying.
 	for (var/i = 1; i <= to_generate.len; i++)
 		var/datum/syndicate_contract/contract_to_add = new(owner, to_generate[i], assigned_targets)
 		var/contract_payout_total = contract_to_add.contract.payout + contract_to_add.contract.payout_bonus
-		
+
 		assigned_targets.Add(contract_to_add.contract.target)
 
 		if (!lowest_paying_contract || (contract_payout_total < lowest_paying_sum))
@@ -79,12 +79,14 @@
 			if(!silent)
 				to_chat(traitor_mob, "Your training has allowed you to overcome your clownish nature, allowing you to wield weapons without harming yourself.")
 			traitor_mob.dna.remove_mutation(CLOWNMUT)
+	..()
 
 /datum/antagonist/traitor/remove_innate_effects()
 	if(owner.assigned_role == "Clown")
 		var/mob/living/carbon/human/traitor_mob = owner.current
 		if(traitor_mob && istype(traitor_mob))
 			traitor_mob.dna.add_mutation(CLOWNMUT)
+	..()
 
 /datum/antagonist/traitor/on_removal()
 	//Remove malf powers.

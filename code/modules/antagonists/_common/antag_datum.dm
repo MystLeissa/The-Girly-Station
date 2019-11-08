@@ -53,10 +53,12 @@ GLOBAL_LIST_EMPTY(antagonists)
 
 //This handles the application of antag huds/special abilities
 /datum/antagonist/proc/apply_innate_effects(mob/living/mob_override)
+	ADD_TRAIT(mob_override,TRAIT_EVIL,TRAIT_GENERIC)
 	return
 
 //This handles the removal of antag huds/special abilities
 /datum/antagonist/proc/remove_innate_effects(mob/living/mob_override)
+	REMOVE_TRAIT(mob_override,TRAIT_EVIL, TRAIT_GENERIC)
 	return
 
 //Assign default team and creates one for one of a kind team antagonists

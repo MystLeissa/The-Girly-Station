@@ -12,10 +12,12 @@
 /datum/antagonist/fugitive/apply_innate_effects(mob/living/mob_override)
 	var/mob/living/M = mob_override || owner.current
 	update_fugitive_icons_added(M)
+	..()
 
 /datum/antagonist/fugitive/remove_innate_effects(mob/living/mob_override)
 	var/mob/living/M = mob_override || owner.current
 	update_fugitive_icons_removed(M)
+	..()
 
 /datum/antagonist/fugitive/on_gain()
 	forge_objectives()

@@ -44,6 +44,7 @@
 	name = "Superheroine"
 	jobtype = /datum/job/detective/superheroine
 	uniform = /obj/item/clothing/under/schoolgirl/magical
+	id = /obj/item/card/id/superheroine
 	shoes = /obj/item/clothing/shoes/winterboots
 	belt = /obj/item/melee/classic_baton
 	ears = /obj/item/radio/headset/superheroine
@@ -60,6 +61,7 @@
 /datum/outfit/job/superheroine/untransformed
 	name = "Superheroine (Untransformed)"
 	jobtype = /datum/job/assistant
+	id = /obj/item/card/id
 	uniform = /obj/item/clothing/under/color/grey
 	belt = /obj/item/pda
 	shoes = /obj/item/clothing/shoes/sneakers/black
@@ -72,6 +74,7 @@
 
 /datum/outfit/job/superheroine/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
+	H.fully_replace_character_name(H.name,"[pick("Station Girl","Pink Mask","Selfie Pro","Doll Woman","Dolly Drastic","Lynette Twist","Runtime Girl","Weaving Window","Smeared Painting")]")
 	H.gender = FEMALE //Girls Only
 
 /datum/outfit/job/detective

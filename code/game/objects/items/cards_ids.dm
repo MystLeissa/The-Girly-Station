@@ -118,6 +118,9 @@
 	if(!ishuman(user))
 		return
 	var/mob/living/carbon/human/H = user
+	if(HAS_TRAIT(H,TRAIT_EVIL))
+		to_chat(H,"<span class='warning'>Your evil heart cannot use this.</span>")
+		return
 	H.equipOutfit(/datum/outfit/job/superheroine,FALSE)
 
 /obj/item/card/minerpermit
@@ -144,6 +147,18 @@
 	var/access_txt // mapping aid
 	var/datum/bank_account/registered_account
 	var/obj/machinery/paystand/my_store
+
+/obj/item/card/id/superheroine
+	name = "Superheroine ID"
+
+/obj/item/card/id/superheroine/equipped(mob/user, slot)
+	ADD_TRAIT(src,TRAIT_NODROP, CLOTHING_TRAIT)
+
+/obj/item/card/id/superheroine/on_mob_death(mob/living/L, gibbed)
+	if(L==src.loc)
+		var/mob/living/carbon/human/H = L
+		new /obj/item/card/girls/superheroine(get_turf(src.loc))
+		H.delete_equipment()
 
 /obj/item/card/id/Initialize(mapload)
 	. = ..()
