@@ -32,7 +32,7 @@
 	department_flag = CIVILIAN
 	total_positions = 1
 	spawn_positions = 1
-	outfit = /datum/outfit/job/superheroine/untransformed
+	outfit = /datum/outfit/job/superheroine-untransformed
 	access = list(ACCESS_MAINT_TUNNELS)
 	minimal_access = list(ACCESS_MAINT_TUNNELS)
 	paycheck = PAYCHECK_ASSISTANT
@@ -58,7 +58,13 @@
 	H.delete_equipment()
 	..()
 
-/datum/outfit/job/superheroine/untransformed
+/datum/outfit/job/superheroine/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	var/old_name = H.real_name
+	H.fully_replace_character_name(old_name,"[pick("Station Girl","Pink Mask","Selfie Pro","Doll Woman","Dolly Drastic","Lynette Twist","Runtime Girl","Weaving Window","Smeared Painting")]")
+	H.gender = FEMALE //Girls Only
+	..()
+
+/datum/outfit/job/superheroine-untransformed
 	name = "Superheroine (Untransformed)"
 	jobtype = /datum/job/assistant
 	id = /obj/item/card/id
@@ -71,18 +77,6 @@
 	backpack_contents = list()
 	implants = list()
 	pda_slot = SLOT_BELT
-
-/datum/outfit/job/superheroine/untransformed/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-    ..()
-
-/datum/outfit/job/superheroine/untransformed/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-
-/datum/outfit/job/superheroine/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	var/old_name = H.real_name
-	H.fully_replace_character_name(old_name,"[pick("Station Girl","Pink Mask","Selfie Pro","Doll Woman","Dolly Drastic","Lynette Twist","Runtime Girl","Weaving Window","Smeared Painting")]")
-	H.gender = FEMALE //Girls Only
-	..()
 
 /datum/outfit/job/detective
 	name = "Detective"
