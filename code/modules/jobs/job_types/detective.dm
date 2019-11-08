@@ -32,7 +32,7 @@
 	department_flag = CIVILIAN
 	total_positions = 1
 	spawn_positions = 1
-	outfit = /datum/outfit/job/superheroine-untransformed
+	outfit = /datum/outfit/job/superheroineuntransformed
 	access = list(ACCESS_MAINT_TUNNELS)
 	minimal_access = list(ACCESS_MAINT_TUNNELS)
 	paycheck = PAYCHECK_ASSISTANT
@@ -64,7 +64,7 @@
 	H.gender = FEMALE //Girls Only
 	..()
 
-/datum/outfit/job/superheroine-untransformed
+/datum/outfit/job/superheroineuntransformed
 	name = "Superheroine (Untransformed)"
 	jobtype = /datum/job/assistant
 	id = /obj/item/card/id
@@ -106,7 +106,6 @@
 	var/obj/item/clothing/mask/cigarette/cig = H.wear_mask
 	if(istype(cig)) //Some species specfic changes can mess this up (plasmamen)
 		cig.light("")
-
 	if(visualsOnly)
 		return
 
