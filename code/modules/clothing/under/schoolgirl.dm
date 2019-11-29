@@ -117,7 +117,7 @@
 	ADD_TRAIT(user,TRAIT_DITZ, CLOTHING_TRAIT)
 	ADD_TRAIT(user,TRAIT_NOSUIT, CLOTHING_TRAIT)
 	locked = TRUE
-	to_chat(wearer,"<span class='notice'>The Lock Snaps Shut. It seems you will be wearing this for a quite while")
+	to_chat(wearer,"<span class='notice'>The Lock Snaps Shut. It seems you will be wearing this for a quite while.</span>")
 	if(M.wear_suit)
 		to_chat(wearer,"<span class='warning'>Your armor falls off...</span>")
 		M.dropItemToGround(M.wear_suit)
