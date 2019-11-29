@@ -77,6 +77,7 @@
 
 /obj/item/clothing/under/schoolgirl/locked/fake/lock(mob/user)
 	var/mob/living/carbon/human/M = user
+	ADD_TRAIT(src,TRAIT_NODROP,CLOTHING_TRAIT)
 	ADD_TRAIT(src,TRAIT_NO_SS, CLOTHING_TRAIT)
 	ADD_TRAIT(user,TRAIT_DITZ, CLOTHING_TRAIT)
 	ADD_TRAIT(user,TRAIT_NOSUIT, CLOTHING_TRAIT)
@@ -88,6 +89,7 @@
 		M.dropItemToGround(M.wear_suit)
 
 /obj/item/clothing/under/schoolgirl/locked/fake/dropped(mob/user)
+	REMOVE_TRAIT(src,TRAIT_NODROP, CLOTHING_TRAIT)
 	REMOVE_TRAIT(src,TRAIT_NO_SS,CLOTHING_TRAIT)
 	REMOVE_TRAIT(wearer,TRAIT_DITZ, CLOTHING_TRAIT)
 	REMOVE_TRAIT(wearer,TRAIT_NOSUIT, CLOTHING_TRAIT)
