@@ -71,6 +71,30 @@
 	var/mob/wearer = null
 	locked_string = "is locked."
 
+/obj/item/clothing/under/schoolgirl/locked/fake
+	custom_price = 25
+	locked_string = "is not removable by wearer"
+
+/obj/item/clothing/under/schoolgirl/locked/fake/lock(mob/user)
+	var/mob/living/carbon/human/M = user
+	ADD_TRAIT(src,TRAIT_NO_SS, CLOTHING_TRAIT)
+	ADD_TRAIT(user,TRAIT_DITZ, CLOTHING_TRAIT)
+	ADD_TRAIT(user,TRAIT_NOSUIT, CLOTHING_TRAIT)
+	locked = TRUE
+	perma = TRUE
+	to_chat(wearer,"<span class='notice'>The Lock Snaps Shut. It seems you will be wearing this until someone relieves you of it.")
+	if(M.wear_suit)
+		to_chat(wearer,"<span class='warning'>Your armor falls off...</span>")
+		M.dropItemToGround(M.wear_suit)
+
+/obj/item/clothing/under/schoolgirl/locked/fake/dropped(mob/user)
+	REMOVE_TRAIT(src,TRAIT_NO_SS,CLOTHING_TRAIT)
+	REMOVE_TRAIT(wearer,TRAIT_DITZ, CLOTHING_TRAIT)
+	REMOVE_TRAIT(wearer,TRAIT_NOSUIT, CLOTHING_TRAIT)
+	locked = FALSE
+	wearer = null
+	. = ..()
+
 /obj/item/clothing/under/schoolgirl/locked/equipped(mob/user, slot)
 	. = ..()
 	if(HAS_TRAIT(user,TRAIT_EXOSKELETON))
@@ -82,8 +106,8 @@
 		lock(user)
 
 /obj/item/clothing/under/schoolgirl/locked/dropped(mob/user)
-	. = ..()
 	wearer = null
+	. = ..()
 
 /obj/item/clothing/under/schoolgirl/locked/proc/lock(mob/user)
 	var/mob/living/carbon/human/M = user
