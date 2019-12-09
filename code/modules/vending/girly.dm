@@ -28,7 +28,8 @@
 	name = "Pink Stuffz"
 	desc = "A Knock-off Girl-thing dispensor..."
 	icon_state = "pgirly"
-	products = list(/obj/item/clothing/under/schoolgirl/locked/fake = 1,
+	products = list(
+					/* /obj/item/clothing/under/schoolgirl/locked/fake = 1, - Temporarily Disabled*/
 					/obj/item/clothing/under/schoolgirl = 2,
 					/obj/item/clothing/under/schoolgirl/orange = 2,
 					/obj/item/clothing/under/schoolgirl/green = 2,
