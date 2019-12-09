@@ -39,6 +39,7 @@
 	paycheck_department = ACCOUNT_CIV
 	selection_color = "#ffccdd"
 	display_order = JOB_DISPLAY_ORDER_DEFAULT
+	announce = FALSE
 
 /datum/outfit/job/superheroine
 	name = "Superheroine"
@@ -62,6 +63,7 @@
 	var/old_name = H.real_name
 	H.fully_replace_character_name(old_name,"[pick("Station Girl","Pink Mask","Selfie Pro","Doll Woman","Dolly Drastic","Lynette Twist","Runtime Girl","Weaving Window","Smeared Painting")]")
 	H.gender = FEMALE //Girls Only
+	ADD_TRAIT(H,TRAIT_SUPERHEROINE,JOB_TRAIT)
 	..()
 
 /datum/outfit/job/superheroineuntransformed

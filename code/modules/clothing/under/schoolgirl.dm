@@ -29,6 +29,10 @@
 /obj/item/clothing/under/schoolgirl/magical/on_mob_death(mob/living/L, gibbed)
 	if(L==src.loc)
 		REMOVE_TRAIT(src,TRAIT_NODROP, CLOTHING_TRAIT)
+		if(HAS_TRAIT(L,TRAIT_SUPERHEROINE))
+			var/mob/living/carbon/human/H = L
+			new /obj/item/card/girls/superheroine(get_turf(src.loc))
+			H.delete_equipment()
 
 /obj/item/clothing/under/schoolgirl/locked/on_mob_death(mob/living/L, gibbed)
 	if(L==src.loc)
