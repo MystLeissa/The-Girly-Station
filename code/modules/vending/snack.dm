@@ -20,6 +20,16 @@
 	payment_department = ACCOUNT_SRV
 	input_display_header = "Chef's Food Selection"
 
+/obj/machinery/vending/snack/empty
+	name = "Chef's Snacker"
+	desc = "This is the chef's personal best!"
+	product_slogans = "Get the Chef's Personal Best!"
+	product_ads = "The Chef makes food, you make the hunger!"
+	products = list()
+	contraband = list()
+	default_price = 50
+	icon_state = "snackorange"
+
 /obj/item/vending_refill/snack
 	machine_name = "Getmore Chocolate Corp"
 
