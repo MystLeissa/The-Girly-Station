@@ -39,7 +39,6 @@
 	paycheck_department = ACCOUNT_CIV
 	selection_color = "#ffccdd"
 	display_order = JOB_DISPLAY_ORDER_DEFAULT
-	announce = FALSE
 
 /datum/outfit/job/superheroine
 	name = "Superheroine"

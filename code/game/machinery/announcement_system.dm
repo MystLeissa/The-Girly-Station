@@ -75,6 +75,9 @@ GLOBAL_LIST_EMPTY(announcement_systems)
 
 /obj/machinery/announcement_system/proc/CompileText(str, user, rank) //replaces user-given variables with actual thingies.
 	str = replacetext(str, "%PERSON", "[user]")
+	if(rank=="Superheroine")
+		str = replacetext(str,"%RANK", "Assistant")
+		return str
 	str = replacetext(str, "%RANK", "[rank]")
 	return str
 
