@@ -52,9 +52,14 @@
 		if(1)
 			new /obj/item/radio/girl(src)
 			new /obj/item/firing_pin/girl(src)
+			new /obj/item/cartridge/virus/frame(src)
 		if(2)
 			new /obj/item/clothing/under/schoolgirl/locked(src)
 			new /obj/item/clothing/accessory/sailorfuku(src)
+			new /obj/item/clothing/shoes/winterboots(src)
+	if(prob(25))
+		new /obj/item/clothing/gloves/color/yellow(src)
+
 
 /obj/item/storage/toolbox/emergency/PopulateContents()
 	new /obj/item/crowbar/red(src)
