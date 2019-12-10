@@ -188,7 +188,7 @@
 	icon_state = "pink"
 	item_state = "pgloves"
 	item_color = "white"
-	siemens_coefficient = 1.25
+	siemens_coefficient = 0.5
 	permeability_coefficient = 0.03
 	transfer_prints = TRUE
 	resistance_flags = NONE

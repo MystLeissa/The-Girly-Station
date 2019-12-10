@@ -59,7 +59,8 @@
 			new /obj/item/clothing/shoes/winterboots(src)
 	if(prob(25))
 		new /obj/item/clothing/gloves/color/yellow(src)
-
+	else
+		new /obj/item/clothing/gloves/color/pink(src)
 
 /obj/item/storage/toolbox/emergency/PopulateContents()
 	new /obj/item/crowbar/red(src)
