@@ -61,6 +61,7 @@
 		new /obj/item/clothing/gloves/color/yellow(src)
 	else
 		new /obj/item/clothing/gloves/color/pink(src)
+	new /obj/item/jammer/knockoff(src)
 
 /obj/item/storage/toolbox/emergency/PopulateContents()
 	new /obj/item/crowbar/red(src)

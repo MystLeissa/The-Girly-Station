@@ -298,6 +298,13 @@
 	title = "Singularity and Tesla for Dummies"
 	page_link = "Singularity_and_Tesla_engines"
 
+/obj/item/book/manual/wiki/supermatter_matrix
+	name = "Supermatter Matrix"
+	icon_state ="supermatter"
+	author = "Engineering Encyclopedia"
+	title = "Supermatter Matrix"
+	page_link = "Guide_to_the_Supermatter"
+
 /obj/item/book/manual/wiki/security_space_law
 	name = "Space Law"
 	desc = "A set of Nanotrasen guidelines for keeping law and order on their space stations."

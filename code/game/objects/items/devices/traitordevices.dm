@@ -263,3 +263,8 @@ effective or pretty fucking useless.
 /obj/structure/jammer/Initialize()
 	. = ..()
 	GLOB.active_jammers |= src
+
+/obj/item/jammer/knockoff
+	name = "bargain radio jammer"
+	desc = "Device used to disrupt nearby radio communications. This knock-off bargain bin version has a very limited range"
+	range = 6
