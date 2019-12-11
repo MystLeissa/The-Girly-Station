@@ -467,7 +467,7 @@
 	hat_offset = -2
 
 /obj/item/robot_module/butler
-	name = "Service"
+	name = "service"
 	basic_modules = list(
 		/obj/item/assembly/flash/cyborg,
 		/obj/item/reagent_containers/food/drinks/drinkingglass,
@@ -490,6 +490,7 @@
 	ratvar_modules = list(/obj/item/clockwork/slab/cyborg/service,
 		/obj/item/borg/sight/xray/truesight_lens)
 	moduleselect_icon = "service"
+	cyborg_base_icon = "service"
 	special_light_key = "service"
 	hat_offset = 0
 
@@ -501,7 +502,7 @@
 
 /obj/item/robot_module/butler/be_transformed_to(obj/item/robot_module/old_module)
 	var/mob/living/silicon/robot/R = loc
-	var/borg_icon = input(R, "Select an icon!", "Robot Icon", null) as null|anything in list("Waitress", "Butler", "Tophat", "Kent", "Bro")
+	var/borg_icon = input(R, "Select an icon!", "Robot Icon", null) as null|anything in list("Waitress", "Butler", "Tophat", "Kent", "Bro","Maid")
 	if(!borg_icon)
 		return FALSE
 	switch(borg_icon)
@@ -519,6 +520,8 @@
 			cyborg_base_icon = "tophat"
 			special_light_key = null
 			hat_offset = INFINITY //He is already wearing a hat
+		if("Maid")
+			cyborg_base_icon = "maid_f"
 	return ..()
 
 /obj/item/robot_module/miner

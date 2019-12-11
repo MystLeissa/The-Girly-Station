@@ -46,6 +46,7 @@
 			<BR>
 			<A href='?src=[REF(src)];[HrefToken()];secrets=virus'>Trigger a Virus Outbreak</A><BR>
 			<A href='?src=[REF(src)];[HrefToken()];secrets=monkey'>Turn all humans into monkeys</A><BR>
+			<A href='?src=[REF(src)];[HrefToken()];secrets=maid'>Maid My Day</A><BR>
 			<A href='?src=[REF(src)];[HrefToken()];secrets=anime'>Make Anime</A><BR>
 			<A href='?src=[REF(src)];[HrefToken()];secrets=allspecies'>Change the species of all humans</A><BR>
 			<A href='?src=[REF(src)];[HrefToken()];secrets=power'>Make all areas powered</A><BR>
@@ -380,6 +381,19 @@
 			message_admins("[key_name_admin(usr)] broke all lights")
 			for(var/obj/machinery/light/L in GLOB.machines)
 				L.break_light_tube()
+
+		if("maid")
+			if(!check_rights(R_FUN))
+				return
+			for(var/mob/living/carbon/human/H in GLOB.carbon_list)
+				var/maiduniform = pick(/obj/item/clothing/under/maid,/obj/item/clothing/under/janimaid)
+				var/obj/item/clothing/under/I = new maiduniform
+				var/olduniform = H.w_uniform
+				H.temporarilyRemoveItemFromInventory(H.w_uniform, TRUE, FALSE)
+				H.equip_to_slot_or_del(I, SLOT_W_UNIFORM)
+				qdel(olduniform)
+				ADD_TRAIT(I, TRAIT_NODROP, ADMIN_TRAIT)
+				message_admins("[key_name_admin(usr)] maid the day.")
 
 		if("anime")
 			if(!check_rights(R_FUN))
