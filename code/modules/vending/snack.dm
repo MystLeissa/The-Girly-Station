@@ -60,7 +60,7 @@
 
 /obj/machinery/vending/snack/random/Initialize()
 	..()
-	var/T = pick(subtypesof(/obj/machinery/vending/snack) - /obj/machinery/vending/snack/random)
+	var/T = pick(subtypesof(/obj/machinery/vending/snack) - /obj/machinery/vending/snack/random - /obj/machinery/vending/snack/empty)
 	new T(loc)
 	return INITIALIZE_HINT_QDEL
 
