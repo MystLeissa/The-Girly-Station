@@ -82,6 +82,7 @@
 	. = ..()
 	var/obj/item/clothing/accessory/sailorfuku/A = new (src)
 	attach_accessory(A)
+
 /obj/item/clothing/under/schoolgirl/locked/traitor/attackby(obj/item/I, mob/user, params)
 	if(user.is_holding_item_of_type(/obj/item/card/emag))
 		unlock()
