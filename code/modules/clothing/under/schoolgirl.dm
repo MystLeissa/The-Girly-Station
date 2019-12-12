@@ -75,6 +75,19 @@
 	var/mob/wearer = null
 	locked_string = "is locked."
 
+/obj/item/clothing/under/schoolgirl/locked/traitor
+	pocket_storage_component_path = null
+
+/obj/item/clothing/under/schoolgirl/locked/traitor/Initialize()
+	. = ..()
+	var/obj/item/clothing/accessory/sailorfuku/A = new (src)
+	attach_accessory(A)
+/obj/item/clothing/under/schoolgirl/locked/traitor/attackby(obj/item/I, mob/user, params)
+	if(user.is_holding_item_of_type(/obj/item/card/emag))
+		unlock()
+		return
+	to_chat(user,"It's locked.")
+
 /obj/item/clothing/under/schoolgirl/locked/fake
 	custom_price = 25
 	locked_string = "is not removable by wearer"
