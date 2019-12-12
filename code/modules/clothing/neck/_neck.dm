@@ -215,6 +215,8 @@
 		ADD_TRAIT(src,TRAIT_NODROP,CLOTHING_TRAIT)
 		ADD_TRAIT(user,TRAIT_MONKEYLIKE,CLOTHING_TRAIT)
 		ADD_TRAIT(user,TRAIT_DUMB,CLOTHING_TRAIT)
+		ADD_TRAIT(user,TRAIT_PACIFISM,CLOTHING_TRAIT)
+		ADD_TRAIT(user,TRAIT_TRAPPED,CLOTHING_TRAIT)
 		to_chat(user,"<span class='danger'>You feel pretty helpless...</span>")
 
 /obj/item/clothing/neck/petcollar/attack_self(mob/user)

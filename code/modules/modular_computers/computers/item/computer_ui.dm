@@ -1,5 +1,8 @@
 /obj/item/modular_computer/attack_self(mob/user)
 	. = ..()
+	if(HAS_TRAIT(user,TRAIT_DUMB))
+		to_chat(user,"<span class='warning'>You can't operate that</span>")
+		return
 	ui_interact(user)
 
 // Operates TGUI
