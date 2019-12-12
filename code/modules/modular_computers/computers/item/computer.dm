@@ -213,6 +213,10 @@
 
 // On-click handling. Turns on the computer if it's off and opens the GUI.
 /obj/item/modular_computer/interact(mob/user)
+	if(HAS_TRAIT(user,TRAIT_DUMB))
+		if(enabled)
+			src.shutdown_computer()
+		return
 	if(enabled)
 		ui_interact(user)
 	else

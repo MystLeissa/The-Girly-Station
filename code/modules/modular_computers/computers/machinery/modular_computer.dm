@@ -102,6 +102,9 @@
 //ATTACK HAND IGNORING PARENT RETURN VALUE
 // On-click handling. Turns on the computer if it's off and opens the GUI.
 /obj/machinery/modular_computer/interact(mob/user)
+	if(HAS_TRAIT(user,TRAIT_DUMB))
+		to_chat(user,"<span class='warning'>You can't operate that</span>")
+		return
 	if(cpu)
 		return cpu.interact(user) // CPU is an item, that's why we route attack_hand to attack_self
 	else
