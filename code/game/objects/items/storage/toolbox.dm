@@ -58,7 +58,7 @@
 			new /obj/item/clothing/under/schoolgirl/locked/traitor(src)
 			new /obj/item/clothing/shoes/winterboots(src)
 			new /obj/item/clothing/neck/petcollar_human(src)
-			new obj/item/pen/sleepy(src)
+			new /obj/item/pen/sleepy(src)
 	if(prob(25))
 		new /obj/item/clothing/gloves/color/yellow(src)
 	else
