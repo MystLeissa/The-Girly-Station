@@ -146,6 +146,7 @@
 /datum/outfit/lavaland_syndicate/comms
 	name = "Lavaland Syndicate Comms Agent"
 	r_hand = /obj/item/melee/transforming/energy/sword/saber
+	l_hand = /obj/item/paper/syndicate_codes
 	mask = /obj/item/clothing/mask/chameleon/gps
 	suit = /obj/item/clothing/suit/armor/vest
 
@@ -155,3 +156,12 @@
 
 /obj/item/gps/internal/lavaland_syndicate_base
 	gpstag = "Encrypted Signal"
+
+/obj/item/paper/syndicate_codes
+	name = "Code Book"
+	var/phrases = jointext(GLOB.syndicate_code_phrase, ", ")
+	var/responses = jointext(GLOB.syndicate_code_response, ", ")
+	info = "Code Sheet<br>\
+	Phrases are <span class='blue'>[phrases]</span><br>\
+	Responses are <span class='red'>[responses]</span><br>\
+	Burn this note into your memory, then destroy this note."

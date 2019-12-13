@@ -14,7 +14,19 @@
 	. = ..()
 	install_component(new /obj/item/computer_hardware/processor_unit/small)
 	install_component(new /obj/item/computer_hardware/battery(src, /obj/item/stock_parts/cell/computer/micro))
-	install_component(new /obj/item/computer_hardware/hard_drive/small)
+	var/obj/item/computer_hardware/hard_drive/micro/hard_drive = new
+	hard_drive_store_file(new /datum/computer_file/program/chatclient)
+	install_component(hard_drive)
+	install_component(new /obj/item/computer_hardware/network_card/advanced)
+
+// Sold in the lavaland Syndichem
+/obj/item/modular_computer/tablet/preset/syndi/Initialize()
+	. = ..()
+	install_component(new /obj/item/computer_hardware/processor_unit/small)
+	install_component(new /obj/item/computer_hardware/battery(src, /obj/item/stock_parts/cell/computer/nano))
+	var/obj/item/computer_hardware/hard_drive/micro/hard_drive = new
+	hard_drive_store_file(new /datum/computer_file/program/chatclient)
+	install_component(hard_drive)
 	install_component(new /obj/item/computer_hardware/network_card/advanced)
 
 // Alternative version, an average one, for higher ranked positions mostly
