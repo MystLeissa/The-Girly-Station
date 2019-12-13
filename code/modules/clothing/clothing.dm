@@ -39,7 +39,7 @@
 	// THESE OVERRIDE THE HIDEHAIR FLAGS
 	var/dynamic_hair_suffix = ""//head > mask for head hair
 	var/dynamic_fhair_suffix = ""//mask > head for facial hair
-
+	var/no_changes = FALSE
 
 /obj/item/clothing/Initialize()
 	if(CHECK_BITFIELD(clothing_flags, VOICEBOX_TOGGLABLE))
@@ -204,6 +204,9 @@ BLIND     // can't see anything
 	if(src.has_sensor <= NO_SENSORS)
 		to_chat(usr, "This suit does not have any sensors.")
 		return 0
+	if(src.no_changes)
+		to_chat(usr, "You cannot change [src].")
+		return 0
 
 	var/list/modes = list("Off", "Binary vitals", "Exact vitals", "Tracking beacon")
 	var/switchMode = input("Select a sensor mode:", "Suit Sensor Mode", modes[sensor_mode + 1]) in modes
@@ -235,6 +238,9 @@ BLIND     // can't see anything
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		return
 	else
+		if(src.no_changes)
+			to_chat(usr,"<span class='notice'>You cannot change [src].</span>")
+			return
 		if(attached_accessory)
 			remove_accessory(user)
 		else
@@ -248,6 +254,9 @@ BLIND     // can't see anything
 
 /obj/item/clothing/under/proc/rolldown()
 	if(!can_use(usr))
+		return
+	if(src.no_changes)
+		to_chat(usr,"<span class='notice'>You cannot change [src].</span>")
 		return
 	if(!can_adjust)
 		to_chat(usr, "<span class='warning'>You cannot wear this suit any differently!</span>")
@@ -279,7 +288,9 @@ BLIND     // can't see anything
 /obj/item/clothing/proc/weldingvisortoggle(mob/user) //proc to toggle welding visors on helmets, masks, goggles, etc.
 	if(!can_use(user))
 		return FALSE
-
+	if(no_changes)
+		to_chat(usr,"<span class='notice'>You cannot change [src].</span>")
+		return FALSE
 	visor_toggling()
 
 	to_chat(user, "<span class='notice'>You adjust \the [src] [up ? "up" : "down"].</span>")

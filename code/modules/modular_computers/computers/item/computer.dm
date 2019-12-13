@@ -214,6 +214,7 @@
 // On-click handling. Turns on the computer if it's off and opens the GUI.
 /obj/item/modular_computer/interact(mob/user)
 	if(HAS_TRAIT(user,TRAIT_DUMB))
+		to_chat(user,"You are too dumb to use it.")
 		if(enabled)
 			src.shutdown_computer()
 		return

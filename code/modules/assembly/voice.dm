@@ -2,7 +2,24 @@
 #define EXCLUSIVE_MODE 2
 #define RECOGNIZER_MODE 3
 #define VOICE_SENSOR_MODE 4
+/* Partially Implemented Finger Print Scanner - Not Active
+/obj/item/assembly/voice/fingerprint
+	name = "fingerprint scanner"
+	desc = "Used to check fingerprints for matches"
+	icon_state = "voice"
+	voice_item = FALSE
+	var/recorded_prints
 
+/obj/item/assembly/voice/fingerprint/attack_self(mob/user)
+	atom/A = user
+	if(ishuman(A))
+
+			var/mob/living/carbon/human/H = A
+			if(!H.gloves)
+				fingerprints += md5(H.dna.uni_identity)
+	recorded_prints = fingerprints
+	to_chat(user,"Recorded Finger Print Pattern: "+recorded_prints)
+*/
 /obj/item/assembly/voice
 	name = "voice analyzer"
 	desc = "A small electronic device able to record a voice sample, and send a signal when that sample is repeated."
@@ -14,6 +31,7 @@
 	verb_ask = "beeps"
 	verb_exclaim = "beeps"
 	var/listening = FALSE
+	var/voice_item = TRUE
 	var/recorded = "" //the activation message
 	var/mode = 1
 	var/static/list/modes = list("inclusive",
@@ -23,10 +41,13 @@
 
 /obj/item/assembly/voice/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Use a multitool to swap between \"inclusive\", \"exclusive\", \"recognizer\", and \"voice sensor\" mode.</span>"
+	if(voice_item)
+		. += "<span class='notice'>Use a multitool to swap between \"inclusive\", \"exclusive\", \"recognizer\", and \"voice sensor\" mode.</span>"
 
 /obj/item/assembly/voice/Hear(message, atom/movable/speaker, message_language, raw_message, radio_freq, list/spans, message_mode)
 	. = ..()
+	if(!voice_item)
+		return
 	if(speaker == src)
 		return
 
@@ -37,6 +58,8 @@
 			addtimer(CALLBACK(src, .proc/pulse, 0), 10)
 
 /obj/item/assembly/voice/proc/record_speech(atom/movable/speaker, raw_message, datum/language/message_language)
+	if(!voice_item)
+		return
 	switch(mode)
 		if(INCLUSIVE_MODE)
 			recorded = raw_message
@@ -56,6 +79,8 @@
 
 /obj/item/assembly/voice/proc/check_activation(atom/movable/speaker, raw_message)
 	. = FALSE
+	if(!voice_item)
+		return FALSE
 	switch(mode)
 		if(INCLUSIVE_MODE)
 			if(findtext(raw_message, recorded))
@@ -71,6 +96,8 @@
 				. = TRUE
 
 /obj/item/assembly/voice/multitool_act(mob/living/user, obj/item/I)
+	if(!voice_item)
+		return
 	mode %= modes.len
 	mode++
 	to_chat(user, "<span class='notice'>You set [src] into [modes[mode]] mode.</span>")
@@ -87,12 +114,14 @@
 
 /obj/item/assembly/voice/attack_self(mob/user)
 	if(!user)
-		return FALSE
+		return
 	activate()
 	return TRUE
 
 /obj/item/assembly/voice/toggle_secure()
 	. = ..()
+	if(!voice_item)
+		return
 	listening = FALSE
 
 #undef INCLUSIVE_MODE

@@ -77,6 +77,7 @@
 
 /obj/item/clothing/under/schoolgirl/locked/traitor
 	pocket_storage_component_path = null
+	no_changes = TRUE
 
 /obj/item/clothing/under/schoolgirl/locked/traitor/Initialize()
 	. = ..()
