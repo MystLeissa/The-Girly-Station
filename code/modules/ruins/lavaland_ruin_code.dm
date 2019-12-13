@@ -159,9 +159,13 @@
 
 /obj/item/paper/syndicate_codes
 	name = "Code Book"
+
+/obj/item/paper/syndicate_codes/Initialize()
+	..()
 	var/phrases = jointext(GLOB.syndicate_code_phrase, ", ")
 	var/responses = jointext(GLOB.syndicate_code_response, ", ")
 	info = "Code Sheet<br>\
 	Phrases are <span class='blue'>[phrases]</span><br>\
 	Responses are <span class='red'>[responses]</span><br>\
 	Burn this note into your memory, then destroy this note."
+
