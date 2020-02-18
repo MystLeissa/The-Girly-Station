@@ -117,6 +117,9 @@
 /datum/language_holder/construct
 	languages = list(/datum/language/common, /datum/language/narsie)
 
+/datum/language_holder/neko
+	languages = list(/datum/language/common, /datum/language/neko)
+
 /datum/language_holder/drone
 	languages = list(/datum/language/common, /datum/language/drone, /datum/language/machine)
 	only_speaks_language = /datum/language/drone
