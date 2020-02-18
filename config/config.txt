@@ -60,16 +60,16 @@ ADMIN_LEGACY_SYSTEM
 #USE_ACCOUNT_AGE_FOR_JOBS
 
 ## Unhash this to track player playtime in the database. Requires database to be enabled.
-#USE_EXP_TRACKING
+USE_EXP_TRACKING
 ## Unhash this to enable playtime requirements for head jobs.
-#USE_EXP_RESTRICTIONS_HEADS
+USE_EXP_RESTRICTIONS_HEADS
 ## Unhash this to override head jobs' playtime requirements with this number of hours.
 ## Leave this commented out to use the values defined in the job datums. Values in the datums are stored as minutes.
-#USE_EXP_RESTRICTIONS_HEADS_HOURS 3
+USE_EXP_RESTRICTIONS_HEADS_HOURS 3
 ## Unhash this to change head jobs' playtime requirements so that they're based on department playtime, rather than crew playtime.
-#USE_EXP_RESTRICTIONS_HEADS_DEPARTMENT
+USE_EXP_RESTRICTIONS_HEADS_DEPARTMENT
 ## Unhash this to enable playtime requirements for certain non-head jobs, like Engineer and Scientist.
-#USE_EXP_RESTRICTIONS_OTHER
+USE_EXP_RESTRICTIONS_OTHER
 ## Allows admins to bypass job playtime requirements.
 #USE_EXP_RESTRICTIONS_ADMIN_BYPASS
 
@@ -129,7 +129,7 @@ LOG_MANIFEST
 # LOG_TWITTER
 
 ## Enable logging pictures
-# LOG_PICTURES
+LOG_PICTURES
 
 ## log mecha actions
 # LOG_MECHA
@@ -186,7 +186,7 @@ VOTE_PERIOD 600
 NORESPAWN
 
 ## disables calling del(src) on newmobs if they logout before spawnin in
-# DONT_DEL_NEWMOB
+#DONT_DEL_NEWMOB
 
 ## set a hosted by name for unix platforms
 HOSTEDBY Yournamehere
@@ -394,7 +394,7 @@ AUTOADMIN_RANK Game Master
 
 
 ## Uncomment to automatically deadmin players when the game starts.
-#AUTO_DEADMIN_PLAYERS
+AUTO_DEADMIN_PLAYERS
 
 ## Uncomment to automatically deadmin antagonists when they gain the role.
 #AUTO_DEADMIN_ANTAGONISTS
