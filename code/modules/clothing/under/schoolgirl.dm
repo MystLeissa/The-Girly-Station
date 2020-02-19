@@ -19,6 +19,7 @@
 	sensor_mode = SENSOR_COORDS
 	random_sensor = FALSE
 	body_parts_covered = 0
+	clothing_flags = SHOWEROKAY
 	locked_string = "is bonded to you."
 	var/obj/item/clothing/mask/mask_type = /obj/item/clothing/mask/superheroine
 	var/obj/item/clothing/mask/superheroine/facemask = null
@@ -78,12 +79,14 @@
 		facemask.forceMove(src)
 
 /obj/item/clothing/mask/superheroine
-	name = "Super Heroihne Mask"
+	name = "Super Heroine Mask"
 	desc = "It's a magical girl mask!"
 	icon_state = "heroinemask"
 	item_state = "heroinemask"
 	item_color = "heroinemask"
 	var/obj/item/clothing/under/schoolgirl/magical/uniform = null
+	flags_cover = MASKCOVERSEYES
+	flags_inv = HIDEFACE
 
 /obj/item/clothing/mask/superheroine/Destroy()
 	uniform = null
@@ -148,6 +151,7 @@
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	has_sensor = NO_SENSORS
 	sensor_mode = SENSOR_COORDS
+	clothing_flags = SHOWEROKAY
 	random_sensor = FALSE
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/schoolgirl
 	custom_price = 100
