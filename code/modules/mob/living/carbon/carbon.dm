@@ -67,6 +67,8 @@
 			if((S.self_operable || user != src) && (user.a_intent == INTENT_HELP || user.a_intent == INTENT_DISARM))
 				if(S.next_step(user,user.a_intent))
 					return 1
+	if(istype(I,/obj/item/paper) && user != src && user.a_intent == INTENT_HELP)
+		I.examine(src)
 	return ..()
 
 /mob/living/carbon/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
