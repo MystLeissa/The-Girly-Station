@@ -39,6 +39,7 @@ GLOBAL_LIST_EMPTY(city_of_cogs_spawns) //Anyone entering the City of Cogs spawns
 GLOBAL_LIST_EMPTY(ruin_landmarks)
 GLOBAL_LIST_EMPTY(lavaland_holes_one) // Level 1 Holes
 GLOBAL_LIST_EMPTY(lavaland_holes_two) // Level 2 Holes
+GLOBAL_LIST_EMPTY(pink_space_portals)
 
 	//away missions
 GLOBAL_LIST_EMPTY(awaydestinations)	//a list of landmarks that the warpgate can take you to

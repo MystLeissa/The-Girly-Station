@@ -146,6 +146,9 @@
 #define TRAIT_TRAPPED			"trapped"
 #define TRAIT_EVIL				"evil-ones-may-never-touch"
 #define TRAIT_SUPERHEROINE		"shes-the-girl"
+#define TRAIT_NO_BLUESPACE_TP	"anti-bluespace"
+#define TRAIT_PINKSPACE_TP		"pinkspace-not-bluespace"
+
 //non-mob traits
 #define TRAIT_PARALYSIS			"paralysis" //Used for limb-based paralysis, where replacing the limb will fix it
 

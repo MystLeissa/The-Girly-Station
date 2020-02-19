@@ -25,7 +25,6 @@
 	startWhen = 7
 	endWhen = 999
 	announceWhen = 1
-
 	var/list/boss_spawn = list()
 	var/list/boss_types = list() //only configure this if you have hostiles
 	var/number_of_bosses

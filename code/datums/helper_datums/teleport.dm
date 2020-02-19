@@ -20,7 +20,6 @@
 	if(delete_atoms[teleatom.type])
 		qdel(teleatom)
 		return FALSE
-
 	// argument handling
 	// if the precision is not specified, default to 0, but apply BoH penalties
 	if (isnull(precision))
@@ -28,6 +27,12 @@
 
 	switch(channel)
 		if(TELEPORT_CHANNEL_BLUESPACE)
+			if(HAS_TRAIT(teleatom,TRAIT_PINKSPACE_TP))
+				var/possible_dests = GLOB.pink_space_portals
+				destination = pick(possible_dests)
+				precision = 0
+			if(HAS_TRAIT(teleatom,TRAIT_NO_BLUESPACE_TP))
+				return FALSE
 			if(istype(teleatom, /obj/item/storage/backpack/holding))
 				precision = rand(1,100)
 

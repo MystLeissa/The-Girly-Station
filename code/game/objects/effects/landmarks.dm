@@ -338,6 +338,15 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	GLOB.prisonwarp += loc
 	return INITIALIZE_HINT_QDEL
 
+/obj/effect/landmark/pinkspace
+	name = "pinkspace"
+	icon_state = "prisonwarp"
+
+/obj/effect/landmark/prisonwarp/Initialize(mapload)
+	..()
+	GLOB.pink_space_portals += loc
+	return INITIALIZE_HINT_QDEL
+
 /obj/effect/landmark/ert_spawn
 	name = "Emergencyresponseteam"
 	icon_state = "ert_spawn"
