@@ -196,6 +196,9 @@
 /datum/action/item_action/toggle_hood
 	name = "Toggle Hood"
 
+/datum/action/item_action/toggle_mask
+	name = "Toggle Mask"
+
 /datum/action/item_action/toggle_firemode
 	name = "Toggle Firemode"
 

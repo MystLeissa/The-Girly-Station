@@ -20,6 +20,86 @@
 	random_sensor = FALSE
 	body_parts_covered = 0
 	locked_string = "is bonded to you."
+	var/obj/item/clothing/mask/mask_type = /obj/item/clothing/mask/superheroine
+	var/obj/item/clothing/mask/superheroine/facemask = null
+	var/mask_toggled = FALSE
+	actions_types = list(/datum/action/item_action/toggle_mask)
+
+/obj/item/clothing/under/schoolgirl/magical/proc/MakeMask()
+	if(!facemask)
+		var/obj/item/clothing/mask/superheroine/W = new mask_type(src)
+		W.uniform = src
+		facemask = W
+
+/obj/item/clothing/under/schoolgirl/magical/item_action_slot_check(slot, mob/user)
+	if(slot == SLOT_W_UNIFORM)
+		return 1
+
+
+/obj/item/clothing/under/schoolgirl/magical/Initialize(mapload)
+	..()
+	MakeMask()
+
+/obj/item/clothing/under/schoolgirl/magical/Destroy()
+	..()
+	qdel(facemask)
+	facemask = null
+
+/obj/item/clothing/under/schoolgirl/magical/AltClick(mob/user)
+	..()
+	if(user == src.loc)
+		ToggleMask()
+
+/obj/item/clothing/under/schoolgirl/magical/proc/ToggleMask()
+	if(!mask_toggled)
+		if(ishuman(src.loc))
+			var/mob/living/carbon/human/H = src.loc
+			if(H.w_uniform != src)
+				to_chat(H,"You must wear it to use the mask!")
+				return
+			if(H.wear_mask)
+				to_chat(H,"You are already wearing a mask!")
+				return
+			else
+				H.equip_to_slot_if_possible(facemask,SLOT_WEAR_MASK,0,0,1)
+				mask_toggled = TRUE
+				to_chat(H,"You wear the [facemask]")
+
+	else
+		RemoveMask()
+
+/obj/item/clothing/under/schoolgirl/magical/proc/RemoveMask()
+	mask_toggled = FALSE
+	if(ishuman(src.loc))
+		var/mob/living/carbon/H = facemask.loc
+		H.transferItemToLoc(facemask, src, TRUE)
+		to_chat(H,"You remvoe the [facemask]")
+	else
+		facemask.forceMove(src)
+
+/obj/item/clothing/mask/superheroine
+	name = "Super Heroihne Mask"
+	desc = "It's a magical girl mask!"
+	icon_state = "heroinemask"
+	item_state = "heroinemask"
+	item_color = "heroinemask"
+	var/obj/item/clothing/under/schoolgirl/magical/uniform = null
+
+/obj/item/clothing/mask/superheroine/Destroy()
+	uniform = null
+	return ..()
+
+/obj/item/clothing/mask/superheroine/dropped()
+	..()
+	uniform.RemoveMask()
+
+/obj/item/clothing/mask/superheroine/equipped(mob/user,slot)
+	..()
+	if(slot != SLOT_WEAR_MASK)
+		if(uniform)
+			src.forceMove(uniform)
+		else
+			qdel(src)
 
 /obj/item/clothing/under/schoolgirl/magical/equipped(mob/user,slot)
 	var/mob/living/carbon/human/M = user
