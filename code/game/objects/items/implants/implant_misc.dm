@@ -28,6 +28,18 @@
 	if(..())
 		source.remove_language(/datum/language/monkey)
 
+/obj/item/implant/nekospeak
+	name = "Neko Translator"
+	desc = "Lets you speak Cat"
+
+/obj/item/implant/nekospeak/implant(mob/living/target, mob/user, silent = FALSE, force = FALSE)
+	if(..())
+		target.grant_language(/datum/language/neko)
+
+/obj/item/implant/nekospeak/removed(mob/living/source, silent = FALSE, special = 0)
+	if(..())
+		source.remove_language(/datum/language/neko)
+
 /obj/item/implanter/miner
 	name = "implanter (Mining Weapons Authentication)"
 	imp_type = /obj/item/implant/weapons_auth/miner

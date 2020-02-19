@@ -84,6 +84,15 @@
 	..()
 	H.remove_language(/datum/language/neko)
 
+/obj/item/organ/tongue/neko/cat
+	desc = "something doesn't seem right about this tongue..."
+
+/obj/item/organ/tongue/neko/cat/Insert(mob/living/carbon/H)
+	H.remove_all_languages()
+	..()
+/obj/item/organ/tongue/neko/cat/Remove(mob/living/carbon/H)
+	H.grant_language(/datum/language/common)
+
 /obj/item/organ/tongue/fly
 	name = "proboscis"
 	desc = "A freakish looking meat tube that apparently can take in liquids."

@@ -13,6 +13,7 @@
 /datum/language/neko
 	name = "Cat Language"
 	desc = "The Language of Felines"
+	flags = LANGUAGE_HIDE_ICON_IF_NOT_UNDERSTOOD
 	speech_verb = "mews"
 	ask_verb = "mews"
 	exclaim_verb = "hisses"

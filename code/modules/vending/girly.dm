@@ -16,11 +16,12 @@
 					/obj/item/clothing/accessory/sailorfuku = 4,
 					/obj/item/clothing/gloves/color/pink = 2,
 					/obj/item/clothing/under/schoolgirl/magical = 2)
-	contraband = list (/obj/item/encryptionkey/girl = 2)
+	contraband = list (/obj/item/encryptionkey/girl = 2,
+					   /obj/item/implantcase/nekospeak = 3)
 	refill_canister = /obj/item/vending_refill/girly
 	product_ads = "Pretty Princess Power!"
-	default_price = 10000
-	extra_price = 5000
+	default_price = 5000
+	extra_price = 2500
 	payment_department = NO_FREEBIES
 	girl_locked = TRUE
 
@@ -43,7 +44,8 @@
 					/obj/item/clothing/under/schoolgirl/magical = 1,
 					/obj/item/storage/backpack/duffelbag/girly_conscript = 1)
 	contraband = list(/obj/item/firing_pin/girl = 1,
-					  /obj/item/radio/girl = 1)
+					  /obj/item/radio/girl = 1,
+					  /obj/item/implantcase/nekospeak = 2)
 	girl_locked = FALSE
 	default_price = 100
 	extra_price = 4900

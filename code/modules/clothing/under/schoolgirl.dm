@@ -18,6 +18,7 @@
 	has_sensor = LOCKED_SENSORS
 	sensor_mode = SENSOR_COORDS
 	random_sensor = FALSE
+	body_parts_covered = 0
 	locked_string = "is bonded to you."
 
 /obj/item/clothing/under/schoolgirl/magical/equipped(mob/user,slot)

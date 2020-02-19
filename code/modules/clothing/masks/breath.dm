@@ -33,9 +33,27 @@
 	. += "<span class='notice'>Alt-click [src] to adjust it.</span>"
 
 /obj/item/clothing/mask/breath/medical
-	desc = "A close-fitting sterile mask that can be connected to an air supply."
+	desc = "An old medical mask."
 	name = "medical mask"
 	icon_state = "medical"
 	item_state = "m_mask"
+	flags_cover = 0
 	permeability_coefficient = 0.01
 	equip_delay_other = 10
+
+/obj/item/clothing/mask/newmedical
+	desc = "A close-fitting sterile mask that can be connected to an air supply. Specially designed not to interfere with surgery."
+	name = "medical mask"
+	icon_state = "medical"
+	item_state = "m_mask"
+	clothing_flags = MASKINTERNALS
+	w_class = WEIGHT_CLASS_SMALL
+	gas_transfer_coefficient = 0.1
+	permeability_coefficient = 0.01
+	flags_cover = 0
+	equip_delay_other = 10
+	resistance_flags = NONE
+
+/obj/item/clothing/mask/newmedical/suicide_act(mob/living/carbon/user)
+	user.visible_message("<span class='suicide'>[user] is wrapping \the [src]'s tube around [user.p_their()] neck! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	return OXYLOSS

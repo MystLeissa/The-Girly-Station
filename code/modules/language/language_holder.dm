@@ -120,6 +120,10 @@
 /datum/language_holder/neko
 	languages = list(/datum/language/common, /datum/language/neko)
 
+/datum/language_holder/cat
+	languages = list(/datum/language/neko)
+	only_speaks_language = /datum/language/neko
+
 /datum/language_holder/drone
 	languages = list(/datum/language/common, /datum/language/drone, /datum/language/machine)
 	only_speaks_language = /datum/language/drone
