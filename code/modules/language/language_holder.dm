@@ -100,7 +100,17 @@
 		var/datum/mind/M = owner
 		if(M.current)
 			. = M.current
-
+/*
+/datum/language_holder/proc/set_language_holder_type(holder_type)
+	var/datum/language_holder/other
+	if(istype(holder_type, /datum/language_holder))
+		other = thing
+		src.remove_all_languages()
+		for(var/l in other.languages)
+			src.grant_language(l)
+		for(var/s in other.shadow_languages)
+			src.grant_language(s,TRUE)
+*/
 /datum/language_holder/alien
 	languages = list(/datum/language/xenocommon)
 
@@ -118,8 +128,7 @@
 	languages = list(/datum/language/common, /datum/language/narsie)
 
 /datum/language_holder/neko
-	languages = list(/datum/language/common)
-	shadow_languages = list(/datum/language/neko)
+	languages = list(/datum/language/common, /datum/language/neko)
 
 /datum/language_holder/cat
 	languages = list(/datum/language/neko)

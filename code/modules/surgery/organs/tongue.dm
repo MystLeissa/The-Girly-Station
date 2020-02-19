@@ -85,16 +85,16 @@
 
 /obj/item/organ/tongue/feline/neko/Insert(mob/living/carbon/H)
 	..()
-	H.copy_known_languages_from(/datum/language_holder/neko)
+	H.grant_language(/datum/language/neko)
 
 /obj/item/organ/tongue/feline/neko/Remove(mob/living/carbon/H)
 	..()
-	H.remove_language(/datum/language/neko,TRUE)
+	H.remove_language(/datum/language/neko)
 
 // Cat Version
 
 /obj/item/organ/tongue/feline/cat
-	desc = "something doesn't seem right about this tongue..."
+	desc = "something doesn't seem right about this cat tongue..."
 	var/static/list/languages_possible_cat = typecacheof(list(/datum/language/neko))
 
 /obj/item/organ/tongue/feline/cat/Initialize(mapload)
@@ -103,7 +103,8 @@
 
 /obj/item/organ/tongue/feline/cat/Insert(mob/living/carbon/H)
 	..()
-	H.copy_known_languages_from(/datum/language_holder/cat,TRUE)
+	H.remove_all_languages()
+	H.grant_language(/datum/language/neko)
 
 /obj/item/organ/tongue/feline/cat/Remove(mob/living/carbon/H)
 	..()
