@@ -105,7 +105,7 @@
 	..()
 	H.copy_known_languages_from(/datum/language_holder/cat,TRUE)
 
-/obj/item/organ/tongue/feline/cat/Remove(mob/living/carbon/H).
+/obj/item/organ/tongue/feline/cat/Remove(mob/living/carbon/H)
 	..()
 	H.remove_all_languages()
 	H.grant_language(/datum/language/common)
