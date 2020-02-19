@@ -62,35 +62,52 @@
 		message = lizard_hiSS.Replace(message, "SSS")
 	speech_args[SPEECH_MESSAGE] = message
 
-/obj/item/organ/tongue/neko
+// Common Base Feline
+
+/obj/item/organ/tongue/feline
 	name = "cat tongue"
-	desc = "A thin and long muscle typically found in cat-like races."
+	desc = "\improper\ cat tongue"
 	say_mod = "mews"
 	taste_sensitivity = 5 // combined nose + tongue, extra sensitive
 	modifies_speech = FALSE
+
+// Neko Version
+
+/obj/item/organ/tongue/feline/neko
+	desc = "A thin and long muscle typically found in cat-like races."
 	var/static/list/languages_possible_neko = typecacheof(list(
 		/datum/language/common,
 		/datum/language/neko))
 
-/obj/item/organ/tongue/neko/Initialize(mapload)
+/obj/item/organ/tongue/feline/neko/Initialize(mapload)
 	. = ..()
 	languages_possible = languages_possible_neko
 
-/obj/item/organ/tongue/neko/Insert(mob/living/carbon/H)
+/obj/item/organ/tongue/feline/neko/Insert(mob/living/carbon/H)
 	..()
-	H.grant_language(/datum/language/neko)
+	H.copy_known_languages_from(/datum/language_holder/neko)
 
-/obj/item/organ/tongue/neko/Remove(mob/living/carbon/H)
+/obj/item/organ/tongue/feline/neko/Remove(mob/living/carbon/H)
 	..()
-	H.remove_language(/datum/language/neko)
+	H.remove_language(/datum/language/neko,TRUE)
 
-/obj/item/organ/tongue/neko/cat
+// Cat Version
+
+/obj/item/organ/tongue/feline/cat
 	desc = "something doesn't seem right about this tongue..."
+	var/static/list/languages_possible_cat = typecacheof(list(/datum/language/neko))
 
-/obj/item/organ/tongue/neko/cat/Insert(mob/living/carbon/H)
-	H.remove_all_languages()
+/obj/item/organ/tongue/feline/cat/Initialize(mapload)
+	. = ..()
+	languages_possible = languages_possible_cat
+
+/obj/item/organ/tongue/feline/cat/Insert(mob/living/carbon/H)
 	..()
-/obj/item/organ/tongue/neko/cat/Remove(mob/living/carbon/H)
+	H.copy_known_languages_from(/datum/language_holder/cat,TRUE)
+
+/obj/item/organ/tongue/feline/cat/Remove(mob/living/carbon/H).
+	..()
+	H.remove_all_languages()
 	H.grant_language(/datum/language/common)
 
 /obj/item/organ/tongue/fly

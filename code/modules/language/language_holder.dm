@@ -118,10 +118,12 @@
 	languages = list(/datum/language/common, /datum/language/narsie)
 
 /datum/language_holder/neko
-	languages = list(/datum/language/common, /datum/language/neko)
+	languages = list(/datum/language/common)
+	shadow_languages = list(/datum/language/neko)
 
 /datum/language_holder/cat
 	languages = list(/datum/language/neko)
+	shadow_languages = list(/datum/language/common)
 	only_speaks_language = /datum/language/neko
 
 /datum/language_holder/drone
@@ -141,7 +143,7 @@
 
 /datum/language_holder/synthetic
 	languages = list(/datum/language/common)
-	shadow_languages = list(/datum/language/common, /datum/language/machine, /datum/language/draconic)
+	shadow_languages = list(/datum/language/common, /datum/language/machine, /datum/language/draconic, /datum/language/neko)
 
 /datum/language_holder/empty
 	languages = list()
