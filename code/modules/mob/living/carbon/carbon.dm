@@ -69,7 +69,7 @@
 					return 1
 	if(istype(I,/obj/item/paper) && user != src && user.a_intent == INTENT_HELP)
 		I.examine(src)
-		return 0
+		return 1
 	return ..()
 
 /mob/living/carbon/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
