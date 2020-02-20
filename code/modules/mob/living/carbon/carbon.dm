@@ -68,6 +68,8 @@
 				if(S.next_step(user,user.a_intent))
 					return 1
 	if(istype(I,/obj/item/paper) && user != src && user.a_intent == INTENT_HELP)
+		to_chat(user,"<span class='notice'>You show [I] to [src]</span>")
+		to_chat(src,"<span class='notice'>You are shown [I] by [user]</span>")
 		I.examine(src)
 		return 1
 	return ..()
