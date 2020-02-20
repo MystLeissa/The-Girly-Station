@@ -153,6 +153,7 @@
 	sensor_mode = SENSOR_COORDS
 	clothing_flags = SHOWEROKAY
 	random_sensor = FALSE
+	body_parts_covered = CHEST|GROIN
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/schoolgirl
 	custom_price = 100
 	var/locked = FALSE
