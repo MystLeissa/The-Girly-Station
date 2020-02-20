@@ -118,7 +118,8 @@
 	if(!ishuman(user))
 		return
 	var/mob/living/carbon/human/H = user
-	if(HAS_TRAIT(H,TRAIT_EVIL))
+	// Replaced EVIL Trait with is_special character check
+	if(isAntag(H))
 		to_chat(H,"<span class='warning'>Your evil heart cannot use this.</span>")
 		return
 	H.equipOutfit(/datum/outfit/job/superheroine,FALSE)

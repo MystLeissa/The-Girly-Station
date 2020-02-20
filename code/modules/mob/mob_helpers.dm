@@ -316,7 +316,7 @@ It's fairly easy to fix if dealing with single letters but not so much with comp
 			if(A.laws && A.laws.zeroth && A.mind && A.mind.special_role)
 				return TRUE
 		return FALSE
-	if(M.mind && M.mind.special_role)//If they have a mind and special role, they are some type of traitor or antagonist.
+	if(isAntag(M))//If they have a mind and special role, they are some type of traitor or antagonist.
 		switch(SSticker.mode.config_tag)
 			if("revolution")
 				if(is_revolutionary(M))
@@ -343,6 +343,15 @@ It's fairly easy to fix if dealing with single letters but not so much with comp
 						return 2
 		return TRUE
 	if(M.mind && LAZYLEN(M.mind.antag_datums)) //they have an antag datum!
+		return TRUE
+	return FALSE
+
+/proc/isAntag(mob/M)
+	if(!SSticker.HasRoundStarted())
+		return FALSE
+	if(!istype(M))
+		return FALSE
+	if(M.mind && M.mind.special_role)
 		return TRUE
 	return FALSE
 
