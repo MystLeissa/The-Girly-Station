@@ -224,9 +224,19 @@
 	user.visible_message("<span class='suicide'>[user] is trying to get the cap off [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return (TOXLOSS)
 
+/obj/item/storage/pill_bottle/salglu
+	name = "bottle of Saline-Glucose pills"
+	desc = "Contains pills that treat minor brute and burn damage, and can be used as a blood thickener"
+	custom_price = 100
+
+/obj/item/storage/pill_bottle/salglu/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/reagent_containers/pill/salglu(src)
+
 /obj/item/storage/pill_bottle/charcoal
 	name = "bottle of charcoal pills"
 	desc = "Contains pills used to counter toxins."
+	custom_price = 100
 
 /obj/item/storage/pill_bottle/charcoal/PopulateContents()
 	for(var/i in 1 to 7)

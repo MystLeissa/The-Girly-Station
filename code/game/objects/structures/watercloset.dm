@@ -224,6 +224,9 @@
 	var/busy = FALSE 	//Something's being washed at the moment
 	var/dispensedreagent = /datum/reagent/water // for whenever plumbing happens
 
+/obj/structure/sink/prison
+	dispensedreagent = /datum/reagent/consumable/ice
+
 /obj/structure/sink/attack_hand(mob/living/user)
 	. = ..()
 	if(.)

@@ -75,6 +75,13 @@
 	reagents.trans_to(target, reagents.total_volume, transfered_by = user)
 	qdel(src)
 
+/obj/item/reagent_containers/pill/salglu
+	name = "Saline-Glucose Pill"
+	desc = "For minor injuries and blood loss"
+	icon_state = "pill3"
+	list_reagents = list(/datum/reagent/medicine/salglu_solution = 30)
+	rename_with_volume = TRUE
+
 /obj/item/reagent_containers/pill/tox
 	name = "toxins pill"
 	desc = "Highly toxic."

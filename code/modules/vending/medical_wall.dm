@@ -35,14 +35,15 @@
 	desc = "This device sells medicine to the public."
 	default_price = 50
 	extra_price = 150
-	products = list(/obj/item/reagent_containers/syringe = 10,
-					/obj/item/reagent_containers/pill/patch/styptic = 5,
-					/obj/item/reagent_containers/pill/patch/silver_sulf = 5,
-					/obj/item/reagent_containers/medigel/sterilizine = 4,
-					/obj/item/reagent_containers/pill/charcoal = 5,
+	products = list(/obj/item/reagent_containers/syringe = 5,
+					/obj/item/reagent_containers/pill/patch/styptic = 2,
+					/obj/item/reagent_containers/pill/patch/silver_sulf = 2,
+					/obj/item/reagent_containers/medigel/sterilizine = 2,
 					/obj/item/reagent_containers/glass/bottle/epinephrine = 3,
 					/obj/item/healthanalyzer = 10,
-					/obj/item/stack/medical/gauze = 20)
+					/obj/item/stack/medical/gauze = 20,
+					/obj/item/storage/pill_bottle/charcoal = 2,
+					/obj/item/storage/pill_bottle/salglu = 2)
 	contraband = list(/obj/item/reagent_containers/hypospray/medipen = 3)
 	premium = list(/obj/item/reagent_containers/medigel/synthflesh = 2,
 				   /obj/item/storage/belt/medical = 1,

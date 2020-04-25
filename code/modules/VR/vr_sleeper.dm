@@ -60,6 +60,7 @@
 /obj/machinery/vr_sleeper/emag_act(mob/user)
 	you_die_in_the_game_you_die_for_real = TRUE
 	sparks.start()
+	trap_humans = TRUE
 	addtimer(CALLBACK(src, .proc/emagNotify), 150)
 
 /obj/machinery/vr_sleeper/update_icon()
@@ -194,6 +195,7 @@
 /obj/machinery/vr_sleeper/proc/emagNotify()
 	if(vr_human)
 		vr_human.Dizzy(10)
+		ADD_TRAIT(vr_human,TRAIT_TRAPPED,VR_ZONE_TRAIT)
 
 /obj/effect/landmark/vr_spawn //places you can spawn in VR, auto selected by the vr_sleeper during get_vr_spawnpoint()
 	var/vr_category = "default" //So we can have specific sleepers, eg: "Basketball VR Sleeper", etc.
