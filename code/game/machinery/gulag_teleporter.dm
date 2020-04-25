@@ -20,6 +20,7 @@ The console is located at computer/gulag_teleporter.dm
 	var/locked = FALSE
 	var/message_cooldown
 	var/breakout_time = 600
+	var/pen_type = /obj/item/pen
 	var/jumpsuit_type = /obj/item/clothing/under/rank/prisoner/skirt
 	var/shoes_type = /obj/item/clothing/shoes/sneakers/orange
 	var/obj/machinery/gulag_item_reclaimer/linked_reclaimer
@@ -159,6 +160,8 @@ The console is located at computer/gulag_teleporter.dm
 		prisoner.equip_to_appropriate_slot(new shoes_type)
 	if(id)
 		prisoner.equip_to_appropriate_slot(id)
+	if(pen_type)
+		prisoner.equip_to_appropriate_slot(new pen_type)
 	if(R)
 		R.fields["criminal"] = "Incarcerated"
 
