@@ -94,7 +94,9 @@
 		if(target_zone != I.zone || target.getorganslot(I.slot))
 			to_chat(user, "<span class='warning'>There is no room for [I] in [target]'s [parse_zone(target_zone)]!</span>")
 			return -1
-
+		if(HAS_TRAIT(target,TRAIT_PROT_IMPLANT) && istype(tool,/obj/item/organ/cyberimp/mouth/breathing_tube))
+			to_chat(user,"<span class='warning'>[tool] would overload [target]'s system.'")
+			return -1
 		display_results(user, target, "<span class='notice'>You begin to insert [tool] into [target]'s [parse_zone(target_zone)]...</span>",
 			"[user] begins to insert [tool] into [target]'s [parse_zone(target_zone)].",
 			"[user] begins to insert something into [target]'s [parse_zone(target_zone)].")

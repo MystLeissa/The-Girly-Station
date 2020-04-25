@@ -24,6 +24,8 @@
 					/obj/item/reagent_containers/medigel/silver_sulf = 2,
 					/obj/item/reagent_containers/medigel/sterilizine = 1,
 					/obj/item/sensor_device = 2,
+					/obj/item/implantcase/protection/resist_pressure = 2,
+					/obj/item/implantcase/protection/radprot = 2,
 					/obj/item/pinpointer/crew = 2)
 	contraband = list(/obj/item/reagent_containers/pill/tox = 3,
 		              /obj/item/reagent_containers/pill/morphine = 4,

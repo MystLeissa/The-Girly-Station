@@ -177,4 +177,43 @@
 /obj/item/implanter/radio/syndicate
 	name = "implanter (internal syndicate radio)"
 	imp_type = /obj/item/implant/radio/syndicate
+/obj/item/implant/protection
+	name = "/improper/ protection implant"
+	desc = "Do Not Use"
 
+/obj/item/implant/protection/can_be_implanted_in(mob/living/target) // for human-only and other special requirements
+	if(HAS_TRAIT(target,TRAIT_PROT_IMPLANT))
+		return FALSE
+	return TRUE
+
+/obj/item/implant/protection/implant(mob/living/target,mob/user,silent = FALSE, force = FALSE)
+	..()
+	ADD_TRAIT(target,TRAIT_PROT_IMPLANT,TRAIT_GENERIC)
+
+/obj/item/implant/protection/removed(mob/living/source, silent = FALSE, special = 0)
+	..()
+	REMOVE_TRAIT(source,TRAIT_PROT_IMPLANT,TRAIT_GENERIC)
+
+/obj/item/implant/protection/radprot
+	name = "Radiation Protection Implant"
+	desc = "Prevents Radiation Damage"
+
+/obj/item/implant/protection/radprot/implant(mob/living/target, mob/user, silent = FALSE, force = FALSE)
+	..()
+	ADD_TRAIT(target,TRAIT_RADIMMUNE,TRAIT_GENERIC)
+
+/obj/item/implant/protection/radprot/removed(mob/living/source, silent = FALSE, special = 0)
+	..()
+	REMOVE_TRAIT(source,TRAIT_RADIMMUNE,TRAIT_GENERIC)
+
+/obj/item/implant/protection/resist_pressure
+	name = "Anti-Pressure Implant"
+	desc = "Prtoects from Low Pressure Enviroments like space"
+
+/obj/item/implant/protection/resist_pressure/implant(mob/living/target, mob/user, silent = FALSE, force = FALSE)
+	..()
+	ADD_TRAIT(target,TRAIT_RESISTLOWPRESSURE,TRAIT_GENERIC)
+
+/obj/item/implant/protection/resist_pressure/removed(mob/living/source, silent = FALSE, special = 0)
+	..()
+	REMOVE_TRAIT(source,TRAIT_RESISTLOWPRESSURE,TRAIT_GENERIC)

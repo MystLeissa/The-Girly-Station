@@ -148,6 +148,12 @@
 	slot = ORGAN_SLOT_BREATHING_TUBE
 	w_class = WEIGHT_CLASS_TINY
 
+/obj/item/organ/cyberimp/mouth/breathing_tube/Insert()
+	ADD_TRAIT(owner,TRAIT_PROT_IMPLANT,ORGAN_TRAIT)
+
+/obj/item/organ/cyberimp/mouth/breating_tube/Remove(mob/living/carbon/M, special = FALSE)
+	REMOVE_TRAIT(M,TRAIT_PROT_IMPLANT,ORGAN_TRAIT)
+
 /obj/item/organ/cyberimp/mouth/breathing_tube/emp_act(severity)
 	. = ..()
 	if(!owner || . & EMP_PROTECT_SELF)
