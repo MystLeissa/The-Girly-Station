@@ -6,7 +6,6 @@
 
 #Ignore byond config folder.
 /cfg/**/*
-/config/dbconfig.txt
 
 #Ignore compiled files and other files generated during compilation.
 *.mdme
@@ -210,3 +209,4 @@ tools/MapAtmosFixer/MapAtmosFixer/bin/*
 #extra map stuff
 /_maps/**/backup/
 /_maps/templates.dm
+config/dbconfig.txt
